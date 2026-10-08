@@ -40,6 +40,13 @@ before acting on it.
   2026-10-08): `.claude/context/omonia/Vorlage_Gruppenangebot_Omonia.docx`
   (no customer data; yellow-highlighted [placeholders]). When the template
   changes, replace that file and commit it.
+- Cost-coverage form ("Kostenübernahmebestätigung", 1 page, Omonia logo):
+  `.claude/context/omonia/Vorlage_Kostenuebernahmebestaetigung_Omonia.docx`.
+  Sections: Veranstaltung, Rechnungsempfänger, Umfang (ganze Rechnung / nur
+  Speisen / Höchstbetrag), Zahlung ([14 Tage] payment term still to confirm),
+  return note, signature + company stamp. For bookings paid by invoice, ask
+  for it in the reply mail and attach a pre-filled copy (pre-filled copies
+  stay in the scratchpad: customer data).
 
 ## Make (make.com)
 
