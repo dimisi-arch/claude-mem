@@ -109,3 +109,11 @@ entries from the first session.
 
 Installed in `.claude/skills/task-observer/`, activated in `CLAUDE.md`. The
 shortened activation was used (the verbatim upstream block was not inserted).
+
+## ponytail (2026-10-08)
+
+Skills from github.com/DietrichGebert/ponytail (MIT) copied into
+`.claude/skills/ponytail*` (6 skills, hooks left out), because `/plugin` does
+not work in cloud sessions. On branch `claude/ponytail-plugin-install-60yz0p`;
+available in every session only once merged into the main branch. Coding only;
+not for the restaurant e-mails.
