@@ -20,7 +20,8 @@ before acting on it.
   (user request 2026-10-08).
 - Style: German, "Sehr geehrte/r …", wir-Form, closing
   "Mit freundlichen Grüßen / Stelios Dimitriou / Team Omonia".
-- Group reservations: mention **2 hours** table time and ask whether that is
+- Group reservations: mention **2 hours** table time (only on **Friday and
+  Saturday**, user 2026-10-08) and ask whether that is
   enough; ask for a **phone number**; offer a menu and ask for the budget
   per person. Check the weekday of every date.
 - Never invent availability, prices or policies; ask Stelios. Only drafts —
