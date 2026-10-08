@@ -27,6 +27,9 @@ before acting on it.
 - Never invent availability, prices or policies; ask Stelios. Only drafts —
   nothing is sent. Gmail connector exists but has not been used yet.
 - Customer offers/files stay out of the repo (scratchpad only).
+- Venue: the **OG (Obergeschoss)** can be booked exclusively for parties of up
+  to **100 people**. For large parties, wait for start time and duration before
+  quoting a Mindestverzehr or price (user 2026-10-08).
 - Company: **Omonia Gastro GmbH**, Passagehof 24, 76133 Karlsruhe,
   Tel. 0721 48699720, info@omonia-karlsruhe.de, www.omonia-karlsruhe.de
   (from public directory listings, 2026-10-08; user to confirm).
