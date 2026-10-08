@@ -90,6 +90,21 @@ already explained: code goes to third-party providers, some providers have
 risky terms, non-Claude models work worse with Claude Code, ~8 GB RAM.
 Offered next: per-project activation or Docker setup.
 
+## Chat-Archiv in Notion (standing request)
+
+User wants every chat saved to Notion, sorted by category. Database
+"Chat-Archiv" (private), data source `collection://0f9aa644-8d33-447f-b637-7956de2e7e36`,
+URL https://app.notion.com/p/225ef91bd7d44d73aa64bead77d66332.
+Properties: Titel, Kategorie (Coding, Make & Automatisierung, Notion & Tools,
+Lernen & Ideen, Entscheidungen, Sonstiges), Datum, Zusammenfassung,
+Offene Punkte, Status (Offen/Erledigt), Sitzung (URL).
+
+Rule for every session: before it ends (and after each larger topic), add one
+page per topic with summary, decisions and open points. Summaries only, no
+verbatim transcripts. Nothing runs by itself after a session closes; if the
+user ends abruptly, the entry is missing. Created 2026-10-08 with three
+entries from the first session.
+
 ## task-observer
 
 Installed in `.claude/skills/task-observer/`, activated in `CLAUDE.md`. The
