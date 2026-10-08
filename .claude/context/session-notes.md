@@ -30,6 +30,10 @@ before acting on it.
 - Venue: the **OG (Obergeschoss)** can be booked exclusively for parties of up
   to **100 people**. For large parties, wait for start time and duration before
   quoting a Mindestverzehr or price (user 2026-10-08).
+- Pricing facts from the user (2026-10-08): groups à la carte → Mindestverzehr
+  **35 € per person** (food + drinks); exclusive OG Friday evening 17–21 h for
+  50–60 people → Mindestverzehr 6.000 €; signature is always the standard one
+  ("Stelios Dimitriou – Team Omonia"), even if older sent mails differ.
 - Company: **Omonia Gastro GmbH**, Passagehof 24, 76133 Karlsruhe,
   Tel. 0721 48699720, info@omonia-karlsruhe.de, www.omonia-karlsruhe.de
   (from public directory listings, 2026-10-08; user to confirm).
