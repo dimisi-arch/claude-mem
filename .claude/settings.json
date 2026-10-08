@@ -1,6 +1,10 @@
 {
   "env": {},
+  "enabledMcpjsonServers": ["playwright"],
   "permissions": {
+    "allow": [
+      "mcp__playwright"
+    ],
     "deny": [
       "Read(./package-lock.json)",
       "Read(./node_modules/**)",
