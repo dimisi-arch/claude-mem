@@ -31,3 +31,16 @@ npm run build-and-sync        # Build, sync to marketplace, restart worker
 ## Important
 
 No need to edit the changelog ever, it's generated automatically.
+
+## Task Observer (skill improvement)
+
+At the start of every session that involves tool calls, invoke the `task-observer` skill (`.claude/skills/task-observer/`) and run its Session Start Protocol before planning or exploring.
+
+- **Workspace (pinned, never derived from the cwd):** `/home/user/claude-mem/.claude/task-observer`
+  - Log: `.../skill-observations/observation-log/`
+  - Principles: `.../skill-observations/cross-cutting-principles.md`
+  - Staged skill updates: `.../skill-updates/` (manifest `PENDING.md`)
+- **New observation files** are created only via `bash /home/user/claude-mem/.claude/skills/task-observer/scripts/new-observation.sh <slug> /home/user/claude-mem/.claude/task-observer`.
+- **Repositories root:** `/home/user`
+- The observer only proposes changes; installed skills are changed only after the user approves them in a review.
+- Cloud sessions run in throwaway containers: commit and push changes under `.claude/task-observer/` before the session ends, or the observations are lost.
