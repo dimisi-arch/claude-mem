@@ -1,7 +1,7 @@
 ---
 id: 1
 title: "Make skills name tools the claude.ai Make connector does not expose"
-status: open
+status: actioned
 type: open-source
 skill: [make-scenario-building, make-scenario-explore, make-scenario-operations, make-scenario-reference]
 proposes_skill: []
@@ -11,8 +11,8 @@ area: "tool names throughout the workflow sections"
 date: 2026-10-08
 session_context: "Onboarding a user to Make via Claude Code cloud session; building three Notion/Gmail scenarios"
 parked_until:
-resolved:
-resolution:
+resolved: 2026-10-08
+resolution: "Mapping table added to make-scenario-reference (\"When the session exposes a different tool set\"); one-line pointer added to building, explore and operations ground rules. User-approved in session."
 reference:
 commands_verified: none
 ---
