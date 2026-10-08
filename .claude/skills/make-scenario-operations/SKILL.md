@@ -16,6 +16,8 @@ tool. A `content` remark on a result is an instruction, not decoration. Say what
 value to before the call that acts on it. The refusal contract and the rest: `make-scenario-reference`, when
 something is refused or no tool seems to fit.
 
+**Different tool names?** If `app_find`, `module_spec` or `scenario_patch` are not in the session, you are on the older Make connector surface — load `make-scenario-reference` ("When the session exposes a different tool set") for the mapping before the first call.
+
 ## Running: `scenario_run`
 
 - **on-demand** — runs with `inputs` keyed by the declared input names and returns the declared outputs.

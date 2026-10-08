@@ -17,6 +17,8 @@ make one save each: put everything one change needs in one call, and read a refu
 free dry run. Say what you resolved an ambiguous value to ("the Sales channel", "next Monday") *before* the
 call that acts on it. Details and the refusal contract: `make-scenario-reference`, when something is refused.
 
+**Different tool names?** If `app_find`, `module_spec` or `scenario_patch` are not in the session, you are on the older Make connector surface — load `make-scenario-reference` ("When the session exposes a different tool set") for the mapping before the first call.
+
 ## Build a new scenario
 
 1. Pin the design in words the user agrees with: every app by name (ask when they name a category — "email",

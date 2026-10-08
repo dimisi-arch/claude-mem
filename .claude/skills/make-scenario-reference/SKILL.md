@@ -20,6 +20,30 @@ returns byte-identical data and additionally renders a widget — use it only wh
 something, never during multi-step work. Names and schemas are permanent; a breaking change ships as a new
 tool, which is why enums read slightly over-provisioned and output schemas are non-strict.
 
+## When the session exposes a different tool set
+
+The tool names in these skills belong to the server at `mcp.make.com/claude`. The claude.ai Make
+connector exposes an older surface with other names (`scenarios_create`, `app-module_get`, …). If
+`app_find`, `module_spec` or `scenario_patch` are absent, say so once and work through this mapping:
+
+| These skills say | Older connector surface |
+|---|---|
+| `environment_get` | `environment_get` (same) |
+| `app_find` | `apps_recommend`, then `app-modules_list` for the app's exact module names |
+| `module_spec` | `app-module_get` (`format: "json"` for the schema), `validate_module_configuration` |
+| `module_field_resolve` / `module_options_get` | `rpc_execute`, with RPC names read from `app-module_get` — never guessed |
+| `connection_create` / `connection_get` | `credential-requests_create` (returns the link) / `credential-requests_get`, `connections_get` |
+| `connection_*` list, requirements | `connections_list`, `connection-requirements_get` |
+| `scenario_create` | `validate_blueprint_schema`, then `scenarios_create` with a blueprint (`flow` array, `mapper`/`parameters` per module) and `scheduling` |
+| `scenario_get` / `scenario_patch` | `scenarios_get` / `scenarios_update` — read its schema first; it is not an operation list |
+| `scenario_activate` / `scenario_run` | `scenarios_activate`, `scenarios_deactivate` / `scenarios_run` |
+| `scenario_execution_*` | `executions_list`, `executions_get`, `executions_get-detail` |
+| `scenario_trigger_learn` / `_inspect` | `hooks_create`, `hooks_learn_start`/`_stop`, `hooks_get`, `hook-incomings_list` |
+| `data_store_*` / `data_structure_*` | `data-stores_*`, `data-store-records_*` / `data-structures_*` |
+
+The biggest difference: the older surface writes whole **blueprints**, not the flat module list with
+`root`/`follows` that `make-scenario-building` describes. Verify every module name with `app-modules_list`.
+
 ## Scopes: all-or-nothing
 
 One bundle of OAuth scopes gates the whole surface. A connection missing any of them is rejected with 403 on
