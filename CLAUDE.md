@@ -32,6 +32,10 @@ npm run build-and-sync        # Build, sync to marketplace, restart worker
 
 No need to edit the changelog ever, it's generated automatically.
 
+## Carried-over session state
+
+Read `.claude/context/session-notes.md` at the start of every session: it holds the user's preferences (answer in German) and the open work (Make account, pending connections, planned automations, OmniRoute). Update it before a session ends when that state changes.
+
 ## Task Observer (skill improvement)
 
 At the start of every session that involves tool calls, invoke the `task-observer` skill (`.claude/skills/task-observer/`) and run its Session Start Protocol before planning or exploring.
