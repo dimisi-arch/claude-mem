@@ -26,6 +26,16 @@ before acting on it.
 - Never invent availability, prices or policies; ask Stelios. Only drafts —
   nothing is sent. Gmail connector exists but has not been used yet.
 - Customer offers/files stay out of the repo (scratchpad only).
+- Company: **Omonia Gastro GmbH**, Passagehof 24, 76133 Karlsruhe,
+  Tel. 0721 48699720, info@omonia-karlsruhe.de, www.omonia-karlsruhe.de
+  (from public directory listings, 2026-10-08; user to confirm).
+- Offer template ("Vorlage Gruppenangebot", built from the user's
+  Angebot .docx): intro, header block (Datum, Beginn, Verweildauer,
+  Ansprechpartner/Tel., Ort/Personen), standard meze menu, Sekt + first round
+  of water included, dessert only as optional add-on sentence, Menüpreis
+  62,90 / Sonderpreis ohne Dessert 58,90, conditions (5 days, 50 %,
+  allergies [3 days?], valid until), contact signature. Lived only in the
+  scratchpad — ask the user for the file if needed again.
 
 ## Make (make.com)
 
