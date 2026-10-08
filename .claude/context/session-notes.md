@@ -43,7 +43,7 @@ before acting on it.
 - Cost-coverage form ("Kostenübernahmebestätigung", 1 page, Omonia logo):
   `.claude/context/omonia/Vorlage_Kostenuebernahmebestaetigung_Omonia.docx`.
   Sections: Veranstaltung, Rechnungsempfänger, Umfang (ganze Rechnung / nur
-  Speisen / Höchstbetrag), Zahlung ([14 Tage] payment term still to confirm),
+  Speisen / Höchstbetrag; always "inklusive Trinkgeld"), Zahlung ([14 Tage] payment term still to confirm),
   return note, signature + company stamp. For bookings paid by invoice, ask
   for it in the reply mail and attach a pre-filled copy (pre-filled copies
   stay in the scratchpad: customer data).
