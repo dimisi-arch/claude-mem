@@ -20,9 +20,8 @@ before acting on it.
   (user request 2026-10-08).
 - Style: German, "Sehr geehrte/r …", wir-Form, closing
   "Mit freundlichen Grüßen / Stelios Dimitriou / Team Omonia".
-- Group reservations: mention **2 hours** table time (only on **Friday and
-  Saturday**, user 2026-10-08) and ask whether that is
-  enough; ask for a **phone number**; offer a menu and ask for the budget
+- Group reservations: **table time (2 hours) only when Stelios asks for it** —
+  he deleted it twice (Wed + Fri), still to confirm as a rule; ask for a **phone number**; offer a menu and ask for the budget
   per person. Check the weekday of every date.
 - Never invent availability, prices or policies; ask Stelios. Only drafts —
   nothing is sent. Gmail connector exists but has not been used yet.
@@ -47,6 +46,14 @@ before acting on it.
   2026-10-08): `.claude/context/omonia/Vorlage_Gruppenangebot_Omonia.docx`
   (no customer data; yellow-highlighted [placeholders]). When the template
   changes, replace that file and commit it.
+- Christmas menu template ("Weihnachtsmenü", 2 pages):
+  `.claude/context/omonia/Vorlage_Weihnachtsmenue_Omonia.docx` — same meze
+  menu, **3. Gang Dessert included** (Galaktoboureko mit Vanilleeis /
+  Schokoladenkuchen), **no Sekt, no water** (all drinks by consumption),
+  Menüpreis 62,90 € / **Sonderpreis 57,90 €** per person.
+- Reply mails: send follow-ups **as a reply to the earlier mail** (thread);
+  for invoice payment ask "vor Ort oder Rechnung" and offer the
+  Kostenübernahme; ask for exact head count 5 days before.
 - Cost-coverage form ("Kostenübernahmebestätigung", 1 page, Omonia logo):
   `.claude/context/omonia/Vorlage_Kostenuebernahmebestaetigung_Omonia.docx`.
   Sections: Veranstaltung, Rechnungsempfänger, Umfang (ganze Rechnung / nur
@@ -54,6 +61,27 @@ before acting on it.
   return note, signature + company stamp. For bookings paid by invoice, ask
   for it in the reply mail and attach a pre-filled copy (pre-filled copies
   stay in the scratchpad: customer data).
+
+### Open cases (as of 2026-10-08; no guest names/phones here — repo is PUBLIC)
+
+Guest contact data is NOT stored in this repo. Ask Stelios for the original
+mail when picking a case up again.
+
+| Date | Group | Status / next step |
+|---|---|---|
+| Fri 16.10.2026 17–21 h | school, 50–60 p., OG | offer sent (OG exclusive, MV 6.000 € or menu without exclusivity); no answer → reminder drafted, deadline Mon 12.10.2026 |
+| Wed 04.11.2026 19:30 | company INIT, 21 p., à la carte, invoice | confirmation + pre-filled Kostenübernahme drafted |
+| Mon 09.11.2026 18:00 | company BBBank, 25 p., Weihnachtsfeier | offer (menu 62,90 / 58,90) + 2-line confirmation drafted |
+| Thu 26.11.2026 17:30 | ~30 p., Weihnachtsfeier, à la carte | first mail said MV 45 € (wrong) → correction to **35 €** + reminder drafted, deadline Fri 16.10.2026. Same evening: 20 p. at 18:30 (hostel group, menu + budget asked) — check space |
+| Fri 27.11.2026 19:00 | company, ~20 p. | reply drafted (company name, menu/à la carte, payment, head count 5 days before) |
+| Fri 11.12.2026 | company (medical centre), 25–30 p. | 04.12 fully booked; Christmas-menu offer (Sonderpreis 57,90) drafted; ask start time + payment |
+| Thu 17.12.2026 18:30 | company BBBank, 13 p., à la carte | confirmation + payment question + pre-filled Kostenübernahme drafted |
+| Sat 19.12.2026 | engagement party ≤100 p., OG exclusive | waiting for start time + duration before quoting MV/price; same day 16:30 20 p. (12 adults, 8 children, one long table, 2 high chairs) |
+| Sat 05.12.2026 | private party, area exclusive | offered: MV 8.000 € exclusive, or without exclusivity → menu; music loud until 23:30, party until midnight |
+| Fri 23.10.2026 17:00 | 20 p., thesis defence | reply drafted (2 h, phone, menu/budget) |
+
+Open questions for Stelios: payment term in the Kostenübernahme ([14 Tage]?),
+usual tip %, Büffet possible for 100 p.?, table-time rule, all-weekday rule.
 
 ## Make (make.com)
 
