@@ -34,7 +34,7 @@ before acting on it.
   Ansprechpartner/Tel., Ort/Personen), standard meze menu, Sekt + first round
   of water included, dessert only as optional add-on sentence, Menüpreis
   62,90 / Sonderpreis ohne Dessert 58,90, conditions (5 days, 50 %,
-  allergies [3 days?], valid 14 days from issue date), contact signature.
+  allergies "vorab", no deadline, valid 14 days from issue date), contact signature.
   **Always use the latest version for every new offer** (user decision
   2026-10-08): `.claude/context/omonia/Vorlage_Gruppenangebot_Omonia.docx`
   (no customer data; yellow-highlighted [placeholders]). When the template
