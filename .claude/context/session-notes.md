@@ -165,6 +165,16 @@ nothing when the CLI is missing. Graph for `src/` built 2026-10-09 (6322 nodes,
 215 communities, ~464k tokens for 5 docs + 6 images); `graphify-out/` is
 gitignored, so it is lost with the container unless the user asks to commit it.
 
+## Remotion skill (2026-10-09)
+
+`remotion-best-practices` (github.com/remotion-dev/skills, version 4.0.534;
+router that bundles all 11 Remotion sub-skills) is fetched at every cloud
+session start by `.claude/hooks/install-remotion-skill.sh`, pinned to one
+commit (bump `REV` to update). The content is under the Remotion License (no
+classic open-source license), so the user decided to keep it out of the public
+repo: `.claude/skills/remotion-best-practices/` is gitignored. Intended use:
+code-built videos (React), e.g. intros/animations for "Age of Geschichte".
+
 ## OmniRoute test in the cloud (2026-10-09)
 
 User asked to test `curl localhost:20128/v1/chat/completions` with model

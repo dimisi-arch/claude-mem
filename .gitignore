@@ -58,3 +58,6 @@ reports/
 
 # graphify output (local knowledge graph; not committed unless decided otherwise)
 graphify-out/
+
+# Remotion skill: Remotion License, fetched at session start by .claude/hooks/install-remotion-skill.sh
+.claude/skills/remotion-best-practices/
