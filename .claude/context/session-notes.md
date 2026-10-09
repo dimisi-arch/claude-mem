@@ -48,19 +48,21 @@ before acting on it.
   - Team `3074489` private space
 - Existing connection: "Make's AI Provider (default)" (`11640039` in team 3074487).
 
-### Pending connections (user still has to finish OAuth)
+### Connections (checked 2026-10-09)
 
-As of the last check both were created but **incomplete** (no token):
-
-| App | Credential request | Connection id(s) |
-|---|---|---|
-| Notion | `8b8297af-9f0a-40d9-bd30-c7bc3583683e` | `11692405`, `11692087` |
-| Gmail | `4c2687c4-d9e6-4ab4-8b79-4b5b300a1717` | `11692409` |
-
-Check with `credential-requests_get` / `connections_list` (team 3074487). The
-user opens `https://eu1.make.com/3074487/credentials-requests/inbox?requestId=<id>`
-and must click through to "Allow" in the Notion/Google window; alternative:
-Make → Connections → Create a connection.
+- Gmail `11692409` authorized (sends as dimisi3001@gmail.com).
+- Notion "Notion Kanal-Zentrale" `11691665` and `11692396` authorized
+  (workspace "Workspace von Stelios"); old ids 11692405/11692087 are gone.
+- YouTube: user wants account **dimisi300@gmail.com**. New credential request
+  `b22dcb96-4964-4f60-bf9d-704f71996d92` (pending, user must authorize).
+  Old YouTube connections `11692399` and `11709243` (dimisi3001, channel
+  "Age of Geschichte") should be deleted — the MCP returned "Access denied" on
+  delete, so the user deletes them in Make → Connections.
+- Existing scenario `7853579` "Redaktionsplan: tägliche Zusammenfassung per
+  Gmail" (Notion watch updates → text aggregator → Gmail to dimisi3001@gmail.com,
+  daily 08:00), inactive, never run. Notion data source
+  `b43fdbca-d689-49a1-9c6f-c5416289d347`. Built outside these notes (YouTube
+  channel "Age of Geschichte" project).
 
 ### Webhook
 
