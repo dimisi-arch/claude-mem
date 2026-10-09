@@ -1,6 +1,6 @@
 ---
 id: 2
-title: "Recurring workflow: installing a third-party skill in cloud sessions (license check, commit vs. fetch-at-start)"
+title: "Recurring workflow: installing a third-party skill in cloud sessions (license check, commit vs. fetch-at-start, hook may not fire)"
 status: open
 type: open-source
 skill: []
@@ -9,7 +9,7 @@ target_file: []
 siblings_checked: "none — no existing skill covers installing third-party skills; session-start-hook only covers test/lint setup"
 area: "skill installation in ephemeral cloud containers"
 date: 2026-10-09
-session_context: "User typed only a skill name (remotion-best-practices) that was not installed; fifth third-party skill install in this repo (ponytail, frontend-design, agent-skills, graphify, remotion)"
+session_context: "Two sessions on 2026-10-09: (1) user typed only a skill name (remotion-best-practices) that was not installed; fifth third-party skill install in this repo (ponytail, frontend-design, agent-skills, graphify, remotion); (2) Remotion check found the start hook had not fired"
 parked_until:
 resolved:
 resolution:
@@ -33,6 +33,17 @@ ask, offer fetch-at-start hook pinned to a commit SHA with the folder
 gitignored; (3) hooks never fail session start; (4) test the hook twice
 (install + idempotent rerun); (5) keep settings.json formatting intact
 (no blanket json.dumps reformat); (6) record source/version in session notes.
+
+**Instance 2026-10-09 (later session, "Funktioniert remotion?"):** the
+fetch-at-start hook had not run. The session started with `/home/user` as its
+working directory (several repos side by side), `CLAUDE_PROJECT_DIR` was empty,
+and neither the Remotion skill nor the graphify CLI was present — both hooks
+live in `claude-mem/.claude/settings.json`, which only fires when that repo is
+the session's project. Step (4) above tested the hook by running it by hand,
+which cannot catch this. Added step: (7) the fetch-at-start choice depends on
+the hook actually firing; verify in a fresh session that the skill exists, and
+tell the user the fallback (run the hook by hand) when the repo is not the
+session's project.
 
 **Principle:** When a task type recurs with the same decision points, the
 decision points (here: license vs. repo visibility) belong in a skill so they

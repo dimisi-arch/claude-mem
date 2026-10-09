@@ -175,6 +175,14 @@ classic open-source license), so the user decided to keep it out of the public
 repo: `.claude/skills/remotion-best-practices/` is gitignored. Intended use:
 code-built videos (React), e.g. intros/animations for "Age of Geschichte".
 
+Tested 2026-10-09: rendering works in the cloud (remotion@4.0.534, React 18,
+3-second 720p intro rendered in seconds). Must pass
+`--browser-executable=/opt/pw-browsers/chromium_headless_shell-1194/chrome-linux/headless_shell`
+— the normal `/opt/pw-browsers/chromium` fails ("Old Headless mode has been
+removed"). Start hooks (Remotion skill, graphify) did NOT run in a session that
+started in `/home/user` instead of the repo; fallback:
+`CLAUDE_PROJECT_DIR=/home/user/claude-mem bash .claude/hooks/install-remotion-skill.sh`.
+
 ## OmniRoute test in the cloud (2026-10-09)
 
 User asked to test `curl localhost:20128/v1/chat/completions` with model
