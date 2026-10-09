@@ -136,3 +136,15 @@ Anthropic's `frontend-design` plugin skill (Apache 2.0) copied into
 `.claude/skills/frontend-design/`. In cloud sessions `claude plugin install`
 works only for the running container; the official marketplace is named
 `anthropic-plugin-directory` here, not `claude-plugins-official`.
+
+## agent-skills by Addy Osmani (2026-10-09)
+
+User chose a selection of 7 of the 25 skills from github.com/addyosmani/agent-skills
+(MIT), copied into `.claude/skills/`: idea-refine, interview-me,
+planning-and-task-breakdown, spec-driven-development,
+debugging-and-error-recovery, security-and-hardening, documentation-and-adrs.
+Left out on purpose: overlaps (code review, simplification, frontend) and
+skills that fire on every change (TDD, git workflow, using-agent-skills at
+session start). Some copied skills mention test-driven-development /
+incremental-implementation / observability-and-instrumentation, which are not
+installed. Hooks and scripts of that repo not copied.
