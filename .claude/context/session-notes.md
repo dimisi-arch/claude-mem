@@ -191,4 +191,8 @@ and the work page "Folge 1: Odysseus und der Zyklop"
 (https://app.notion.com/p/3f09d8bfe487817597f0fa871ff23d78). Read those first.
 Channel @AgeofGeschichte, ID UC4bC24FPFm1wovpWGNfhL1A. Make YouTube connection
 to use: "YouTube dimisi300". vidIQ is connected as dimisi@gmx.de but lists no
-channel. Check 2026-10-09: 0 videos; public channel description read back empty.
+channel. 2026-10-09: 0 videos. Channel description (all eras, "Age of ..." style,
+German only, no English) set via Make scenario 7864799 "Kanalbeschreibung setzen
+(Age of Geschichte)" (inactive; edit its mapper and run it to change the text) and
+verified live; banner kept. Profile picture cannot be set by API: user uploads it
+in YouTube Studio (Runway task 0b5af735, "Buch der Geschichte").
