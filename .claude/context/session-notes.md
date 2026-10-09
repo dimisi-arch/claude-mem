@@ -7,6 +7,8 @@ before acting on it.
 ## User
 
 - Answer in **German**.
+- Time zone **Europe/Berlin**. Make/Tally/Notion timestamps are UTC (`…Z`):
+  convert before quoting (CEST = UTC+2, CET = UTC+1).
 - Not a developer: explain steps plainly, give copy-paste commands, ask before
   anything hard to undo.
 
