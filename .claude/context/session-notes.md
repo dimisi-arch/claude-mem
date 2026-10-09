@@ -48,19 +48,16 @@ before acting on it.
   - Team `3074489` private space
 - Existing connection: "Make's AI Provider (default)" (`11640039` in team 3074487).
 
-### Pending connections (user still has to finish OAuth)
+### Connections (checked 2026-10-09)
 
-As of the last check both were created but **incomplete** (no token):
-
-| App | Credential request | Connection id(s) |
-|---|---|---|
-| Notion | `8b8297af-9f0a-40d9-bd30-c7bc3583683e` | `11692405`, `11692087` |
-| Gmail | `4c2687c4-d9e6-4ab4-8b79-4b5b300a1717` | `11692409` |
-
-Check with `credential-requests_get` / `connections_list` (team 3074487). The
-user opens `https://eu1.make.com/3074487/credentials-requests/inbox?requestId=<id>`
-and must click through to "Allow" in the Notion/Google window; alternative:
-Make → Connections → Create a connection.
+- Gmail `11692409`: authorised, valid until 2027-04; used by the scenario
+  "Redaktionsplan: tägliche Zusammenfassung per Gmail".
+- Notion: use `11692396` "Notion Kanal-Zentrale" (used by the Redaktionsplan
+  scenario). `11691665` is an unused duplicate. The old ids `11692405` and
+  `11692087` no longer exist.
+- YouTube: use "YouTube dimisi300" (3 scenarios); two other YouTube
+  connections are unused duplicates.
+- Webhook `3861381` (below) is on but **attached to no scenario**.
 
 ### Webhook
 
