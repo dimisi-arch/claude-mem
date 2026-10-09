@@ -157,5 +157,16 @@ session start by `.claude/hooks/install-graphify.sh` (SessionStart, remote
 only, never fails the start). `graphify install --project` added the skill
 (`.claude/skills/graphify/`), `.claude/CLAUDE.md`, a graphify section in
 `CLAUDE.md` and two PreToolUse hooks; the hooks were wrapped so they do
-nothing when the CLI is missing. No graph built yet (`/graphify .` creates
-`graphify-out/`).
+nothing when the CLI is missing. Graph for `src/` built 2026-10-09 (6322 nodes,
+215 communities, ~464k tokens for 5 docs + 6 images); `graphify-out/` is
+gitignored, so it is lost with the container unless the user asks to commit it.
+
+## OmniRoute test in the cloud (2026-10-09)
+
+User asked to test `curl localhost:20128/v1/chat/completions` with model
+`auto` and open a PR if it works. Result: OmniRoute 3.8.51 installs and starts
+(needs Node >= 22.22.2; container has 22.22.0, worked with node@24 from npm),
+bound to 127.0.0.1 because the default listens on 0.0.0.0 without an API key.
+The request failed: the free `auto` provider opencode.ai is blocked by the
+environment's network policy. No PR opened because the test did not pass.
+Nothing was routed through it; Claude Code settings untouched.
