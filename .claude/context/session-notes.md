@@ -223,3 +223,6 @@ Make scenario 7865932 (public, hidden until it has a video). Teil 1 final: 45 s,
 upload texts are on the Notion page "Folge 1". Pipeline scripts saved in
 .claude/context/youtube-shorts/. ~28 Runway credits left: daily parts need a paid
 Runway plan (new images cost 20 credits each).
+Publishing slot: daily 17:30-18:00 (Europe/Berlin), scheduled in YouTube Studio.
+After each release the user pins a comment with a question to viewers; the
+questions per part are in the Notion parts plan.
