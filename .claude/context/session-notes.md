@@ -170,3 +170,10 @@ bound to 127.0.0.1 because the default listens on 0.0.0.0 without an API key.
 The request failed: the free `auto` provider opencode.ai is blocked by the
 environment's network policy. No PR opened because the test did not pass.
 Nothing was routed through it; Claude Code settings untouched.
+User's own Windows PC (2026-10-09): OmniRoute 3.8.51 installed and running
+(PowerShell 7.6.6 available; npm skipped install scripts but the server still
+started). Test with `auto` reached OpenCode, which answered HTTP 403 "free tier
+can only be used from within OpenCode" — the README's zero-credential claim no
+longer holds. Test not passed, so no PR. Dashboard password was still the
+default "CHANGEME"; user told to change it. User pasted an OmniRoute API key in
+chat; told to rotate it; not stored anywhere.
