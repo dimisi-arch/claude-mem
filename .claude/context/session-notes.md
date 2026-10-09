@@ -207,3 +207,9 @@ Short 1 v2 (user asked: faster, other voices for characters): narrator Elias spe
 up 15% with atempo, character voices Odysseus=Clint (whisper), Polyphem=Monster
 (pitched down, cave echo), other Cyclopes=Ragnar+Grungle chorus. Speaker name shown
 above character subtitles. ~40 Runway credits left.
+
+**Channel format decided 2026-10-09: Shorts only**, 40-60 s, 9:16, no long videos.
+Each story is uploaded part by part; every part ends with a hook to the next part
+(never "the whole story comes soon"). Channel description updated to say so (live).
+Odysseus is spoken normally, not whispered. Short 1 v3 (47.7 s) ends "TEIL 2 FOLGT";
+next: part 2, the escape under the rams. ~35 Runway credits left.
