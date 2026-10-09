@@ -57,25 +57,25 @@ before acting on it.
   `11692087` no longer exist.
 - YouTube: use "YouTube dimisi300" (3 scenarios); two other YouTube
   connections are unused duplicates.
-- Webhook `3861381` (below) is on but **attached to no scenario**.
 
-### Webhook
+### Scenarios
 
-- Hook `3861381` "Anfragen → Notion" (gateway-webhook, team 3074487). Get its
-  URL with `hooks_get`. Learning mode was started; payload not confirmed yet.
+- **7871546 "Anfragen → Notion (Tally-Webhook)"** (built 2026-10-09, inactive):
+  hook `3861381` (`https://hook.eu1.make.com/9g09934l4ma09malsfkoclygwmbpr8mo`)
+  → new item in Notion database "Anfragen" (Sammelbox, data source
+  `2fdf1501-26ae-4a9c-8da1-80e9f8c7fb7f`, connection 11692396). Expects a Tally
+  form with fields labelled Betreff, Name, E-Mail, Telefon, Nachricht (mapped by
+  label from `data.fields`). Before activating: user shares the database with
+  Make in Notion (••• → Connections), connects Tally's webhook, sends one test;
+  inspect it with `hook-incomings_list`, then run and activate.
+- **7853579** daily Redaktionsplan summary by Gmail (built, inactive).
 
-### Planned automations (not built yet)
+### Planned automations
 
-1. **Webhook → Notion**: generic webhook (above) creates an item in a Notion
-   data source. Field mapping waits on the first real request.
-2. **Daily Notion summary by Gmail**: new/changed Notion items once a day.
-   Proposed: 08:00 Europe/Berlin, recipient = the user's own address (confirm).
-3. **AI sorting**: new Notion items get a category/priority from Make's AI
-   Provider.
+- **AI sorting**: new "Anfragen" items get a category/priority from Make's AI
+  Provider. Open: which property and allowed values.
 
-Open questions for the user: which Notion database, confirm recipient and
-time, which property the AI sets and its allowed values. Build all three
-scenarios inactive; activate only after the user has tested them.
+Build scenarios inactive; activate only after the user has tested them.
 
 ## Chat-Archiv in Notion (standing request)
 
