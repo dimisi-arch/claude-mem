@@ -35,7 +35,14 @@ connector exposes an older surface with other names (`scenarios_create`, `app-mo
 | `connection_create` / `connection_get` | `credential-requests_create` (returns the link) / `credential-requests_get`, `connections_get` |
 | `connection_*` list, requirements | `connections_list`, `connection-requirements_get` |
 | `scenario_create` | `validate_blueprint_schema`, then `scenarios_create` with a blueprint (`flow` array, `mapper`/`parameters` per module) and `scheduling` |
+| `scenario_list` / `scenario_list_show` | `scenarios_list` / `show_scenarios_list` (renders the list; only when the user wants it shown) |
+| `scenario_folder_list` | `folders_list` |
 | `scenario_get` / `scenario_patch` | `scenarios_get` / `scenarios_update` — read its schema first; it is not an operation list |
+| `scenario_module_get` | no per-module read: take the module's `mapper`/`parameters` from the blueprint `scenarios_get` returns |
+| `scenario_delete` | `scenarios_delete` — same rule: only on an explicit request |
+| `scenario_label_*` | `scenario-labels_list`, `_create`, `_assign`, `_unassign` |
+| `scenario_note_*` | none — say so; there is no notes tool on this surface |
+| `app_endpoint_list` | none — `credential-requests_create` takes `appModules` (from `app-modules_list`) or `appEndpoints: ["*"]` |
 | `scenario_activate` / `scenario_run` | `scenarios_activate`, `scenarios_deactivate` / `scenarios_run` |
 | `scenario_execution_*` | `executions_list`, `executions_get`, `executions_get-detail` |
 | `scenario_trigger_learn` / `_inspect` | `hooks_create`, `hooks_learn_start`/`_stop`, `hooks_get`, `hook-incomings_list` |

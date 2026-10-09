@@ -34,7 +34,7 @@ No need to edit the changelog ever, it's generated automatically.
 
 ## Carried-over session state
 
-Read `.claude/context/session-notes.md` at the start of every session: it holds the user's preferences (answer in German) and the open work (Make account, pending connections, planned automations, OmniRoute). Update it before a session ends when that state changes.
+Read `.claude/context/session-notes.md` at the start of every session: it holds the user's preferences (answer in German) and the open work (restaurant e-mails, Make, Notion rules, YouTube channel). Update it before a session ends when that state changes, and keep it under ~9,000 characters: the start hook injects it in full, so move finished topics to `.claude/context/session-notes-archive.md`.
 
 ## Task Observer (skill improvement)
 
@@ -52,7 +52,7 @@ At the start of every session that involves tool calls, invoke the `task-observe
 ## Session-start hooks may not fire
 
 The SessionStart hooks in `.claude/settings.json` only run when this repo is the session's project. If `.claude/skills/remotion-best-practices/SKILL.md` or the `graphify` command is missing, run them by hand:
-`CLAUDE_PROJECT_DIR=/home/user/claude-mem bash .claude/hooks/install-remotion-skill.sh` and `CLAUDE_PROJECT_DIR=/home/user/claude-mem bash .claude/hooks/install-graphify.sh` (from the repo root; replace the path if the repo lives elsewhere).
+`CLAUDE_PROJECT_DIR=/home/user/claude-mem bash .claude/hooks/install-remotion-skill.sh` and `CLAUDE_PROJECT_DIR=/home/user/claude-mem bash .claude/hooks/install-graphify.sh` (from the repo root; replace the path if the repo lives elsewhere). The graphify hook also builds `graphify-out/` in the background (~2 min) when it is missing.
 
 ## graphify
 
