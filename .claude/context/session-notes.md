@@ -196,3 +196,10 @@ German only, no English) set via Make scenario 7864799 "Kanalbeschreibung setzen
 (Age of Geschichte)" (inactive; edit its mapper and run it to change the text) and
 verified live; banner kept. Profile picture cannot be set by API: user uploads it
 in YouTube Studio (Runway task 0b5af735, "Buch der Geschichte").
+
+Fixed channel voice (user approved 2026-10-09): Runway preset **Elias**, model
+eleven_v3, languageCode de, stability 0.5; [whispers]/[shouts] tags for drama.
+Runway free plan: voice library search and music are not available; sound effects
+work (1 credit/s). ~35 credits left after Short 1. Short 1 "Ich heisse Niemand"
+was cut in the container (PIL frames -> ffmpeg, silencedetect for subtitle timing)
+and awaits approval; the video file lived only in the scratchpad.
