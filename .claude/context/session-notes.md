@@ -60,14 +60,15 @@ before acting on it.
 
 ### Scenarios
 
-- **7871546 "Anfragen → Notion (Tally-Webhook)"** (built 2026-10-09, inactive):
-  hook `3861381` (`https://hook.eu1.make.com/9g09934l4ma09malsfkoclygwmbpr8mo`)
-  → new item in Notion database "Anfragen" (Sammelbox, data source
-  `2fdf1501-26ae-4a9c-8da1-80e9f8c7fb7f`, connection 11692396). Expects a Tally
-  form with fields labelled Betreff, Name, E-Mail, Telefon, Nachricht (mapped by
-  label from `data.fields`). Before activating: user shares the database with
-  Make in Notion (••• → Connections), connects Tally's webhook, sends one test;
-  inspect it with `hook-incomings_list`, then run and activate.
+- **7871546 "Anfragen → Notion (Tally-Webhook)"** — **active since 2026-10-09**,
+  tested end to end. Tally form "Kontaktformular" (id `81vZgo`,
+  https://tally.so/r/81vZgo; fields Betreff, Name, E-Mail, Telefon, Nachricht)
+  → hook `3861381` → Notion database "Anfragen" (data source
+  `2fdf1501-26ae-4a9c-8da1-80e9f8c7fb7f`, shared with Make, connection 11692396).
+  Fields are mapped by label from `data.fields`: renaming a Tally question
+  breaks its column. Tally only sends new submissions from the live link (not
+  the editor preview). Tally connector exists in claude.ai, but cannot set
+  webhooks.
 - **7853579** daily Redaktionsplan summary by Gmail (built, inactive).
 
 ### Planned automations
