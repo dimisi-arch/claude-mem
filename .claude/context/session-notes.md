@@ -80,7 +80,11 @@ Open questions for the user: which Notion database, confirm recipient and
 time, which property the AI sets and its allowed values. Build all three
 scenarios inactive; activate only after the user has tested them.
 
-## OmniRoute (github.com/diegosouzapw/OmniRoute)
+## OmniRoute (github.com/diegosouzapw/OmniRoute) — DROPPED 2026-10-09
+
+User decided to drop OmniRoute (free `auto` tier refused by OpenCode). Do not
+pursue it further unless the user brings it up again. History below.
+
 
 User wants Claude Code to run through it. Only possible on the user's own
 machine (`npm install -g omniroute`, dashboard `localhost:20128`, then
