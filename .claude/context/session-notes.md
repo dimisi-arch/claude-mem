@@ -203,3 +203,7 @@ Runway free plan: voice library search and music are not available; sound effect
 work (1 credit/s). ~35 credits left after Short 1. Short 1 "Ich heisse Niemand"
 was cut in the container (PIL frames -> ffmpeg, silencedetect for subtitle timing)
 and awaits approval; the video file lived only in the scratchpad.
+Short 1 v2 (user asked: faster, other voices for characters): narrator Elias sped
+up 15% with atempo, character voices Odysseus=Clint (whisper), Polyphem=Monster
+(pitched down, cave echo), other Cyclopes=Ragnar+Grungle chorus. Speaker name shown
+above character subtitles. ~40 Runway credits left.
