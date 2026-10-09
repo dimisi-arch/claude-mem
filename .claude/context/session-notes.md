@@ -186,7 +186,7 @@ chat; told to rotate it; not stored anywhere.
 
 ## To remember (2026-10-09)
 
-- User said "Merk dir Motion Plugin" — no details yet. Unclear whether it means
-  the Motion app (usemotion.com, calendar/task planner), a Notion plugin (user
-  often types "nation"/"Motion" for Notion), or something else. Ask what it is
-  for before acting.
+- "Motion Plugin" = the **Motion** animation library (motion.dev, formerly
+  Framer Motion, MIT, github.com/motiondivision/motion). Install per project:
+  `npm install motion` (React/JS) or `npm install motion-v` (Vue). Use it when
+  building web UIs that need animation; saved in the Code-Sammlung.
