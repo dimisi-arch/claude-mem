@@ -1,0 +1,5 @@
+2026-10-09
+- CLAUDE.md (claude-mem): task-observer block present (pinned workspace, helper script)
+- user preferences (claude.ai): names the skill load + session-notes read; does not name the workspace probe
+- session-start hook: none for task-observer
+- scheduled review prompt: none registered (prompt restates: n/a)

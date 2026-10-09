@@ -1,7 +1,7 @@
 ---
 id: 2
-title: "Recurring workflow: installing a third-party skill in cloud sessions (license check, commit vs. fetch-at-start)"
-status: open
+title: "Recurring workflow: installing a third-party skill in cloud sessions (license check, commit vs. fetch-at-start, hook may not fire)"
+status: actioned
 type: open-source
 skill: []
 proposes_skill: [install-third-party-skill]
@@ -9,11 +9,11 @@ target_file: []
 siblings_checked: "none — no existing skill covers installing third-party skills; session-start-hook only covers test/lint setup"
 area: "skill installation in ephemeral cloud containers"
 date: 2026-10-09
-session_context: "User typed only a skill name (remotion-best-practices) that was not installed; fifth third-party skill install in this repo (ponytail, frontend-design, agent-skills, graphify, remotion)"
+session_context: "Two sessions on 2026-10-09: (1) user typed only a skill name (remotion-best-practices) that was not installed; fifth third-party skill install in this repo (ponytail, frontend-design, agent-skills, graphify, remotion); (2) Remotion check found the start hook had not fired"
 parked_until:
-resolved:
-resolution:
-reference: ".claude/context/session-notes.md (sections ponytail, frontend-design, agent-skills, graphify, Remotion skill)"
+resolved: 2026-10-09
+resolution: "New internal skill .claude/skills/install-third-party-skill/ built and installed on user request; CLAUDE.md section \"Session-start hooks may not fire\" holds the hook fallback (step 7)"
+reference: ".claude/context/session-notes.md (sections ponytail … Remotion skill); staged: .claude/task-observer/skill-updates/2026-10-09/install-third-party-skill/"
 commands_verified: "none"
 ---
 
@@ -34,6 +34,26 @@ gitignored; (3) hooks never fail session start; (4) test the hook twice
 (install + idempotent rerun); (5) keep settings.json formatting intact
 (no blanket json.dumps reformat); (6) record source/version in session notes.
 
+**Instance 2026-10-09 (later session, "Funktioniert remotion?"):** the
+fetch-at-start hook had not run. The session started with `/home/user` as its
+working directory (several repos side by side), `CLAUDE_PROJECT_DIR` was empty,
+and neither the Remotion skill nor the graphify CLI was present — both hooks
+live in `claude-mem/.claude/settings.json`, which only fires when that repo is
+the session's project. Step (4) above tested the hook by running it by hand,
+which cannot catch this. Added step: (7) the fetch-at-start choice depends on
+the hook actually firing; verify in a fresh session that the skill exists, and
+tell the user the fallback (run the hook by hand) when the repo is not the
+session's project.
+
+**Review 2026-10-09:** step (7)'s fallback is applied — `CLAUDE.md` section
+"Session-start hooks may not fire". The new skill itself is still open; the
+user did not choose to build it in this review.
+
 **Principle:** When a task type recurs with the same decision points, the
 decision points (here: license vs. repo visibility) belong in a skill so they
 are asked every time, not rediscovered.
+
+**2026-10-09 (later):** user asked to build the skill. Staged at
+`skill-updates/2026-10-09/install-third-party-skill/` (bundle passed
+validate-skill-bundle.py). Stays open until the staged copy is installed;
+the next review's presence check then closes it.

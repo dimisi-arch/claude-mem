@@ -1,0 +1,2 @@
+0002-install-third-party-skill-workflow.md
+0003-session-start-protocol-shortened.md

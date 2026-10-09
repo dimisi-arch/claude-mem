@@ -175,6 +175,14 @@ classic open-source license), so the user decided to keep it out of the public
 repo: `.claude/skills/remotion-best-practices/` is gitignored. Intended use:
 code-built videos (React), e.g. intros/animations for "Age of Geschichte".
 
+Tested 2026-10-09: rendering works in the cloud (remotion@4.0.534, React 18,
+3-second 720p intro rendered in seconds). Must pass
+`--browser-executable=/opt/pw-browsers/chromium_headless_shell-1194/chrome-linux/headless_shell`
+— the normal `/opt/pw-browsers/chromium` fails ("Old Headless mode has been
+removed"). Start hooks (Remotion skill, graphify) did NOT run in a session that
+started in `/home/user` instead of the repo; fallback:
+`CLAUDE_PROJECT_DIR=/home/user/claude-mem bash .claude/hooks/install-remotion-skill.sh`.
+
 ## OmniRoute test in the cloud (2026-10-09)
 
 User asked to test `curl localhost:20128/v1/chat/completions` with model
@@ -206,3 +214,12 @@ German only, no English) set via Make scenario 7864799 "Kanalbeschreibung setzen
 (Age of Geschichte)" (inactive; edit its mapper and run it to change the text) and
 verified live; banner kept. Profile picture cannot be set by API: user uploads it
 in YouTube Studio (Runway task 0b5af735, "Buch der Geschichte").
+
+## install-third-party-skill (2026-10-09)
+
+Own internal skill in `.claude/skills/install-third-party-skill/` (built from
+task-observer observation #2): checklist for adding someone else's skill —
+license check against this public repo, copy+commit vs. fetch-at-start hook,
+pin a commit, test twice, record source here. First task-observer review ran
+2026-10-09 (all 29 starter principles adopted; record in
+`.claude/task-observer/skill-observations/reviews/2026-10-09/`).
