@@ -117,3 +117,22 @@ Skills from github.com/DietrichGebert/ponytail (MIT) copied into
 not work in cloud sessions. On branch `claude/ponytail-plugin-install-60yz0p`;
 available in every session only once merged into the main branch. Coding only;
 not for the restaurant e-mails.
+
+## Code-Sammlung in Notion (standing request, 2026-10-08)
+
+User wants every command / code snippet they paste into the chat saved for later
+reuse when writing code. Private Notion page "Code-Sammlung"
+(https://app.notion.com/p/3f39d8bfe48781a69c84fa1ec674daa5), not the repo —
+the repo is public. Rule for every session: add each pasted snippet as a new
+section at the top (title, date, what it is for, code block, status
+✅ checked / ⚠️ unchecked / ❌ do not run, plus a safety note). Never store
+passwords or API keys there; tell the user and leave them out. When the user
+writes code, check the page for a fitting snippet first. Entries so far:
+ponytail plugin commands, Voice Studio PowerShell installer (unchecked).
+
+## frontend-design (2026-10-09)
+
+Anthropic's `frontend-design` plugin skill (Apache 2.0) copied into
+`.claude/skills/frontend-design/`. In cloud sessions `claude plugin install`
+works only for the running container; the official marketplace is named
+`anthropic-plugin-directory` here, not `claude-plugins-official`.
