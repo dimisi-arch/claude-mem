@@ -129,3 +129,10 @@ section at the top (title, date, what it is for, code block, status
 passwords or API keys there; tell the user and leave them out. When the user
 writes code, check the page for a fitting snippet first. Entries so far:
 ponytail plugin commands, Voice Studio PowerShell installer (unchecked).
+
+## frontend-design (2026-10-09)
+
+Anthropic's `frontend-design` plugin skill (Apache 2.0) copied into
+`.claude/skills/frontend-design/`. In cloud sessions `claude plugin install`
+works only for the running container; the official marketplace is named
+`anthropic-plugin-directory` here, not `claude-plugins-official`.
