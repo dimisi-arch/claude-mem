@@ -49,6 +49,11 @@ At the start of every session that involves tool calls, invoke the `task-observe
 - The observer only proposes changes; installed skills are changed only after the user approves them in a review.
 - Cloud sessions run in throwaway containers: commit and push changes under `.claude/task-observer/` before the session ends, or the observations are lost.
 
+## Session-start hooks may not fire
+
+The SessionStart hooks in `.claude/settings.json` only run when this repo is the session's project. If `.claude/skills/remotion-best-practices/SKILL.md` or the `graphify` command is missing, run them by hand:
+`CLAUDE_PROJECT_DIR=/home/user/claude-mem bash .claude/hooks/install-remotion-skill.sh` and `CLAUDE_PROJECT_DIR=/home/user/claude-mem bash .claude/hooks/install-graphify.sh` (from the repo root; replace the path if the repo lives elsewhere).
+
 ## graphify
 
 This project has a knowledge graph at graphify-out/ with god nodes, community structure, and cross-file relationships.

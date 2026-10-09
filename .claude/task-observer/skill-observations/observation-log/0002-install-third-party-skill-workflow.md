@@ -45,6 +45,10 @@ the hook actually firing; verify in a fresh session that the skill exists, and
 tell the user the fallback (run the hook by hand) when the repo is not the
 session's project.
 
+**Review 2026-10-09:** step (7)'s fallback is applied — `CLAUDE.md` section
+"Session-start hooks may not fire". The new skill itself is still open; the
+user did not choose to build it in this review.
+
 **Principle:** When a task type recurs with the same decision points, the
 decision points (here: license vs. repo visibility) belong in a skill so they
 are asked every time, not rediscovered.
