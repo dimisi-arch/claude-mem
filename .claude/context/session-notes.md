@@ -183,3 +183,10 @@ can only be used from within OpenCode" — the README's zero-credential claim no
 longer holds. Test not passed, so no PR. Dashboard password was still the
 default "CHANGEME"; user told to change it. User pasted an OmniRoute API key in
 chat; told to rotate it; not stored anywhere.
+
+## To remember (2026-10-09)
+
+- User said "Merk dir Motion Plugin" — no details yet. Unclear whether it means
+  the Motion app (usemotion.com, calendar/task planner), a Notion plugin (user
+  often types "nation"/"Motion" for Notion), or something else. Ask what it is
+  for before acting.
