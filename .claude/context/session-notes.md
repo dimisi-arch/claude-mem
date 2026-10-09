@@ -213,3 +213,13 @@ Each story is uploaded part by part; every part ends with a hook to the next par
 (never "the whole story comes soon"). Channel description updated to say so (live).
 Odysseus is spoken normally, not whispered. Short 1 v3 (47.7 s) ends "TEIL 2 FOLGT";
 next: part 2, the escape under the rams. ~35 Runway credits left.
+
+2026-10-09 later: **daily upload, one part per day**; stay true to Homer; same voices
+and look in every part (series bible in Notion, Kanal-Zentrale). Odysseus voice is
+now **Malachi** (normal, 4% lower), Clint dropped. Horn removed from the Cyclops
+images by retouch (Homer: one eye, no horn). Playlist "Die Odyssee" created via
+Make scenario 7865932 (public, hidden until it has a video). Teil 1 final: 45 s,
+~26 MB, awaits upload by the user. Parts plan for the Cyclops story (4 parts) and
+upload texts are on the Notion page "Folge 1". Pipeline scripts saved in
+.claude/context/youtube-shorts/. ~28 Runway credits left: daily parts need a paid
+Runway plan (new images cost 20 credits each).
