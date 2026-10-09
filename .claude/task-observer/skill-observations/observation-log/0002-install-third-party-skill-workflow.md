@@ -1,7 +1,7 @@
 ---
 id: 2
 title: "Recurring workflow: installing a third-party skill in cloud sessions (license check, commit vs. fetch-at-start, hook may not fire)"
-status: open
+status: actioned
 type: open-source
 skill: []
 proposes_skill: [install-third-party-skill]
@@ -11,9 +11,9 @@ area: "skill installation in ephemeral cloud containers"
 date: 2026-10-09
 session_context: "Two sessions on 2026-10-09: (1) user typed only a skill name (remotion-best-practices) that was not installed; fifth third-party skill install in this repo (ponytail, frontend-design, agent-skills, graphify, remotion); (2) Remotion check found the start hook had not fired"
 parked_until:
-resolved:
-resolution:
-reference: ".claude/context/session-notes.md (sections ponytail, frontend-design, agent-skills, graphify, Remotion skill)"
+resolved: 2026-10-09
+resolution: "New internal skill .claude/skills/install-third-party-skill/ built and installed on user request; CLAUDE.md section \"Session-start hooks may not fire\" holds the hook fallback (step 7)"
+reference: ".claude/context/session-notes.md (sections ponytail … Remotion skill); staged: .claude/task-observer/skill-updates/2026-10-09/install-third-party-skill/"
 commands_verified: "none"
 ---
 
@@ -52,3 +52,8 @@ user did not choose to build it in this review.
 **Principle:** When a task type recurs with the same decision points, the
 decision points (here: license vs. repo visibility) belong in a skill so they
 are asked every time, not rediscovered.
+
+**2026-10-09 (later):** user asked to build the skill. Staged at
+`skill-updates/2026-10-09/install-third-party-skill/` (bundle passed
+validate-skill-bundle.py). Stays open until the staged copy is installed;
+the next review's presence check then closes it.

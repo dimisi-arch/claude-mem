@@ -214,3 +214,12 @@ German only, no English) set via Make scenario 7864799 "Kanalbeschreibung setzen
 (Age of Geschichte)" (inactive; edit its mapper and run it to change the text) and
 verified live; banner kept. Profile picture cannot be set by API: user uploads it
 in YouTube Studio (Runway task 0b5af735, "Buch der Geschichte").
+
+## install-third-party-skill (2026-10-09)
+
+Own internal skill in `.claude/skills/install-third-party-skill/` (built from
+task-observer observation #2): checklist for adding someone else's skill —
+license check against this public repo, copy+commit vs. fetch-at-start hook,
+pin a commit, test twice, record source here. First task-observer review ran
+2026-10-09 (all 29 starter principles adopted; record in
+`.claude/task-observer/skill-observations/reviews/2026-10-09/`).
