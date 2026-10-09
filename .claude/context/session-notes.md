@@ -148,3 +148,14 @@ skills that fire on every change (TDD, git workflow, using-agent-skills at
 session start). Some copied skills mention test-driven-development /
 incremental-implementation / observability-and-instrumentation, which are not
 installed. Hooks and scripts of that repo not copied.
+
+## graphify (2026-10-09)
+
+User chose the full setup. CLI `graphifyy` (PyPI, double y = official name;
+github.com/Graphify-Labs/graphify, MIT/Apache 2.0) is installed at every cloud
+session start by `.claude/hooks/install-graphify.sh` (SessionStart, remote
+only, never fails the start). `graphify install --project` added the skill
+(`.claude/skills/graphify/`), `.claude/CLAUDE.md`, a graphify section in
+`CLAUDE.md` and two PreToolUse hooks; the hooks were wrapped so they do
+nothing when the CLI is missing. No graph built yet (`/graphify .` creates
+`graphify-out/`).
