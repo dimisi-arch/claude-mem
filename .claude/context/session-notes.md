@@ -80,7 +80,11 @@ Open questions for the user: which Notion database, confirm recipient and
 time, which property the AI sets and its allowed values. Build all three
 scenarios inactive; activate only after the user has tested them.
 
-## OmniRoute (github.com/diegosouzapw/OmniRoute)
+## OmniRoute (github.com/diegosouzapw/OmniRoute) — DROPPED 2026-10-09
+
+User decided to drop OmniRoute (free `auto` tier refused by OpenCode). Do not
+pursue it further unless the user brings it up again. History below.
+
 
 User wants Claude Code to run through it. Only possible on the user's own
 machine (`npm install -g omniroute`, dashboard `localhost:20128`, then
@@ -136,3 +140,44 @@ Anthropic's `frontend-design` plugin skill (Apache 2.0) copied into
 `.claude/skills/frontend-design/`. In cloud sessions `claude plugin install`
 works only for the running container; the official marketplace is named
 `anthropic-plugin-directory` here, not `claude-plugins-official`.
+
+## agent-skills by Addy Osmani (2026-10-09)
+
+User chose a selection of 7 of the 25 skills from github.com/addyosmani/agent-skills
+(MIT), copied into `.claude/skills/`: idea-refine, interview-me,
+planning-and-task-breakdown, spec-driven-development,
+debugging-and-error-recovery, security-and-hardening, documentation-and-adrs.
+Left out on purpose: overlaps (code review, simplification, frontend) and
+skills that fire on every change (TDD, git workflow, using-agent-skills at
+session start). Some copied skills mention test-driven-development /
+incremental-implementation / observability-and-instrumentation, which are not
+installed. Hooks and scripts of that repo not copied.
+
+## graphify (2026-10-09)
+
+User chose the full setup. CLI `graphifyy` (PyPI, double y = official name;
+github.com/Graphify-Labs/graphify, MIT/Apache 2.0) is installed at every cloud
+session start by `.claude/hooks/install-graphify.sh` (SessionStart, remote
+only, never fails the start). `graphify install --project` added the skill
+(`.claude/skills/graphify/`), `.claude/CLAUDE.md`, a graphify section in
+`CLAUDE.md` and two PreToolUse hooks; the hooks were wrapped so they do
+nothing when the CLI is missing. Graph for `src/` built 2026-10-09 (6322 nodes,
+215 communities, ~464k tokens for 5 docs + 6 images); `graphify-out/` is
+gitignored, so it is lost with the container unless the user asks to commit it.
+
+## OmniRoute test in the cloud (2026-10-09)
+
+User asked to test `curl localhost:20128/v1/chat/completions` with model
+`auto` and open a PR if it works. Result: OmniRoute 3.8.51 installs and starts
+(needs Node >= 22.22.2; container has 22.22.0, worked with node@24 from npm),
+bound to 127.0.0.1 because the default listens on 0.0.0.0 without an API key.
+The request failed: the free `auto` provider opencode.ai is blocked by the
+environment's network policy. No PR opened because the test did not pass.
+Nothing was routed through it; Claude Code settings untouched.
+User's own Windows PC (2026-10-09): OmniRoute 3.8.51 installed and running
+(PowerShell 7.6.6 available; npm skipped install scripts but the server still
+started). Test with `auto` reached OpenCode, which answered HTTP 403 "free tier
+can only be used from within OpenCode" — the README's zero-credential claim no
+longer holds. Test not passed, so no PR. Dashboard password was still the
+default "CHANGEME"; user told to change it. User pasted an OmniRoute API key in
+chat; told to rotate it; not stored anywhere.
