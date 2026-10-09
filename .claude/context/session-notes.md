@@ -226,3 +226,12 @@ Runway plan (new images cost 20 credits each).
 Publishing slot: daily 17:30-18:00 (Europe/Berlin), scheduled in YouTube Studio.
 After each release the user pins a comment with a question to viewers; the
 questions per part are in the Notion parts plan.
+
+**Remotion (2026-10-09):** Shorts are now built with Remotion; project in
+`youtube/remotion/` (README in German: run on the user's PC with `npm install`,
+`npx remotion studio`). Teil 1 rebuilt there: word-by-word captions (Montserrat),
+Cinzel titles, GFS Didot for Greek, animated title/end cards, embers, firelight,
+camera shake on boulder/roar. Word times: `tools/captions.py` (faster-whisper).
+Official Remotion agent skills (github.com/remotion-dev/skills) were used from a
+scratch clone, not copied into the public repo (no licence file in that repo).
+User has a GPU PC and works on `main` locally; I push only to the PR branch.

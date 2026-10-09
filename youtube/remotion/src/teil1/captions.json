@@ -1,0 +1,817 @@
+{
+ "totalMs": 45356,
+ "pieces": [
+  {
+   "key": "ody1",
+   "start": 0.25,
+   "end": 2.649,
+   "speaker": "Odysseus"
+  },
+  {
+   "key": "n1",
+   "start": 3.099,
+   "end": 8.112,
+   "speaker": "Erzähler"
+  },
+  {
+   "key": "n2",
+   "start": 8.362,
+   "end": 14.886,
+   "speaker": "Erzähler"
+  },
+  {
+   "key": "n3",
+   "start": 15.186,
+   "end": 19.149,
+   "speaker": "Erzähler"
+  },
+  {
+   "key": "n4",
+   "start": 19.399,
+   "end": 20.379,
+   "speaker": "Erzähler"
+  },
+  {
+   "key": "ody2",
+   "start": 20.529,
+   "end": 21.263,
+   "speaker": "Odysseus"
+  },
+  {
+   "key": "n5",
+   "start": 21.663,
+   "end": 25.97,
+   "speaker": "Erzähler"
+  },
+  {
+   "key": "nb",
+   "start": 26.17,
+   "end": 28.591,
+   "speaker": "Zyklopen"
+  },
+  {
+   "key": "n6",
+   "start": 28.841,
+   "end": 29.779,
+   "speaker": "Erzähler"
+  },
+  {
+   "key": "poly",
+   "start": 29.879,
+   "end": 31.119,
+   "speaker": "Polyphem"
+  },
+  {
+   "key": "n7",
+   "start": 31.569,
+   "end": 37.626,
+   "speaker": "Erzähler"
+  },
+  {
+   "key": "end1",
+   "start": 37.976,
+   "end": 42.475,
+   "speaker": "Erzähler"
+  },
+  {
+   "key": "end2",
+   "start": 42.825,
+   "end": 44.756,
+   "speaker": "Erzähler"
+  }
+ ],
+ "pages": [
+  {
+   "startMs": 250,
+   "endMs": 3049,
+   "speaker": "ODYSSEUS",
+   "words": [
+    {
+     "text": "„Mein",
+     "startMs": 250,
+     "key": false,
+     "endMs": 580
+    },
+    {
+     "text": "Name",
+     "startMs": 580,
+     "key": false,
+     "endMs": 960
+    },
+    {
+     "text": "ist",
+     "startMs": 960,
+     "key": false,
+     "endMs": 1860
+    },
+    {
+     "text": "Niemand.“",
+     "startMs": 1860,
+     "key": true,
+     "endMs": 2649
+    }
+   ]
+  },
+  {
+   "startMs": 3360,
+   "endMs": 8512,
+   "speaker": null,
+   "words": [
+    {
+     "text": "Mit",
+     "startMs": 3360,
+     "key": false,
+     "endMs": 3440
+    },
+    {
+     "text": "diesem",
+     "startMs": 3440,
+     "key": false,
+     "endMs": 3980
+    },
+    {
+     "text": "einen",
+     "startMs": 3980,
+     "key": false,
+     "endMs": 4380
+    },
+    {
+     "text": "Satz",
+     "startMs": 4380,
+     "key": false,
+     "endMs": 4880
+    },
+    {
+     "text": "rettet",
+     "startMs": 4880,
+     "key": false,
+     "endMs": 5260
+    },
+    {
+     "text": "Odysseus",
+     "startMs": 5260,
+     "key": false,
+     "endMs": 5800
+    },
+    {
+     "text": "sich",
+     "startMs": 5800,
+     "key": false,
+     "endMs": 6040
+    },
+    {
+     "text": "und",
+     "startMs": 6040,
+     "key": false,
+     "endMs": 6300
+    },
+    {
+     "text": "seine",
+     "startMs": 6300,
+     "key": false,
+     "endMs": 6460
+    },
+    {
+     "text": "Männer",
+     "startMs": 6460,
+     "key": false,
+     "endMs": 6820
+    },
+    {
+     "text": "vor",
+     "startMs": 6820,
+     "key": false,
+     "endMs": 7300
+    },
+    {
+     "text": "einem",
+     "startMs": 7300,
+     "key": false,
+     "endMs": 7560
+    },
+    {
+     "text": "Riesen.",
+     "startMs": 7560,
+     "key": false,
+     "endMs": 8112
+    }
+   ]
+  },
+  {
+   "startMs": 9020,
+   "endMs": 12180,
+   "speaker": null,
+   "words": [
+    {
+     "text": "Der",
+     "startMs": 9020,
+     "key": false,
+     "endMs": 9220
+    },
+    {
+     "text": "Zyklop",
+     "startMs": 9220,
+     "key": false,
+     "endMs": 9740
+    },
+    {
+     "text": "Polyphem",
+     "startMs": 9740,
+     "key": false,
+     "endMs": 10320
+    },
+    {
+     "text": "hat",
+     "startMs": 10320,
+     "key": false,
+     "endMs": 10600
+    },
+    {
+     "text": "sie",
+     "startMs": 10600,
+     "key": false,
+     "endMs": 10800
+    },
+    {
+     "text": "in",
+     "startMs": 10800,
+     "key": false,
+     "endMs": 10920
+    },
+    {
+     "text": "seiner",
+     "startMs": 10920,
+     "key": false,
+     "endMs": 11100
+    },
+    {
+     "text": "Höhle",
+     "startMs": 11100,
+     "key": false,
+     "endMs": 11460
+    },
+    {
+     "text": "eingesperrt,",
+     "startMs": 11460,
+     "key": false,
+     "endMs": 12004
+    }
+   ]
+  },
+  {
+   "startMs": 12180,
+   "endMs": 15286,
+   "speaker": null,
+   "words": [
+    {
+     "text": "hinter",
+     "startMs": 12180,
+     "key": false,
+     "endMs": 12480
+    },
+    {
+     "text": "einem",
+     "startMs": 12480,
+     "key": false,
+     "endMs": 12740
+    },
+    {
+     "text": "Felsen,",
+     "startMs": 12740,
+     "key": false,
+     "endMs": 13460
+    },
+    {
+     "text": "den",
+     "startMs": 13460,
+     "key": false,
+     "endMs": 13600
+    },
+    {
+     "text": "kein",
+     "startMs": 13600,
+     "key": false,
+     "endMs": 13900
+    },
+    {
+     "text": "Mensch",
+     "startMs": 13900,
+     "key": false,
+     "endMs": 14160
+    },
+    {
+     "text": "bewegen",
+     "startMs": 14160,
+     "key": false,
+     "endMs": 14560
+    },
+    {
+     "text": "kann.",
+     "startMs": 14560,
+     "key": false,
+     "endMs": 14886
+    }
+   ]
+  },
+  {
+   "startMs": 15340,
+   "endMs": 16540,
+   "speaker": null,
+   "words": [
+    {
+     "text": "Odysseus",
+     "startMs": 15340,
+     "key": false,
+     "endMs": 15800
+    },
+    {
+     "text": "gibt",
+     "startMs": 15800,
+     "key": false,
+     "endMs": 15980
+    },
+    {
+     "text": "ihm",
+     "startMs": 15980,
+     "key": false,
+     "endMs": 16200
+    },
+    {
+     "text": "Wein,",
+     "startMs": 16200,
+     "key": false,
+     "endMs": 17101
+    }
+   ]
+  },
+  {
+   "startMs": 16540,
+   "endMs": 19520,
+   "speaker": null,
+   "words": [
+    {
+     "text": "und",
+     "startMs": 16540,
+     "key": false,
+     "endMs": 17220
+    },
+    {
+     "text": "der",
+     "startMs": 17220,
+     "key": false,
+     "endMs": 17420
+    },
+    {
+     "text": "Riese",
+     "startMs": 17420,
+     "key": false,
+     "endMs": 17780
+    },
+    {
+     "text": "fragt",
+     "startMs": 17780,
+     "key": false,
+     "endMs": 18220
+    },
+    {
+     "text": "nach",
+     "startMs": 18220,
+     "key": false,
+     "endMs": 18460
+    },
+    {
+     "text": "seinem",
+     "startMs": 18460,
+     "key": false,
+     "endMs": 18660
+    },
+    {
+     "text": "Namen.",
+     "startMs": 18660,
+     "key": false,
+     "endMs": 19149
+    }
+   ]
+  },
+  {
+   "startMs": 19520,
+   "endMs": 20529,
+   "speaker": null,
+   "words": [
+    {
+     "text": "Odysseus",
+     "startMs": 19520,
+     "key": false,
+     "endMs": 19980
+    },
+    {
+     "text": "sagt:",
+     "startMs": 19980,
+     "key": false,
+     "endMs": 20379
+    }
+   ]
+  },
+  {
+   "startMs": 20529,
+   "endMs": 21663,
+   "speaker": "ODYSSEUS",
+   "words": [
+    {
+     "text": "„Niemand.“",
+     "startMs": 20529,
+     "key": true,
+     "endMs": 21263
+    }
+   ]
+  },
+  {
+   "startMs": 21820,
+   "endMs": 24160,
+   "speaker": null,
+   "words": [
+    {
+     "text": "Als",
+     "startMs": 21820,
+     "key": false,
+     "endMs": 22020
+    },
+    {
+     "text": "Polyphem",
+     "startMs": 22020,
+     "key": false,
+     "endMs": 22520
+    },
+    {
+     "text": "später",
+     "startMs": 22520,
+     "key": false,
+     "endMs": 22940
+    },
+    {
+     "text": "geblendet",
+     "startMs": 22940,
+     "key": false,
+     "endMs": 23520
+    },
+    {
+     "text": "brüllt,",
+     "startMs": 23520,
+     "key": false,
+     "endMs": 24196
+    }
+   ]
+  },
+  {
+   "startMs": 24160,
+   "endMs": 26170,
+   "speaker": null,
+   "words": [
+    {
+     "text": "kommen",
+     "startMs": 24160,
+     "key": false,
+     "endMs": 24460
+    },
+    {
+     "text": "seine",
+     "startMs": 24460,
+     "key": false,
+     "endMs": 24740
+    },
+    {
+     "text": "Nachbarn",
+     "startMs": 24740,
+     "key": false,
+     "endMs": 25160
+    },
+    {
+     "text": "und",
+     "startMs": 25160,
+     "key": false,
+     "endMs": 25400
+    },
+    {
+     "text": "fragen:",
+     "startMs": 25400,
+     "key": false,
+     "endMs": 25970
+    }
+   ]
+  },
+  {
+   "startMs": 26170,
+   "endMs": 28841,
+   "speaker": "ZYKLOPEN",
+   "words": [
+    {
+     "text": "„Wer",
+     "startMs": 26170,
+     "key": false,
+     "endMs": 26640
+    },
+    {
+     "text": "tut",
+     "startMs": 26640,
+     "key": false,
+     "endMs": 26960
+    },
+    {
+     "text": "dir",
+     "startMs": 26960,
+     "key": false,
+     "endMs": 27280
+    },
+    {
+     "text": "etwas",
+     "startMs": 27280,
+     "key": false,
+     "endMs": 27620
+    },
+    {
+     "text": "an?“",
+     "startMs": 27620,
+     "key": false,
+     "endMs": 28591
+    }
+   ]
+  },
+  {
+   "startMs": 28841,
+   "endMs": 29880,
+   "speaker": null,
+   "words": [
+    {
+     "text": "Und",
+     "startMs": 28841,
+     "key": false,
+     "endMs": 29100
+    },
+    {
+     "text": "er",
+     "startMs": 29100,
+     "key": false,
+     "endMs": 29360
+    },
+    {
+     "text": "ruft:",
+     "startMs": 29360,
+     "key": false,
+     "endMs": 29779
+    }
+   ]
+  },
+  {
+   "startMs": 29880,
+   "endMs": 31519,
+   "speaker": "POLYPHEM",
+   "words": [
+    {
+     "text": "„Niemand!“",
+     "startMs": 29880,
+     "key": true,
+     "endMs": 31119
+    }
+   ]
+  },
+  {
+   "startMs": 31660,
+   "endMs": 35440,
+   "speaker": null,
+   "words": [
+    {
+     "text": "Die",
+     "startMs": 31660,
+     "key": false,
+     "endMs": 31800
+    },
+    {
+     "text": "anderen",
+     "startMs": 31800,
+     "key": false,
+     "endMs": 32160
+    },
+    {
+     "text": "Zyklopen",
+     "startMs": 32160,
+     "key": false,
+     "endMs": 32600
+    },
+    {
+     "text": "denken,",
+     "startMs": 32600,
+     "key": false,
+     "endMs": 32900
+    },
+    {
+     "text": "er",
+     "startMs": 32900,
+     "key": false,
+     "endMs": 33120
+    },
+    {
+     "text": "sei",
+     "startMs": 33120,
+     "key": false,
+     "endMs": 33300
+    },
+    {
+     "text": "krank,",
+     "startMs": 33300,
+     "key": false,
+     "endMs": 33800
+    },
+    {
+     "text": "und",
+     "startMs": 33800,
+     "key": false,
+     "endMs": 34040
+    },
+    {
+     "text": "gehen",
+     "startMs": 34040,
+     "key": false,
+     "endMs": 34260
+    },
+    {
+     "text": "wieder.",
+     "startMs": 34260,
+     "key": false,
+     "endMs": 35150
+    }
+   ]
+  },
+  {
+   "startMs": 35440,
+   "endMs": 38026,
+   "speaker": null,
+   "words": [
+    {
+     "text": "Eine",
+     "startMs": 35440,
+     "key": false,
+     "endMs": 35640
+    },
+    {
+     "text": "List",
+     "startMs": 35640,
+     "key": false,
+     "endMs": 36020
+    },
+    {
+     "text": "aus",
+     "startMs": 36020,
+     "key": false,
+     "endMs": 36320
+    },
+    {
+     "text": "einem",
+     "startMs": 36320,
+     "key": false,
+     "endMs": 36620
+    },
+    {
+     "text": "einzigen",
+     "startMs": 36620,
+     "key": false,
+     "endMs": 37260
+    },
+    {
+     "text": "Wort.",
+     "startMs": 37260,
+     "key": false,
+     "endMs": 37626
+    }
+   ]
+  },
+  {
+   "startMs": 38060,
+   "endMs": 40980,
+   "speaker": null,
+   "words": [
+    {
+     "text": "Doch",
+     "startMs": 38060,
+     "key": false,
+     "endMs": 38220
+    },
+    {
+     "text": "der",
+     "startMs": 38220,
+     "key": false,
+     "endMs": 38460
+    },
+    {
+     "text": "Felsen",
+     "startMs": 38460,
+     "key": false,
+     "endMs": 38900
+    },
+    {
+     "text": "liegt",
+     "startMs": 38900,
+     "key": false,
+     "endMs": 39040
+    },
+    {
+     "text": "noch",
+     "startMs": 39040,
+     "key": false,
+     "endMs": 39320
+    },
+    {
+     "text": "immer",
+     "startMs": 39320,
+     "key": false,
+     "endMs": 39520
+    },
+    {
+     "text": "vor",
+     "startMs": 39520,
+     "key": false,
+     "endMs": 39700
+    },
+    {
+     "text": "dem",
+     "startMs": 39700,
+     "key": false,
+     "endMs": 39880
+    },
+    {
+     "text": "Eingang.",
+     "startMs": 39880,
+     "key": false,
+     "endMs": 41105
+    }
+   ]
+  },
+  {
+   "startMs": 40980,
+   "endMs": 42875,
+   "speaker": null,
+   "words": [
+    {
+     "text": "Wie",
+     "startMs": 40980,
+     "key": false,
+     "endMs": 41200
+    },
+    {
+     "text": "kommen",
+     "startMs": 41200,
+     "key": false,
+     "endMs": 41500
+    },
+    {
+     "text": "sie",
+     "startMs": 41500,
+     "key": false,
+     "endMs": 41720
+    },
+    {
+     "text": "hier",
+     "startMs": 41720,
+     "key": false,
+     "endMs": 42000
+    },
+    {
+     "text": "heraus?",
+     "startMs": 42000,
+     "key": false,
+     "endMs": 42475
+    }
+   ]
+  },
+  {
+   "startMs": 42960,
+   "endMs": 45356,
+   "speaker": null,
+   "words": [
+    {
+     "text": "Abonniere",
+     "startMs": 42960,
+     "key": false,
+     "endMs": 43540
+    },
+    {
+     "text": "Age",
+     "startMs": 43540,
+     "key": false,
+     "endMs": 43900
+    },
+    {
+     "text": "of",
+     "startMs": 43900,
+     "key": false,
+     "endMs": 44100
+    },
+    {
+     "text": "Geschichte.",
+     "startMs": 44100,
+     "key": false,
+     "endMs": 44756
+    }
+   ]
+  }
+ ]
+}
