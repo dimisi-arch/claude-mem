@@ -181,3 +181,14 @@ can only be used from within OpenCode" — the README's zero-credential claim no
 longer holds. Test not passed, so no PR. Dashboard password was still the
 default "CHANGEME"; user told to change it. User pasted an OmniRoute API key in
 chat; told to rotate it; not stored anywhere.
+
+## YouTube-Kanal "Age of Geschichte" (since 2026-10-06)
+
+All state lives in Notion, not the repo: page "Geschichtskanal: Kanal-Zentrale"
+(https://app.notion.com/p/3f19d8bfe487816cb6f3ef3b6a91814e) with the
+Redaktionsplan database (data source `collection://b43fdbca-d689-49a1-9c6f-c5416289d347`)
+and the work page "Folge 1: Odysseus und der Zyklop"
+(https://app.notion.com/p/3f09d8bfe487817597f0fa871ff23d78). Read those first.
+Channel @AgeofGeschichte, ID UC4bC24FPFm1wovpWGNfhL1A. Make YouTube connection
+to use: "YouTube dimisi300". vidIQ is connected as dimisi@gmx.de but lists no
+channel. Check 2026-10-09: 0 videos; public channel description read back empty.
