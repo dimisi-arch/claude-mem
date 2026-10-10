@@ -6,7 +6,8 @@ before acting on it.
 
 ## User
 
-- Answer in **German**.
+- Answer in **German** — every message, also the short status lines between tool
+  calls, and PR descriptions on GitHub (user's reminder 2026-10-10).
 - Time zone **Europe/Berlin**. Make/Tally/Notion timestamps are UTC (`…Z`):
   convert before quoting (CEST = UTC+2, CET = UTC+1).
 - Not a developer: explain steps plainly, give copy-paste commands, ask before
