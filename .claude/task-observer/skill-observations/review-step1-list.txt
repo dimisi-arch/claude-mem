@@ -1,1 +1,4 @@
 0002-install-third-party-skill-workflow.md
+0003-session-start-protocol-shortened.md
+0004-make-connection-cannot-see-new-notion-db.md
+0005-tool-timestamps-shown-in-utc.md
