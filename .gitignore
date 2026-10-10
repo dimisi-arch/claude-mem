@@ -61,3 +61,6 @@ graphify-out/
 
 # Remotion skill: Remotion License, fetched at session start by .claude/hooks/install-remotion-skill.sh
 .claude/skills/remotion-best-practices/
+
+# free-resources lists (free-for-dev has no license), fetched at session start by .claude/hooks/install-free-lists.sh
+.claude/skills/free-resources/lists/
