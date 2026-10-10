@@ -1,5 +1,5 @@
 ---
-id: 6
+id: 7
 title: "Scheduled cloud runs start without the repository, and a prompt that names a tool loosely gets a skipped step"
 status: open
 type: open-source
@@ -37,3 +37,5 @@ target session lists it (full prefixed name), never a short form.
 session with a different tool list and filesystem; name tools by their
 exact identifiers, give every acquisition step a fallback, and prove the
 setup with a real firing.
+
+**Renumbered 2026-10-10:** logged as #6; the scheduled review logged its own #6 on a parallel branch (PR #16), so this one became #7.
