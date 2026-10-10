@@ -30,6 +30,11 @@ call that acts on it. Details and the refusal contract: `make-scenario-reference
    `config` shape and its `dynamic` paths.
 5. Connections: reuse an id from `connection.existing`; otherwise one `connection_create` for every app,
    hand over the link, `connection_get` when the user says they are done.
+   A valid connection proves the login, not access to one resource: for a target that is new or was
+   created outside Make (a Notion database made through another tool, say), list it through the connection
+   — the module's ID-finder RPC — before building, since validation with a raw id passes regardless. If it
+   is missing, give the user the one sharing step (Notion: ••• → Connections → add the Make integration)
+   and list again once they confirm. (Observed once, on Notion: an unshared database came back absent.)
 6. `module_field_resolve` every `dynamic` path in `dependsOn` order, copying `value` into `config`. A polling
    trigger's start point is the `/data` path — ask "existing items or from now?" before resolving it.
    (`module_options_get` is the same lookup keyed by `module_spec`'s `dynamicFields` and a `connectionId`;

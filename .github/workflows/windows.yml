@@ -16,6 +16,8 @@ on:
 
 jobs:
   build:
+    # Upstream's own suite; skipped in forks so a fork's pushes don't send failure mails.
+    if: ${{ !github.event.repository.fork }}
     # Pinned to windows-2022 (VS2022 / v17). The windows-latest image moved to
     # windows-2025, which ships Visual Studio 18 — npm's bundled node-gyp@11.5.0
     # can't detect it ("unknown version undefined") and native tree-sitter
@@ -103,6 +105,8 @@ jobs:
   # (foreign interpreter inherited into the uvx child) were all invisible to
   # CI. This job runs the real thing.
   chroma-windows:
+    # Upstream's own suite; skipped in forks so a fork's pushes don't send failure mails.
+    if: ${{ !github.event.repository.fork }}
     name: chroma lifecycle · worker-recycle orphan gate
     # Same windows-2022 pin and rationale as the build job above: the
     # windows-latest image moved to windows-2025 / VS18, which npm's bundled

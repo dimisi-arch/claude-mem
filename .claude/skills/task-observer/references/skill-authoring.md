@@ -13,6 +13,7 @@ Load this before creating any skill or making substantial changes to one.
 - Licensing
 - Versioning releases
 - Author Attribution Template
+- The description has more than one reader
 - Confidentiality layers
 - Timelessness — shared skills must not capture current state
 - Editing skills — always start from the live file
@@ -96,7 +97,7 @@ enumerate and read the set whenever enumeration is cheap.
 **A list of sources is an embedded command too.** The rule above is easy to
 read as being about shell snippets, because those are what "command" looks
 like. It is not: it governs anything the skill instructs a future session to
-*use* without checking — and a URL, an API endpoint, a database name, a file
+*use* unchecked — and a URL, an API endpoint, a database name, a file
 path or a tool invocation is exactly that. A skill whose core is "consult
 these sources" ships its sources the way another ships a command.
 
@@ -231,21 +232,26 @@ file serves one episode, or a set of episodes that reliably co-occur.
 Splitting is indicated when the count of distinct load triggers into one
 file grows, whatever its size — each trigger pays for every other
 episode's content — and a long single-episode file is correctly shaped
-and must not be split to satisfy a size rule. Measured once on this
-skill's own bundle (lines / distinct load triggers named in the core):
+and must not be split to satisfy a size rule. One measurement of this
+skill's own bundle (lines / distinct section-named load triggers),
+copied from the validator's `reference shape` line — refresh it from
+that line, never by hand. The validator counts pointers that name a
+section, so a file the core cites only by filename reads n/a:
 
 | file | lines | triggers |
 |---|---:|---:|
-| `weekly-review.md` | ~1,100 | 1 |
-| `skill-authoring.md` | ~950 | ~1 |
-| `observation-log.md` | ~930 | **14** |
-| `environments.md` | ~720 | 2 |
-| `signals.md` | ~170 | 3 |
+| `weekly-review.md` | 1,992 | 1 |
+| `observation-log.md` | 1,714 | **18** |
+| `environments.md` | 1,432 | 5 |
+| `skill-authoring.md` | 1,400 | n/a |
+| `starter-principles.md` | 444 | n/a |
+| `signals.md` | 232 | 4 |
+| `migration.md` | 226 | n/a |
 
-A line ceiling would have flagged the largest file first — the one that
-needs no change, since a review loads it whole as a unit — and said
-nothing about the mid-sized file that fourteen separate moments in a
-session each pull in. So `scripts/validate-skill-bundle.py` prints the
+A line ceiling flags the largest file first — the one that needs no
+change, since a review loads it whole as a unit — and cannot tell it
+from the file that eighteen separate moments in a session each pull
+in. So `scripts/validate-skill-bundle.py` prints the
 per-file trigger count on every run, deliberately **not gated**: one
 snapshot cannot site a threshold, and this one already overturned the
 rule that was about to be written; the next review argues from a trend.
@@ -366,7 +372,7 @@ requirement is that there is one.
 a client-agnostic skill shared privately with one client is NOT open source
 and NOT internal. Keep the author metadata and footer; replace the licence
 with a short usage notice (e.g., "shared privately for internal use; please
-don't redistribute without checking with the author"); no LICENSE file
+ask the author before redistributing"); no LICENSE file
 needed. All confidentiality sweeps still apply — other-client information
 must not leak even when the recipient is a known client. Do not treat "not
 internal" as "therefore open source": distribution channel determines the
@@ -545,6 +551,38 @@ activation block, a hook entry, a handoff document; the config case
 carries its own read-back in `environments.md` ("A delegated setup step
 is not done until you have observed it").
 
+## The description has more than one reader
+
+A published skill's `description` is read by three systems and written for
+one. It is the runtime trigger an agent matches to decide whether to load
+the skill. It is the search field harvested skill directories index, often
+ranked by nothing better than a substring match. And through those
+directory pages it is part of the text AI answers ground on when someone
+asks whether a tool like this exists. A trigger wants precision about when
+to load; a directory search wants the words the audience types. The two
+pull apart, and the trade-off resolves differently per skill, so it is
+stated here, not settled.
+
+The deciding fact is whether loading still depends on the description. A
+skill that ships its own activation layer — a CLAUDE.md line, a
+session-start hook, an explicit invocation convention — has decoupled
+loading from description matching, and its description may carry audience
+vocabulary. A skill that relies on description matching alone has not:
+loosening its description buys discovery at the cost of false loads, each
+one a full core read in a session that did not need it.
+
+Two guards where the description is free to change. Every added term must
+be one the author would defend as an accurate description of what the
+skill does — the test is accuracy, not search volume, and a stuffed
+description is read by the very maintainers a project pitches to; every
+added word also spends the character budget the delivery gate measures.
+And directories hold stale copies of the frontmatter, refreshed on their
+own schedule, so a change is measurable only after weeks: record the
+before state (terms searched, result positions) when the change ships, and
+compare then. The failure shape: a field named for one consumer acquires
+others once the artefact is published, and nothing in the authoring
+workflow reads it from their side.
+
 ## Confidentiality layers
 
 The open-source/internal boundary is a confidentiality boundary; enforce it
@@ -646,7 +684,9 @@ in layers so any one catches what others miss:
    justification is stated as a present-tense failure shape ("the failure
    shape: …"), never as the case it came from: no "observed once", no "in
    the case that produced this", no client complaint, no count from one
-   project. Examples come from at least two unrelated verticals or from a
+   project. Exempt: counts about the skill's own log and process
+   (observations, reviews, skills, releases) — they trace to no engagement
+   and are the evidence a rule exists for. Examples come from at least two unrelated verticals or from a
    neutral stock vertical, never from the vertical of the session that
    produced the rule. The failure shape this layer closes: a skill update
    written from an internal log carries the log's engagement narrative
@@ -706,13 +746,13 @@ eight sites as corrected had missed three the least specific grep found.
 And a check that has passed every run is evidence about the check, not
 about the artefact — the instrument guard (`observation-log.md`, "Every
 instrument gets the same guard") applies to green results exactly as to
-empty ones. **One question is open and is the maintainer's, not the
-scanning session's:** whether a claim-status form ("verified on <date>")
-is exempt, on the argument that it is what stops a claim going stale
-silently and that "at last check" makes a same-week verification
-indistinguishable from a months-old one. Until it is decided, the rule
-stands as written; if an exemption is granted, it is encoded as a scan
-exclusion in the script, never as prose the next scan re-interprets.
+empty ones. **One paired form is exempt (maintainer decision):** a
+measured fact may carry "Last verified YYYY-MM-DD · Re-test:
+`<one command>`" — the date plus a backticked re-test command, together, because
+for a fact that drifts the age is the useful part and the command keeps it
+from being a bare claim. Every other dated first-party form stays forbidden,
+including the date without its command; a publishing scan encodes the
+exemption as an exclusion in its script, never as prose.
 
 **The internal-document exemption assumes a maintenance loop that is only
 prose.** The taxonomy sanctions internal skills that describe one
@@ -742,7 +782,7 @@ re-check exists, do not record the value — record how to obtain it.
    local-filesystem environments the same files are ordinary writable
    files and nothing stops the write — the discipline is the only thing
    preventing the overwrite. Assume you are in the unprotected case unless
-   you have seen an EROFS yourself. Do not edit skill files in place, in
+   you have seen an EROFS yourself. Do not edit a skill's files in place, in
    any environment — staging-only is what keeps the autonomous review
    safe, and the way to make it hold where no guard exists is to begin
    every edit with the copy (`mkdir -p` the staging dir, `cp` the live
@@ -879,7 +919,9 @@ re-check exists, do not record the value — record how to obtain it.
    at delivery; run the gate as the last step before presenting.)
    Packaging hygiene: before zipping, sweep the staged tree for build
    artefacts (`__pycache__/`, `*.pyc`, `.DS_Store`, `.~lock.*`) left by
-   in-session checks, and read the archive listing back after zipping —
+   in-session checks and version-control directories (`.git/`, `.hg/`,
+   `.svn/`) a seed from a clone carries in, and read the archive listing
+   back after zipping —
    the listing catches two defect classes, leaked artefacts AND wrong
    path separators, and it gets read only for the one you name, so check
    for both explicitly.
@@ -927,6 +969,15 @@ re-check exists, do not record the value — record how to obtain it.
    a live violation of it, in a skill whose rules were under active
    rewrite, found only because the prompt happened to be opened for an
    unrelated reason).
+
+   **A rename is a migration, not an edit.** Where skills are hosted by an
+   account or an app, a skill under a new name is a new skill. Before the
+   rename, grep the old name across the `skill:` fields of the observation
+   log (active and archive), `skill-families.md`, the cross-cutting
+   principles, scheduled-task prompts, sibling paths (`../<old-name>/`),
+   copied script headers and memory notes. Upload the renamed skill, verify
+   that it loads, deactivate the old one in the same step, then update
+   every surface the grep found. Deleting the old skill is the user's call.
 9. **Inserting into an ordered structure is a splice, not a replacement.**
    String replacement edits text, but a list, a table, a `## Contents`
    index, a frontmatter block or a numbered sequence of steps is
@@ -1244,6 +1295,11 @@ caught only by a test built to break it.
    directory and asserts that the default location was not touched: a
    subcommand that re-declares a global option can clobber it, and the
    smoke test then writes into the real home folder.
+5. A mutation run first proves the baseline green with the harness's own
+   command, and each test asserts which guard rejected the input, not
+   only that something did. A mutant that dies by an exception or an
+   import error is investigated, not counted as killed; a surviving
+   mutant means harden the fixture or delete the redundant condition.
 
 ## Runtime prerequisites — declare what the skill needs to be able to run
 
@@ -1317,7 +1373,8 @@ already sunk, and the loss is invisible because nothing errors.
 ## Principle Propagation
 
 When an observation's Principle applies to skills in general, log it with
-`Skill: All skills` and surface it; if the user approves, add it to
+`skill: []` and `target_file: [skill-observations/cross-cutting-principles.md]`
+and surface it; if the user approves, add it to
 `[workspace folder]/skill-observations/cross-cutting-principles.md`. That
 file is a mandatory checklist during any skill creation or regeneration.
 The user chooses propagation timing: immediate (update all skills now — for
