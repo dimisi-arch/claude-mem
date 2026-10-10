@@ -15,6 +15,9 @@ before acting on it.
   summary in flowing sentences, no links, via `uv run --with edge-tts python
   .claude/scripts/vorlesen.py in.txt out.mp3`, sent with SendUserFile. Voice pitch is
   right; new English names that sound wrong go into its PRONUNCIATION list.
+- **New sessions/routines: on the PC** (2026-10-10), bridge environment
+  `Stelios:…` (id changes per start: `list_environments`); PC off → cloud
+  `Standard`, say so.
 
 ## Restaurant e-mail assistant (main use since 2026-10-08)
 
