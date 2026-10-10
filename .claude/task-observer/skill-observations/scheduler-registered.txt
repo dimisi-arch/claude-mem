@@ -1,0 +1,4 @@
+2026-10-10
+workspace: /home/user/claude-mem/.claude/task-observer
+scheduler: claude.ai routine trig_01Rr6ouwppx4xAePk7k3Ewi9 "Wöchentliche Skill-Verbesserung", Mondays 06:45 Europe/Berlin, fresh cloud session per run
+verified: registration listed; first firing not yet observed

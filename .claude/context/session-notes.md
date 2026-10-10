@@ -137,3 +137,13 @@ in YouTube Studio (Runway task 0b5af735, "Buch der Geschichte").
   fallback in `CLAUDE.md`.
 - OmniRoute: dropped 2026-10-09, do not pursue unless the user asks.
 
+## Self-improvement loop (2026-10-10)
+
+- Routine `trig_01Rr6ouwppx4xAePk7k3Ewi9` "Wöchentliche Skill-Verbesserung":
+  Mondays 06:45 Berlin, fresh cloud session: task-observer review +
+  upstream/new-skill check, result as a PR (never merged by the run).
+- `.claude/scripts/check-claude-setup.sh` checks skills, hooks, settings and
+  the notes length; GitHub workflow `claude-setup.yml` runs it (Actions must be
+  enabled on the fork).
+- Skills that need the user's PC (GitHub login): playwright-test-results,
+  playwright-devops script; playwright-dev needs `npm ci` + build.
