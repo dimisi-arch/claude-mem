@@ -38,7 +38,7 @@ Read `.claude/context/session-notes.md` at the start of every session: it holds 
 
 ## Task Observer (skill improvement)
 
-At the start of every session that involves tool calls, invoke the `task-observer` skill (`.claude/skills/task-observer/`) and run its Session Start Protocol before planning or exploring.
+At the start of every session that involves tool calls, invoke the `task-observer` skill (`.claude/skills/task-observer/`) and run its Session Start Protocol before planning or exploring. Step 2 (the log scan) is one command, never a hand-made `ls`: `bash /home/user/claude-mem/.claude/skills/task-observer/scripts/session-start-scan.sh /home/user/claude-mem/.claude/task-observer`.
 
 - **Workspace (pinned, never derived from the cwd):** `/home/user/claude-mem/.claude/task-observer`
   - Log: `.../skill-observations/observation-log/`

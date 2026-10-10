@@ -153,7 +153,7 @@ reference file and point to it.
 **Requirement:** Use subagents for speed, but never let them guess at data
 values. Safe delegations: validation, formatting checks, cross-reference
 checks — anything where every required input can be passed in the brief.
-Unsafe without safeguards: anything requiring live data. For data-bearing
+Unsafe unless guarded: anything requiring live data. For data-bearing
 tasks, the parent gathers the raw data first and passes it complete; a
 subagent lacking a value writes a `[VERIFY: value not confirmed]`
 placeholder rather than a plausible invention. After the return, the

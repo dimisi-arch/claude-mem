@@ -7,6 +7,8 @@ on:
 
 jobs:
   build:
+    # Upstream's own suite; skipped in forks so a fork's pushes don't send failure mails.
+    if: ${{ !github.event.repository.fork }}
     name: typecheck · build · test · bundle-size
     runs-on: ubuntu-latest
     timeout-minutes: 25
@@ -66,6 +68,8 @@ jobs:
   # TerminateProcess). Running the gate here — not only on the Windows job —
   # means the regression is proven on the runner every PR already uses.
   chroma-recycle-gate:
+    # Upstream's own suite; skipped in forks so a fork's pushes don't send failure mails.
+    if: ${{ !github.event.repository.fork }}
     name: chroma round-trip · worker-recycle orphan gate
     runs-on: ubuntu-latest
     timeout-minutes: 25
@@ -147,6 +151,8 @@ jobs:
         run: pgrep -a -f 'uv|python' || true
 
   sync-hub:
+    # Upstream's own suite; skipped in forks so a fork's pushes don't send failure mails.
+    if: ${{ !github.event.repository.fork }}
     name: sync-hub worker (DO anti-pattern grep · vitest · WS suite)
     runs-on: ubuntu-latest
     timeout-minutes: 15
@@ -194,6 +200,8 @@ jobs:
         run: bun run test:ws
 
   sync-api:
+    # Upstream's own suite; skipped in forks so a fork's pushes don't send failure mails.
+    if: ${{ !github.event.repository.fork }}
     name: sync-api (postgres · protocol v2 · matrix e2e)
     runs-on: ubuntu-latest
     timeout-minutes: 20
@@ -240,6 +248,8 @@ jobs:
         run: bun scripts/sync-matrix-e2e.ts
 
   clean-room-deps:
+    # Upstream's own suite; skipped in forks so a fork's pushes don't send failure mails.
+    if: ${{ !github.event.repository.fork }}
     name: clean-room dependency closure smoke
     runs-on: ubuntu-latest
     timeout-minutes: 25
@@ -278,6 +288,8 @@ jobs:
         run: npm run smoke:clean-room
 
   server-runtime-e2e-docker:
+    # Upstream's own suite; skipped in forks so a fork's pushes don't send failure mails.
+    if: ${{ !github.event.repository.fork }}
     name: server-runtime e2e (docker · pg + valkey)
     runs-on: ubuntu-latest
     timeout-minutes: 30

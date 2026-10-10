@@ -1,7 +1,7 @@
 ---
 id: 3
 title: "Session Start Protocol run as a hand-made ls instead of the shipped commands"
-status: parked
+status: open
 type: open-source
 skill: [task-observer]
 proposes_skill: []
@@ -10,7 +10,7 @@ siblings_checked: "none — task-observer belongs to no family in this install (
 area: "Session Start Protocol, steps 1-2"
 date: 2026-10-09
 session_context: "Cloud session 'Funktioniert remotion?': the agent replaced steps 1-2 with one improvised ls/awk call; the gap surfaced only when the user asked for the review later in the session"
-parked_until: "the staged task-observer 3.6.0 (skill-updates/2026-10-10/task-observer, which ships scripts/session-start-scan.sh for step 2) is installed — then re-check whether steps 1 and 3 still lack a one-call command"
+parked_until:
 resolved:
 resolution:
 reference:
@@ -46,3 +46,9 @@ frontmatter; no checkpoint line was written. Second violation of the same
 rule → the fix must be structural: the staged 3.6.0 `scripts/session-start-scan.sh`
 is that barrier once installed, and the routine prompt / session-start hook
 should then name that script as the one call.
+
+**2026-10-10 (installed):** park condition met — task-observer 3.6.0 is
+installed. Step 2 is now one command (`scripts/session-start-scan.sh`) and
+is named as that one call in `.claude/hooks/session-start.sh` and CLAUDE.md.
+Still open: steps 1 (workspace creation) and 3 (review trigger) have no
+one-call command; that part is upstream's (rebelytics).

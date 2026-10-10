@@ -155,6 +155,9 @@ Loading a skill is not complete until you have queried the observation
 log for OPEN observations naming it and read their bodies:
   find "[ABSOLUTE PATH]/skill-observations/observation-log" -maxdepth 1 \
     -name '*.md' -exec grep -l "skill:.*<skill-name>" {} +
+(<skill-name> is the bare name: drop a plugin: prefix, up to the last
+colon. A qualified pattern misses every entry filed under the bare name
+and reports a clean zero; the bare one matches both spellings.)
 (Use find, not a bare *.md glob. Under zsh an unmatched glob is an error,
 so on an empty log the command never runs and the enclosing block aborts —
 and 2>/dev/null does not help, because the redirection belongs to a
@@ -176,6 +179,11 @@ skills you built to load. A checkpoint line written without the load is a
 false record. Before writing to any file a skill reads at run time (a
 state file), load that skill: a state file that describes itself is not a
 substitute for the skill that owns it.
+
+Where scripts run, the lookup and its checkpoint line are one command:
+  bash "<skill directory>/scripts/skill-load.sh" "[ABSOLUTE PATH]" <skill-name>
+The Skill invocation and that call are ONE batch — emit them together,
+one call per skill loaded, never the call in a later batch.
 
 The task-observer workspace for this project is:
   [ABSOLUTE PATH]
@@ -213,9 +221,10 @@ compaction, when the skill body is out of context.
 
 `<skill directory>` is the installed skill's own directory (the one
 holding `SKILL.md`), substituted at install exactly like
-`[ABSOLUTE PATH]`; where the harness cannot run a script, drop the
-paragraph and keep the rest — the inline id snippet in SKILL.md is then
-the write path.
+`[ABSOLUTE PATH]`; where the harness cannot run a script, drop the two
+script paragraphs and keep the rest — the inline id snippet in SKILL.md is
+then the write path, and the `find … grep` above is the lookup, with its
+checkpoint line written by hand in the same batch.
 
 ### Anchoring the workspace
 
@@ -282,12 +291,13 @@ than consolidating on your own judgement, because one plural case is
 legitimate (see the multi-log block in `weekly-review.md`).
 
 **The session-start scan lists the neighbours on every run.** One line of
-the scan snippet finds every `skill-observations/observation-log/` up to
-three levels under the pinned root's parent and prints each with its file
-count — `logs under the parent (…): /a/proj=157  /a/other=19`. One entry
-is the ordinary case. Several are either shards or the legitimate plural
-case, and the line cannot tell which: report it in one line, route to
-"Several observation logs on one machine" in `weekly-review.md`, and never
+the scan (`scripts/session-start-scan.sh`) finds every
+`skill-observations/observation-log/` up to three levels under the
+pinned root's parent and prints each with its file count — `logs under
+the parent (…): /a/proj=157  /a/other=19`. One entry is the ordinary
+case. Several are either shards or the legitimate plural case, and the
+line cannot tell which: report it in one line, route to "Several
+observation logs on one machine" in `weekly-review.md`, and never
 consolidate from the scan. The probe is bounded by the parent's depth-3
 tree, not by any log's size; an empty line means the probe could not read
 the parent, since the pinned log itself is always under it.
@@ -310,7 +320,11 @@ system already reads or writes state, that location is authoritative
 and the documented defaults are the fallback; an existence probe over
 the defaults alone reports "not found" for every install that deviated
 from them. Never create a workspace while a hook or config names a
-different root: reconcile first. If one exists, adopt it, or
+different root: reconcile first. Every always-loaded instruction file is
+a pin source (a CLAUDE.md and an AGENTS.md forked for another agent tool
+are two): grep each for the workspace root. Two distinct roots are a
+fork, not a variant: stop and reconcile before writing, and keep the pin
+in one file both tools load. If one exists, adopt it, or
 consolidate deliberately with the user. A fresh
 empty log beside a populated one is a silent fork: both grow
 independently, ids collide, and each session sees only half the history.
@@ -460,10 +474,20 @@ last=$(cat "$d/last-review-date.txt" 2>/dev/null || echo never)
 msg="Invoke the task-observer skill before the first tool call. Observation files are created only by scripts/new-observation.sh in the skill directory, never by copying a header."
 if [ "$open" -gt 0 ]; then
   msg="$msg $open open observations; last review: $last."
-  case "$last" in (never) msg="$msg Offer the review." ;; esac
+  cutoff=$(date -d '7 days ago' +%F 2>/dev/null || date -v-7d +%F)   # GNU, then BSD/macOS
+  case "$last" in
+    (never) msg="$msg Offer the review." ;;
+    (*) [ "$(printf '%s\n%s\n' "$last" "$cutoff" | sort | head -1)" = "$last" ] && msg="$msg Offer the review." ;;
+  esac
 fi
 printf '{"hookSpecificOutput":{"hookEventName":"SessionStart","additionalContext":"%s"}}\n' "$msg"
 ```
+
+On native Windows, Claude Code runs hook commands through Git Bash, where
+a bare `bash` or `python` can resolve to WSL's `System32\bash.exe` or the
+Microsoft Store stub under `WindowsApps`, and neither runs the hook.
+Register the hook with the interpreter's full path (for Python, `py -0p`
+lists the real installs; skip any `WindowsApps` path).
 
 The count is of files whose `status` field reads `open` — not of files
 in the directory. Resolved entries deliberately stay in `observation-log/`
@@ -700,6 +724,19 @@ or intermittently, so the first batch carries the probe alone and the
 skills load a batch later. The review's activation regression pass checks
 for it (`weekly-review.md`, Step 1).
 
+**A deferred probe tool moves the probe to batch 2.** In a cloud session
+bridged to the user's computer, the device tools may still be connecting
+at turn start and arrive deferred (name only, schema not loaded), so the
+probe cannot ride in batch 1. Batch 1 then carries the deferred-tool load
+together with the session-start skill loads; batch 2 carries the probe,
+the session-start scan and one `skill-load.sh` call per skill loaded in
+batch 1 — the one recorded exception to the lookup riding in its load's
+batch, because the script runs through the same deferred tool. Record the split in the start-up lines ("probe in batch 2: device
+tool deferred"), so a review reading the transcript sees an environmental
+order, not a skipped rule. The failure shape: a rule that names batch 1's
+content cannot be met when one of its tools does not exist yet, and an
+unrecorded workaround reads the same as a violation.
+
 ### Install-layout hazards — three ways a skill silently stops existing
 
 Each of these leaves no error. The skill simply stops being offered, or an
@@ -712,7 +749,7 @@ directory and looks for `<entry>/SKILL.md`. There is no recursive lookup. On
 a library of any size the natural organising instinct is to group skills into
 category folders — `skills/seo/`, `skills/clients/`, `skills/writing/` — and
 doing so makes **every skill inside them cease to exist**: no error, no
-warning, no change in behaviour except that the skills stop being offered.
+notice, no change in behaviour except that the skills stop being offered.
 There is nothing to debug, because "not found" has no error to report. The
 layout is not merely the happy path; it is the rule, and it does not travel
 with the maintainer who reorganises six months later. Keep every skill
@@ -845,6 +882,11 @@ What follows from that:
   case the wall was the permission mode rather than a policy: once the user
   switched out of auto mode, the hook tier installed with no friction at
   all. Try this before handing the block over for pasting.
+- **The objection follows the content, not the file.** A documentation
+  page that quotes the activation text can be refused on the same grounds
+  as the config edit. Report the setup as incomplete while either the
+  config or its write-up has not landed, and do not reword either to get
+  past the classifier.
 
 **The ladder is not monotonic.** Tier 4 — the session-start hook, which this
 file elsewhere calls the only enforced option — can be blocked *harder* than
@@ -950,19 +992,21 @@ and the same command run from a file arrives exact. A body written through
 that shell loses one backslash of every `\\`, and an inline snippet that
 carries `\\` runs altered: the session-start scan's `suspect` program,
 halved, is rejected by gawk, mawk and BWK awk, so the count reads 0 with
-an error on stderr. Test a host once with `printf '%s\n' 'a\\b' | od -c`:
-two backslashes in the output mean the transport is exact. Where it is
-not, write observation bodies and any other content holding backslashes
-with the editing tool, and run a snippet that carries `\\` from a file
-written with the editing tool (`bash <file>`). Very long inline commands
-have also been reported cut on the same transport, so keep inline commands
-short and put long content in files.
+an error on stderr — why the scan ships as `scripts/session-start-scan.sh`,
+whose one-line invocation carries no backslash. Test a host once with
+`printf '%s\n' 'a\\b' | od -c`: two backslashes in the output mean the
+transport is exact. Where it is not, write observation bodies and any
+other content holding backslashes with the editing tool, and run a
+snippet that carries `\\` from a file written with the editing tool
+(`bash <file>`). Very long inline commands have also been reported cut on
+the same transport, so keep inline commands short and put long content in
+files.
 
 **A byte order mark from Windows PowerShell.** PowerShell 5.1 writes UTF-8
 with a BOM (`Set-Content -Encoding UTF8`, `Out-File -Encoding utf8`).
 Every header reader tests line 1 for `---`, so an entry written that way
 drops out of the session-start scan — `parsed` one below `files`, with no
-warning while other headers parse — and the archival sweep never moves
+notice while other headers parse — and the archival sweep never moves
 it. Write entries with the editing tool or the helper script; in
 PowerShell 7, `-Encoding utf8NoBOM`.
 
@@ -1251,7 +1295,8 @@ This skill consists of `SKILL.md`, the reference files it lists
 (`weekly-review.md`, `skill-authoring.md`, `environments.md`,
 `observation-log.md`, `signals.md`, `migration.md`,
 `starter-principles.md`) and `scripts/migrate-log.py`,
-`scripts/new-observation.sh` and `scripts/validate-skill-bundle.py`. If a referenced
+`scripts/new-observation.sh`, `scripts/session-start-scan.sh`,
+`scripts/skill-load.sh` and `scripts/validate-skill-bundle.py`. If a referenced
 file is missing, the install is
 incomplete: proceed using the rules in `SKILL.md`, tell the user which
 files are missing, and point them to the full bundle at the canonical
