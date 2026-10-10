@@ -1,0 +1,17 @@
+name: Claude setup
+
+on:
+  pull_request:
+    paths: ['.claude/**', 'CLAUDE.md', '.github/workflows/claude-setup.yml']
+  push:
+    branches: [main]
+    paths: ['.claude/**', 'CLAUDE.md', '.github/workflows/claude-setup.yml']
+
+jobs:
+  check:
+    name: skills · hooks · settings · session notes
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: bash .claude/scripts/check-claude-setup.sh
