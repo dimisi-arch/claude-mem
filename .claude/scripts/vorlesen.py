@@ -38,7 +38,7 @@ VOICE = "de-DE-FlorianMultilingualNeural"
 PRONUNCIATION = {
     "Claude": "Clawd",
     "GitHub": "Git Hub",
-    "Impeccable": "Im-peckable",  # was heard as "Impact Käbel"
+    "Impeccable": "Impeckable",  # heard as "Impact Käbel"; "Impeckable" tested closest
     "Make": "Mehk",  # the automation service, was heard as "Meg"
     "Find Skills": "Feind Skills",  # was heard as "Fine" / "Fame"
     "Dashboards": "Dashbords",
