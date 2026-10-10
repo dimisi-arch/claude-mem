@@ -136,7 +136,7 @@ in YouTube Studio (Runway task 0b5af735, "Buch der Geschichte").
   when this repo is the session's project (manual fallback in `CLAUDE.md`).
 - agent-reach (MIT, v1.5.0; details in its SOURCE.md): Exa search works in the
   cloud. Open: Reddit/Instagram only on the PC, with a secondary account.
-- claude-automation-recommender (Anthropic claude-code-setup, Apache 2.0): read-only.
+- claude-automation-recommender (Anthropic, read-only); find-skills (search only).
 - Own skills (2026-10-10): `historical-images` (free museum images per episode) and
   `free-resources` (public-apis, free-for-dev, awesome-mcp-servers, fetched at start).
 
