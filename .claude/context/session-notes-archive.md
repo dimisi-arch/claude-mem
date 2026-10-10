@@ -114,3 +114,9 @@ pin a commit, test twice, record source here. First task-observer review ran
   enabled on the fork).
 - task-observer 3.6.0 installed 2026-10-10: its step-2 scan is one command
   (`scripts/session-start-scan.sh`), named in the start hook and CLAUDE.md.
+
+## YouTube channel description (done 2026-10-09, moved 2026-10-10)
+
+Channel description (all eras, "Age of ..." style, German only, no English) set via
+Make scenario 7864799 "Kanalbeschreibung setzen (Age of Geschichte)" (inactive; edit
+its mapper and run it to change the text) and verified live; banner kept.

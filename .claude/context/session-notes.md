@@ -11,6 +11,9 @@ before acting on it.
   convert before quoting (CEST = UTC+2, CET = UTC+1).
 - Not a developer: explain steps plainly, give copy-paste commands, ask before
   anything hard to undo.
+- **Voice message with every answer** (standing, 2026-10-10): short spoken German
+  summary, no links, via `uv run --with edge-tts python .claude/scripts/vorlesen.py
+  in.txt out.mp3` (male voice Florian), sent with SendUserFile.
 
 ## Restaurant e-mail assistant (main use since 2026-10-08)
 
@@ -116,10 +119,8 @@ and the work page "Folge 1: Odysseus und der Zyklop"
 (https://app.notion.com/p/3f09d8bfe487817597f0fa871ff23d78). Read those first.
 Channel @AgeofGeschichte, ID UC4bC24FPFm1wovpWGNfhL1A. Make YouTube connection
 to use: "YouTube dimisi300". vidIQ is connected as dimisi@gmx.de but lists no
-channel. 2026-10-09: 0 videos. Channel description (all eras, "Age of ..." style,
-German only, no English) set via Make scenario 7864799 "Kanalbeschreibung setzen
-(Age of Geschichte)" (inactive; edit its mapper and run it to change the text) and
-verified live; banner kept. Profile picture cannot be set by API: user uploads it
+channel. 2026-10-09: 0 videos. Channel description done (Make 7864799, details in
+the archive). Profile picture cannot be set by API: user uploads it
 in YouTube Studio (Runway task 0b5af735, "Buch der Geschichte").
 
 ## Installed skills and tools (details: session-notes-archive.md)
