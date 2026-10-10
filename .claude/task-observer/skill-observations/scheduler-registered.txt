@@ -1,4 +1,4 @@
 2026-10-10
-workspace: /home/user/claude-mem/.claude/task-observer
-scheduler: claude.ai routine trig_01Rr6ouwppx4xAePk7k3Ewi9 "Wöchentliche Skill-Verbesserung", Mondays 06:45 Europe/Berlin, fresh cloud session per run
-verified: registration listed; first firing not yet observed
+workspace: /home/user/claude-mem/.claude/task-observer (checkout inside session_01Lrn7FyucuYZy1VNQJZTC16)
+scheduler: claude.ai routine trig_01S8wUrZaHJPHUUdTfQi5RbE "Wöchentliche Skill-Verbesserung", Mondays 06:45 Europe/Berlin, persistent session "Skill-Werkstatt"
+verified: a fresh-session firing (old trigger) ran the full review but could not push; persistent-session test run started 2026-10-10

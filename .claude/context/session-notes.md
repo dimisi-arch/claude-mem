@@ -139,9 +139,12 @@ in YouTube Studio (Runway task 0b5af735, "Buch der Geschichte").
 
 ## Self-improvement loop (2026-10-10)
 
-- Routine `trig_01Rr6ouwppx4xAePk7k3Ewi9` "Wöchentliche Skill-Verbesserung":
-  Mondays 06:45 Berlin, fresh cloud session: task-observer review +
-  upstream/new-skill check, result as a PR (never merged by the run).
+- Routine `trig_01S8wUrZaHJPHUUdTfQi5RbE` "Wöchentliche Skill-Verbesserung":
+  Mondays 06:45 Berlin, fires into the persistent session
+  `session_01Lrn7FyucuYZy1VNQJZTC16` "Skill-Werkstatt", which has this repo
+  attached (fresh routine sessions have no repo and cannot push). Result: a PR
+  plus a push notification; the run never merges. A manual "run now" starts an
+  empty session instead: test by messaging the Werkstatt session.
 - `.claude/scripts/check-claude-setup.sh` checks skills, hooks, settings and
   the notes length; GitHub workflow `claude-setup.yml` runs it (Actions must be
   enabled on the fork).
