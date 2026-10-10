@@ -120,3 +120,16 @@ pin a commit, test twice, record source here. First task-observer review ran
 Channel description (all eras, "Age of ..." style, German only, no English) set via
 Make scenario 7864799 "Kanalbeschreibung setzen (Age of Geschichte)" (inactive; edit
 its mapper and run it to change the text) and verified live; banner kept.
+
+## Local PC details (moved 2026-10-10)
+
+- Remotion renders with
+  `--browser-executable="C:/Program Files/Google/Chrome/Application/chrome.exe"`.
+- Only here (GitHub login via `gh`): playwright-test-results,
+  playwright-devops; playwright-dev (needs the build).
+
+## Declined tools
+
+- Headroom (chopratejas/headroom, context compression proxy): declined 2026-10-10 —
+  needs Claude Code traffic routed through a local proxy (impossible in cloud sessions),
+  installs Serena and edits settings; little gain for e-mail/Make/Notion work.

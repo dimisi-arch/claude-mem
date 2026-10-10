@@ -1,6 +1,6 @@
 # Session notes — carried-over state
 
-Stand: 2026-10-10. Written at the end of a session so the next one can pick up.
+Stand: 2026-10-10.
 Verify anything time-sensitive (connection status, webhook) with the Make tools
 before acting on it.
 
@@ -12,8 +12,9 @@ before acting on it.
 - Not a developer: explain steps plainly, give copy-paste commands, ask before
   anything hard to undo.
 - **Voice message with every answer** (standing, 2026-10-10): short spoken German
-  summary, no links, via `uv run --with edge-tts python .claude/scripts/vorlesen.py
-  in.txt out.mp3` (male voice Florian), sent with SendUserFile.
+  summary in flowing sentences, no links, via `uv run --with edge-tts python
+  .claude/scripts/vorlesen.py in.txt out.mp3`, sent with SendUserFile. Voice pitch is
+  right; new English names that sound wrong go into its PRONUNCIATION list.
 
 ## Restaurant e-mail assistant (main use since 2026-10-08)
 
@@ -138,6 +139,7 @@ in YouTube Studio (Runway task 0b5af735, "Buch der Geschichte").
   fallback in `CLAUDE.md`.
 - agent-reach (MIT, v1.5.0; details in its SOURCE.md): Exa search works in the
   cloud. Open: Reddit/Instagram only on the PC, with a secondary account.
+- claude-automation-recommender (Anthropic claude-code-setup, Apache 2.0): read-only.
 
 ## Self-improvement loop (2026-10-10)
 
@@ -159,7 +161,4 @@ in YouTube Studio (Runway task 0b5af735, "Buch der Geschichte").
   PATH, else the Windows Store stub answers `python3`.
 - Run repo scripts with Git Bash (check script and hooks work there). The
   Remotion/graphify hooks skip outside the cloud: skill fetched by hand.
-- Remotion renders with
-  `--browser-executable="C:/Program Files/Google/Chrome/Application/chrome.exe"`.
-- Only here (GitHub login via `gh`): playwright-test-results,
-  playwright-devops; playwright-dev (needs the build).
+- More PC details (Remotion browser path, PC-only skills): archive.
