@@ -99,8 +99,7 @@ Offene Punkte, Status (Offen/Erledigt), Sitzung (URL).
 Rule for every session: before it ends (and after each larger topic), add one
 page per topic with summary, decisions and open points. Summaries only, no
 verbatim transcripts. Nothing runs by itself after a session closes; if the
-user ends abruptly, the entry is missing. Created 2026-10-08 with three
-entries from the first session.
+user ends abruptly, the entry is missing.
 
 ## Code-Sammlung in Notion (standing request, 2026-10-08)
 
@@ -111,8 +110,7 @@ the repo is public. Rule for every session: add each pasted snippet as a new
 section at the top (title, date, what it is for, code block, status
 ✅ checked / ⚠️ unchecked / ❌ do not run, plus a safety note). Never store
 passwords or API keys there; tell the user and leave them out. When the user
-writes code, check the page for a fitting snippet first. Entries so far:
-ponytail plugin commands, Voice Studio PowerShell installer (unchecked).
+writes code, check the page for a fitting snippet first.
 
 ## YouTube-Kanal "Age of Geschichte" (since 2026-10-06)
 
@@ -156,7 +154,8 @@ in YouTube Studio (Runway task 0b5af735, "Buch der Geschichte").
 
 - Windows 11, repo at `C:\Users\Stilianos\claude-mem`; fork clone
   `C:\Users\Stilianos\playwright` (`upstream` = microsoft/playwright, built).
-- Installed: Git, Node 24, uv, GitHub CLI, Chrome, Edge.
+- Installed: Git, Node 24, uv, GitHub CLI, Chrome, Edge. Git Bash does not find
+  `uv`: add `$LOCALAPPDATA/Microsoft/WinGet/Packages/astral-sh.uv_*` to PATH.
   No system Python: uv provides `python`/`python3` 3.13 and `graphify` in
   `C:\Users\Stilianos\.local\bin` (install with `uv tool install --python 3.13
   graphifyy`; newer Pythons need a C++ compiler). Put that folder first on
