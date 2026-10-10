@@ -16,32 +16,15 @@ before acting on it.
   .claude/scripts/vorlesen.py in.txt out.mp3 --check`, fix every mispronounced word in
   its PRONUNCIATION list and rerun until clean, then SendUserFile. Voice pitch is right.
 
-## Restaurant e-mail assistant (main use since 2026-10-08)
+## Projects (private repos since 2026-10-10)
 
-- User = **Stelios Dimitriou**, works at **Restaurant Omonia** (Greek meze &
-  kitchen bar). Claude drafts replies to guest e-mails and reservations and
-  edits offers (Angebote, .docx with Omonia logo → also deliver as PDF with
-  a preview image).
-- **Proactively show improvement suggestions** for every text drafted, unasked
-  (user request 2026-10-08).
-- Style: German, "Sehr geehrte/r …", wir-Form, closing
-  "Mit freundlichen Grüßen / Stelios Dimitriou / Team Omonia".
-- Group reservations: mention **2 hours** table time and ask whether that is
-  enough; ask for a **phone number**; offer a menu and ask for the budget
-  per person. Check the weekday of every date.
-- Never invent availability, prices or policies; ask Stelios. Only drafts —
-  nothing is sent. Gmail connector exists but has not been used yet.
-- Customer offers/files stay out of the repo (scratchpad only).
-- Company: **Omonia Gastro GmbH**, Passagehof 24, 76133 Karlsruhe,
-  Tel. 0721 48699720, info@omonia-karlsruhe.de, www.omonia-karlsruhe.de
-  (from public directory listings, 2026-10-08; user to confirm).
-- Offer template ("Vorlage Gruppenangebot", built from the user's
-  Angebot .docx): intro, header block (Datum, Beginn, Verweildauer,
-  Ansprechpartner/Tel., Ort/Personen), standard meze menu, Sekt + first round
-  of water included, dessert only as optional add-on sentence, Menüpreis
-  62,90 / Sonderpreis ohne Dessert 58,90, conditions (5 days, 50 %,
-  allergies [3 days?], valid until), contact signature. Lived only in the
-  scratchpad — ask the user for the file if needed again.
+- Restaurant guest e-mails, offers, reservations: **`dimisi-arch/omonia-assistent`**
+  (private). Its CLAUDE.md and notes hold the rules and state. Never copy guest or
+  business details into this public repo.
+- YouTube channel "Age of Geschichte": **`dimisi-arch/age-of-geschichte`** (private),
+  with the style prompt and Notion links. Shared tools (historical-images, vorlesen.py)
+  stay here.
+- Start a session with the project repo plus claude-mem.
 
 ## Make (make.com)
 
@@ -110,19 +93,6 @@ section at the top (title, date, what it is for, code block, status
 passwords or API keys there; tell the user and leave them out. When the user
 writes code, check the page for a fitting snippet first. Entries so far:
 ponytail plugin commands, Voice Studio PowerShell installer (unchecked).
-
-## YouTube-Kanal "Age of Geschichte" (since 2026-10-06)
-
-All state lives in Notion, not the repo: page "Geschichtskanal: Kanal-Zentrale"
-(https://app.notion.com/p/3f19d8bfe487816cb6f3ef3b6a91814e) with the
-Redaktionsplan database (data source `collection://b43fdbca-d689-49a1-9c6f-c5416289d347`)
-and the work page "Folge 1: Odysseus und der Zyklop"
-(https://app.notion.com/p/3f09d8bfe487817597f0fa871ff23d78). Read those first.
-Channel @AgeofGeschichte, ID UC4bC24FPFm1wovpWGNfhL1A. Make YouTube connection
-to use: "YouTube dimisi300". vidIQ is connected as dimisi@gmx.de but lists no
-channel. 2026-10-09: 0 videos. Channel description done (Make 7864799, details in
-the archive). Profile picture cannot be set by API: user uploads it
-in YouTube Studio (Runway task 0b5af735, "Buch der Geschichte").
 
 ## Installed skills and tools (details: session-notes-archive.md)
 
