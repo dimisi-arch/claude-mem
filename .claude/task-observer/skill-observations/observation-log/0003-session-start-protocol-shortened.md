@@ -10,7 +10,7 @@ siblings_checked: "none — task-observer belongs to no family in this install (
 area: "Session Start Protocol, steps 1-2"
 date: 2026-10-09
 session_context: "Cloud session 'Funktioniert remotion?': the agent replaced steps 1-2 with one improvised ls/awk call; the gap surfaced only when the user asked for the review later in the session"
-parked_until: "the user decides to send this upstream as feedback, or upstream task-observer ships a single session-start script"
+parked_until: "the staged task-observer 3.6.0 (skill-updates/2026-10-10/task-observer, which ships scripts/session-start-scan.sh for step 2) is installed — then re-check whether steps 1 and 3 still lack a one-call command"
 resolved:
 resolution:
 reference:
@@ -39,3 +39,10 @@ under time pressure replaces adaptable snippets with a cheaper improvisation.
 **Review 2026-10-09:** task-observer is foreign-maintained (metadata.source
 github.com/rebelytics/one-skill-to-rule-them-all), so no local edit. User
 chose "keep as a note" — parked, not sent upstream.
+
+**Second instance, 2026-10-10 (scheduled weekly review, test firing):** the run
+again replaced the step-2 scan snippet with a hand-made `ls` + `awk` over the
+frontmatter; no checkpoint line was written. Second violation of the same
+rule → the fix must be structural: the staged 3.6.0 `scripts/session-start-scan.sh`
+is that barrier once installed, and the routine prompt / session-start hook
+should then name that script as the one call.

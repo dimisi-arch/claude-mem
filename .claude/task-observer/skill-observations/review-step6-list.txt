@@ -1,2 +1,3 @@
-0002-install-third-party-skill-workflow.md
 0003-session-start-protocol-shortened.md
+0004-make-connection-cannot-see-new-notion-db.md
+0006-bundle-gate-flags-make-iml-as-residue.md

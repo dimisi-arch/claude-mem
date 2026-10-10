@@ -1,7 +1,7 @@
 ---
 id: 4
 title: "A target created for a scenario is invisible to the Make connection until it is shared with it"
-status: open
+status: actioned
 type: open-source
 skill: [make-scenario-building]
 proposes_skill: []
@@ -11,8 +11,8 @@ area: "Build a new scenario, step 5 (Connections)"
 date: 2026-10-09
 session_context: "Building webhook -> Notion scenario; the Notion database was created via the Notion MCP connector, then Make's Notion connection did not list it"
 parked_until:
-resolved:
-resolution:
+resolved: 2026-10-10
+resolution: "Staged for make-scenario-building at skill-updates/2026-10-10/make-scenario-building (weekly review); claim promoted with its provenance (observed once, on Notion)"
 reference:
 commands_verified: "run — rpc listDataSources with the Notion connection returned [] for the new database and listed only the three databases shared earlier"
 ---
