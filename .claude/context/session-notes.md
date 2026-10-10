@@ -1,6 +1,6 @@
 # Session notes — carried-over state
 
-Stand: 2026-10-08. Written at the end of a session so the next one can pick up.
+Stand: 2026-10-10. Written at the end of a session so the next one can pick up.
 Verify anything time-sensitive (connection status, webhook) with the Make tools
 before acting on it.
 
@@ -145,12 +145,19 @@ in YouTube Studio (Runway task 0b5af735, "Buch der Geschichte").
   attached (fresh routine sessions have no repo and cannot push). Result: a PR
   plus a push notification; the run never merges. A manual "run now" starts an
   empty session instead: test by messaging the Werkstatt session.
-- task-observer 3.6.0 installed 2026-10-10: its step-2 scan is one command
-  (`scripts/session-start-scan.sh`), named in the start hook and CLAUDE.md.
-- Upstream's CI (`ci.yml`, `windows.yml`) is skipped in this fork (fork guard
-  per job): it was red on main and mailed the user on every push.
-- `.claude/scripts/check-claude-setup.sh` checks skills, hooks, settings and
-  the notes length; GitHub workflow `claude-setup.yml` runs it (Actions must be
-  enabled on the fork).
-- Skills that need the user's PC (GitHub login): playwright-test-results,
-  playwright-devops script; playwright-dev needs `npm ci` + build.
+
+## Local PC (workbench since 2026-10-10)
+
+- Windows 11, repo at `C:\Users\Stilianos\claude-mem`; fork clone
+  `C:\Users\Stilianos\playwright` (`upstream` = microsoft/playwright, built).
+- Installed: Git, Node 24, uv, GitHub CLI, Chrome, Edge.
+  No system Python: uv provides `python`/`python3` 3.13 and `graphify` in
+  `C:\Users\Stilianos\.local\bin` (install with `uv tool install --python 3.13
+  graphifyy`; newer Pythons need a C++ compiler). Put that folder first on
+  PATH, else the Windows Store stub answers `python3`.
+- Run repo scripts with Git Bash (check script and hooks work there). The
+  Remotion/graphify hooks skip outside the cloud: skill fetched by hand.
+- Remotion renders with
+  `--browser-executable="C:/Program Files/Google/Chrome/Application/chrome.exe"`.
+- Only here (GitHub login via `gh`): playwright-test-results,
+  playwright-devops; playwright-dev (needs the build).

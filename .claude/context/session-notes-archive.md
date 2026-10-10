@@ -104,3 +104,13 @@ license check against this public repo, copy+commit vs. fetch-at-start hook,
 pin a commit, test twice, record source here. First task-observer review ran
 2026-10-09 (all 29 starter principles adopted; record in
 `.claude/task-observer/skill-observations/reviews/2026-10-09/`).
+
+## Moved from session-notes.md 2026-10-10 (self-improvement loop)
+
+- Upstream's CI (`ci.yml`, `windows.yml`) is skipped in this fork (fork guard
+  per job): it was red on main and mailed the user on every push.
+- `.claude/scripts/check-claude-setup.sh` checks skills, hooks, settings and
+  the notes length; GitHub workflow `claude-setup.yml` runs it (Actions must be
+  enabled on the fork).
+- task-observer 3.6.0 installed 2026-10-10: its step-2 scan is one command
+  (`scripts/session-start-scan.sh`), named in the start hook and CLAUDE.md.
