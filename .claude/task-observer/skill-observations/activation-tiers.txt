@@ -1,5 +1,5 @@
-2026-10-09
+2026-10-10
 - CLAUDE.md (claude-mem): task-observer block present (pinned workspace, helper script)
 - user preferences (claude.ai): names the skill load + session-notes read; does not name the workspace probe
-- session-start hook: none for task-observer
-- scheduled review prompt: none registered (prompt restates: n/a)
+- session-start hook: .claude/hooks/session-start.sh — new since 2026-10-09; names the skill load and the workspace, not the probe-in-first-batch
+- scheduled review prompt: routine trig_01Rr6ouwppx4xAePk7k3Ewi9 (prompt restates: step 3 "Status values are only open, actioned, declined, superseded, parked"; step 6 delivery constraints "never install a staged skill, never edit live skill files")
