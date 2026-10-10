@@ -143,7 +143,7 @@ in YouTube Studio (Runway task 0b5af735, "Buch der Geschichte").
 ## Self-improvement loop (2026-10-10)
 
 - Routine `trig_01S8wUrZaHJPHUUdTfQi5RbE` "Skill-Verbesserung (jeden 2. Tag)", 06:45
-  Berlin (odd days of the month, user's wish 2026-10-10), fires into session `session_01Lrn7FyucuYZy1VNQJZTC16` (has the repo; fresh
+  Berlin (odd days), fires into session `session_01Lrn7FyucuYZy1VNQJZTC16` (has the repo; fresh
   routine sessions cannot push). Result: PR + push notification, never merges.
   "Run now" starts an empty session: test by messaging that session instead.
 - `observer-nudge.sh` (UserPromptSubmit) reminds to log observations every 4th prompt.
