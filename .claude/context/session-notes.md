@@ -130,16 +130,15 @@ in YouTube Studio (Runway task 0b5af735, "Buch der Geschichte").
   task-observer, ponytail* (MIT, hooks left out: start with `/ponytail`),
   frontend-design, 7 agent-skills by Addy Osmani, graphify, Make skills,
   own `install-third-party-skill` (use it for every new third-party skill).
-- `remotion-best-practices`: fetched at start by `.claude/hooks/install-remotion-skill.sh`
-  (Remotion License, kept out of the repo). Rendering works with
+- `remotion-best-practices`: fetched at start (Remotion License). Render with
   `--browser-executable=/opt/pw-browsers/chromium_headless_shell-1194/chrome-linux/headless_shell`.
-- graphify: `.claude/hooks/install-graphify.sh` installs the CLI and builds
-  `graphify-out/` in the background (~2 min, no API cost).
-- Start hooks only fire when this repo is the session's project; manual
-  fallback in `CLAUDE.md`.
+- graphify, agent-reach and the free lists come from start hooks; they only fire
+  when this repo is the session's project (manual fallback in `CLAUDE.md`).
 - agent-reach (MIT, v1.5.0; details in its SOURCE.md): Exa search works in the
   cloud. Open: Reddit/Instagram only on the PC, with a secondary account.
 - claude-automation-recommender (Anthropic claude-code-setup, Apache 2.0): read-only.
+- Own skills (2026-10-10): `historical-images` (free museum images per episode) and
+  `free-resources` (public-apis, free-for-dev, awesome-mcp-servers, fetched at start).
 
 ## Self-improvement loop (2026-10-10)
 
