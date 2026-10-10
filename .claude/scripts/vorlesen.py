@@ -36,6 +36,8 @@ VOICE = "de-DE-FlorianMultilingualNeural"
 # 2026-10-10: "Claude" came out as "Cloud", "GitHub" as "Getub". Agent Reach, Headroom,
 # Anthropic, Notion and Setup were already correct. Longer names first: "Find Skills" before "Find".
 PRONUNCIATION = {
+    "claude-mem": "Clawd Mem",  # was heard as "klotmemen"
+    "Merge": "Mördsch",  # was heard as "merch"
     "Claude": "Clawd",
     "GitHub": "Git Hub",
     "Impeccable": "Impeckable",  # heard as "Impact Käbel"; "Impeckable" tested closest
