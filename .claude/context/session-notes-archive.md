@@ -133,3 +133,11 @@ its mapper and run it to change the text) and verified live; banner kept.
 - Headroom (chopratejas/headroom, context compression proxy): declined 2026-10-10 —
   needs Claude Code traffic routed through a local proxy (impossible in cloud sessions),
   installs Serena and edits settings; little gain for e-mail/Make/Notion work.
+- Superpowers (obra/superpowers, coding-workflow plugin): declined 2026-10-10 — its
+  session-start hook makes every skill mandatory ("1% chance → MUST use"), which clashes
+  with task-observer/ponytail; planning, debugging and TDD are already covered by the
+  installed agent-skills. Reconsider only for a real software project.
+- Claude Octopus (multi-AI coding plugin): declined 2026-10-10 — coding-only, needs other
+  AI subscriptions, 60+ overlapping skills.
+- Scrapling (bypasses bot protection) and Ollama (local models, weaker German): declined
+  2026-10-10; Ollama may return if many e-mails need local pre-sorting.
