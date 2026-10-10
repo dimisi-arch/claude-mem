@@ -145,6 +145,10 @@ in YouTube Studio (Runway task 0b5af735, "Buch der Geschichte").
   attached (fresh routine sessions have no repo and cannot push). Result: a PR
   plus a push notification; the run never merges. A manual "run now" starts an
   empty session instead: test by messaging the Werkstatt session.
+- task-observer 3.6.0 installed 2026-10-10: its step-2 scan is one command
+  (`scripts/session-start-scan.sh`), named in the start hook and CLAUDE.md.
+- Upstream's CI (`ci.yml`, `windows.yml`) is skipped in this fork (fork guard
+  per job): it was red on main and mailed the user on every push.
 - `.claude/scripts/check-claude-setup.sh` checks skills, hooks, settings and
   the notes length; GitHub workflow `claude-setup.yml` runs it (Actions must be
   enabled on the fork).
