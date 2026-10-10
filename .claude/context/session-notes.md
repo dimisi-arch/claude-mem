@@ -11,10 +11,10 @@ before acting on it.
   convert before quoting (CEST = UTC+2, CET = UTC+1).
 - Not a developer: explain steps plainly, give copy-paste commands, ask before
   anything hard to undo.
-- **Voice message with every answer** (standing, 2026-10-10): short spoken German
-  summary in flowing sentences, no links, via `uv run --with edge-tts python
-  .claude/scripts/vorlesen.py in.txt out.mp3`, sent with SendUserFile. Voice pitch is
-  right; new English names that sound wrong go into its PRONUNCIATION list.
+- **Voice message with every answer** (standing): flowing spoken German, numbers as
+  words, no links. Always run `uv run --with edge-tts --with faster-whisper python
+  .claude/scripts/vorlesen.py in.txt out.mp3 --check`, fix every mispronounced word in
+  its PRONUNCIATION list and rerun until clean, then SendUserFile. Voice pitch is right.
 
 ## Restaurant e-mail assistant (main use since 2026-10-08)
 
@@ -136,18 +136,17 @@ in YouTube Studio (Runway task 0b5af735, "Buch der Geschichte").
   when this repo is the session's project (manual fallback in `CLAUDE.md`).
 - agent-reach (MIT, v1.5.0; details in its SOURCE.md): Exa search works in the
   cloud. Open: Reddit/Instagram only on the PC, with a secondary account.
-- claude-automation-recommender (Anthropic, read-only); find-skills (search only).
+- claude-automation-recommender (read-only), find-skills (search only), impeccable (web UI).
 - Own skills (2026-10-10): `historical-images` (free museum images per episode) and
   `free-resources` (public-apis, free-for-dev, awesome-mcp-servers, fetched at start).
 
 ## Self-improvement loop (2026-10-10)
 
-- Routine `trig_01S8wUrZaHJPHUUdTfQi5RbE` "Wöchentliche Skill-Verbesserung":
-  Mondays 06:45 Berlin, fires into the persistent session
-  `session_01Lrn7FyucuYZy1VNQJZTC16` "Skill-Werkstatt", which has this repo
-  attached (fresh routine sessions have no repo and cannot push). Result: a PR
-  plus a push notification; the run never merges. A manual "run now" starts an
-  empty session instead: test by messaging the Werkstatt session.
+- Routine `trig_01S8wUrZaHJPHUUdTfQi5RbE` "Skill-Verbesserung (Mo + Do)", 06:45
+  Berlin, fires into session `session_01Lrn7FyucuYZy1VNQJZTC16` (has the repo; fresh
+  routine sessions cannot push). Result: PR + push notification, never merges.
+  "Run now" starts an empty session: test by messaging that session instead.
+- `observer-nudge.sh` (UserPromptSubmit) reminds to log observations every 4th prompt.
 
 ## Local PC (workbench since 2026-10-10)
 
