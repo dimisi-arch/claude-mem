@@ -52,7 +52,7 @@ At the start of every session that involves tool calls, invoke the `task-observe
 ## Session-start hooks may not fire
 
 The SessionStart hooks in `.claude/settings.json` only run when this repo is the session's project. If `.claude/skills/remotion-best-practices/SKILL.md` or the `graphify` command is missing, run them by hand:
-`CLAUDE_PROJECT_DIR=/home/user/claude-mem bash .claude/hooks/install-remotion-skill.sh` and `CLAUDE_PROJECT_DIR=/home/user/claude-mem bash .claude/hooks/install-graphify.sh` (from the repo root; replace the path if the repo lives elsewhere). The graphify hook also builds `graphify-out/` in the background (~2 min) when it is missing.
+`CLAUDE_PROJECT_DIR=/home/user/claude-mem bash .claude/hooks/install-remotion-skill.sh` and `CLAUDE_PROJECT_DIR=/home/user/claude-mem bash .claude/hooks/install-graphify.sh` (from the repo root; replace the path if the repo lives elsewhere). If `agent-reach` or `mcporter` is missing, also run `CLAUDE_PROJECT_DIR=/home/user/claude-mem CLAUDE_CODE_REMOTE=true bash .claude/hooks/install-agent-reach.sh` (installs in the background, ~1 min). The graphify hook also builds `graphify-out/` in the background (~2 min) when it is missing.
 
 ## graphify
 

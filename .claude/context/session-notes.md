@@ -135,7 +135,8 @@ in YouTube Studio (Runway task 0b5af735, "Buch der Geschichte").
   `graphify-out/` in the background (~2 min, no API cost).
 - Start hooks only fire when this repo is the session's project; manual
   fallback in `CLAUDE.md`.
-- OmniRoute: dropped 2026-10-09, do not pursue unless the user asks.
+- agent-reach (MIT, v1.5.0; details in its SOURCE.md): Exa search works in the
+  cloud. Open: Reddit/Instagram only on the PC, with a secondary account.
 
 ## Self-improvement loop (2026-10-10)
 
