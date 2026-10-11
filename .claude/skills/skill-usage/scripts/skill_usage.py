@@ -19,8 +19,10 @@ MIN_SAVING = 60  # a description shorter than this is not worth switching
 HOME = Path.home()
 STATE_DIR = HOME / ".claude" / "skill-usage"
 SKILL_DIR = Path(__file__).resolve().parent.parent
-SKILL_REF = re.compile(r"skills[\\/]+([A-Za-z0-9_.-]+)")
-RUNS_SCRIPT = re.compile(r"[\\/]scripts[\\/]")
+SCRIPT_USE = re.compile(r"skills[\\/]+([A-Za-z0-9_.-]+)[\\/]+scripts[\\/]")
+# K=.../skills/<name> followed somewhere by "$K/scripts/..."
+VAR_SET = re.compile(r"=[\"']?[^\s\"']*skills[\\/]+([A-Za-z0-9_.-]+)[\"']?(?=\s|;|$)")
+VAR_RUN = re.compile(r"\$\{?\w+\}?[\\/]scripts[\\/]")
 SLASH = re.compile(r"<command-name>/?([\w:.-]+)</command-name>")
 STAMP = re.compile(r'"timestamp":"([^"]+)"')
 
@@ -107,10 +109,11 @@ def scan(since):
                         if tool == "Skill" and args.get("skill"):
                             events.append((args["skill"], ts, "call"))
                         elif tool in ("Bash", "PowerShell"):
-                            # a skill folder named in a command that also runs something under scripts/
                             command = str(args.get("command", ""))
-                            if RUNS_SCRIPT.search(command):
-                                events += [(n, ts, "script") for n in set(SKILL_REF.findall(command))]
+                            names = set(SCRIPT_USE.findall(command))
+                            if VAR_RUN.search(command):
+                                names |= set(VAR_SET.findall(command))
+                            events += [(n, ts, "script") for n in names]
         except OSError:
             continue
         if first:
@@ -183,6 +186,8 @@ def main():
     last_any = {}
     for name, ts, kind in events:
         key = bare(name) if bare(name) in skills else name
+        if kind == "script" and key not in skills:
+            continue  # a path that merely looks like a skill folder
         last_any[key] = max(last_any.get(key, ts), ts)
         if ts >= window:
             s = stats[key]

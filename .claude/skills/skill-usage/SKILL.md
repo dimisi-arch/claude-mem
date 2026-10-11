@@ -23,7 +23,7 @@ own: the most used skill, how many are unused, and what was or will be switched.
 `--days N` changes the window; the default of 7 is what the user asked for.
 
 What counts as use: a `Skill` tool call, a `/name` command typed by the user, and a
-shell command that names `skills/<name>` and runs something under `scripts/`.
+shell command that runs a file under `skills/<name>/scripts/` of an installed skill.
 Reading or listing a skill's files does not count. A skill used only by following
 its text, with no call and no script, is invisible to the count: before a switch
 surprises the user, check the "nicht benutzt" table for skills you know were used.
