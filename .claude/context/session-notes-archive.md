@@ -153,3 +153,8 @@ its mapper and run it to change the text) and verified live; banner kept.
   models with daily caps, one sign-up and key per provider, guest data would go to
   free tiers, and its own README calls it "not production". If a free model is ever
   needed for one automation, use a single provider's free key directly.
+- SkillOpt (microsoft/SkillOpt, MIT; trains a skill text against a scored task set, plus
+  the preview "SkillOpt-Sleep" that mines past sessions nightly): not installed,
+  2026-10-11 (same status) — needs per-skill test tasks with right answers and paid
+  replay runs; the weekly task-observer review already covers improvement from real
+  work. Idea worth keeping: accept a skill change only after it passes a few examples.
