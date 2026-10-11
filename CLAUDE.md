@@ -34,7 +34,7 @@ No need to edit the changelog ever, it's generated automatically.
 
 ## Carried-over session state
 
-Read `.claude/context/session-notes.md` at the start of every session: it holds the user's preferences (answer in German) and the shared open work (Make, Notion rules, tools). The two projects live in private repos: restaurant work in `dimisi-arch/omonia-assistent`, the YouTube channel in `dimisi-arch/age-of-geschichte`; keep their details out of this public repo. Update it before a session ends when that state changes, and keep it under ~9,000 characters: the start hook injects it in full, so move finished topics to `.claude/context/session-notes-archive.md`.
+The start hook injects `.claude/context/session-notes.md` in full into every session ("Carried-over notes" in the session-start context): it holds the user's preferences (answer in German) and the shared open work (Make, Notion rules, tools). Do not read the file again when that block is in context; reading it twice costs about 2,000 tokens on every later step. Read it yourself only when the block is missing (the hook did not fire). The two projects live in private repos: restaurant work in `dimisi-arch/omonia-assistent`, the YouTube channel in `dimisi-arch/age-of-geschichte`; keep their details out of this public repo. Update it before a session ends when that state changes, and keep it under ~9,000 characters: the start hook injects it in full, so move finished topics to `.claude/context/session-notes-archive.md`.
 
 ## Task Observer (skill improvement)
 

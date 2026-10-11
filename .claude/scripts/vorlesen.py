@@ -121,8 +121,8 @@ def check(text: str, path: str) -> int:
         wav = os.path.join(tmp, "a.wav")
         subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", path, "-ar", "16000",
                         "-ac", "1", wav], check=True)
-        w = wave.open(wav)
-        audio = np.frombuffer(w.readframes(w.getnframes()), np.int16).astype(np.float32) / 32768
+        with wave.open(wav) as w:  # closed before cleanup: Windows cannot delete an open file
+            audio = np.frombuffer(w.readframes(w.getnframes()), np.int16).astype(np.float32) / 32768
     model = WhisperModel("small", device="cpu", compute_type="int8")
     segs, _ = model.transcribe(audio, language="de", beam_size=5)
     heard = words(" ".join(s.text for s in segs))
