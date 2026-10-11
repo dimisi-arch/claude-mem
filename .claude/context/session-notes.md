@@ -131,4 +131,12 @@ ponytail plugin commands, Voice Studio PowerShell installer (unchecked).
   PATH, else the Windows Store stub answers `python3`.
 - Run repo scripts with Git Bash (check script and hooks work there). The
   Remotion/graphify hooks skip outside the cloud: skill fetched by hand.
+- 2026-10-11: private repos cloned beside it (`omonia-assistent`,
+  `age-of-geschichte`). ffmpeg 9.0.2 (winget Gyan.FFmpeg) and the agent-reach
+  CLI + yt-dlp installed; no logins set up, Exa search (mcporter) not installed.
+  Every `uv run`/`uv tool install` here needs `--python 3.13` (uv otherwise
+  picks 3.15: no wheels). Voice check works: `uv run --python 3.13 --with
+  edge-tts --with faster-whisper python .claude/scripts/vorlesen.py … --check`.
+  Until the shell is restarted, ffmpeg is only under
+  `%LOCALAPPDATA%\Microsoft\WinGet\Packages\Gyan.FFmpeg_*\ffmpeg-*\bin`.
 - More PC details (Remotion browser path, PC-only skills): archive.
