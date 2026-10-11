@@ -1,7 +1,7 @@
 ---
 id: 7
 title: "Scheduled cloud runs start without the repository, and a prompt that names a tool loosely gets a skipped step"
-status: open
+status: parked
 type: open-source
 skill: [task-observer]
 proposes_skill: []
@@ -10,7 +10,7 @@ siblings_checked: "none — task-observer belongs to no family in this install (
 area: "references/environments.md, scheduled-task prompt rules"
 date: 2026-10-10
 session_context: "Registering the weekly review as a cloud routine (fresh session per firing); two test firings failed at step 0 before the third"
-parked_until:
+parked_until: "upstream task-observer releases a fix for the issue drafted 2026-10-11 (draft handed to the user to post at github.com/rebelytics/one-skill-to-rule-them-all)"
 resolved:
 resolution:
 reference:

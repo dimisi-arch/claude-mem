@@ -1,7 +1,7 @@
 ---
 id: 6
 title: "Bundle gate's unresolved-slot rule fails a skill whose example data legitimately uses {{…}} syntax"
-status: open
+status: parked
 type: open-source
 skill: [task-observer]
 proposes_skill: []
@@ -10,7 +10,7 @@ siblings_checked: "none — task-observer belongs to no family in this install (
 area: "Delivering updated skills, pre-delivery gate item (7); scripts/validate-skill-bundle.py"
 date: 2026-10-10
 session_context: "Scheduled weekly review 2026-10-10: staging make-scenario-building for observation #4"
-parked_until:
+parked_until: "upstream task-observer releases a fix for the issue drafted 2026-10-11 (draft handed to the user to post at github.com/rebelytics/one-skill-to-rule-them-all)"
 resolved:
 resolution:
 reference:

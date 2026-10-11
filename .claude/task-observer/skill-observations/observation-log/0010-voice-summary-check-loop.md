@@ -1,7 +1,7 @@
 ---
 id: 10
 title: "Spoken summaries need a measure-and-fix loop (transcribe, respell, trim pauses), not a better-sounding voice choice"
-status: open
+status: actioned
 type: internal
 skill: []
 proposes_skill: [voice-summary]
@@ -11,8 +11,8 @@ area: "Voice messages sent to the user with every answer"
 date: 2026-10-10
 session_context: "User listens to every answer as a German voice message (driving, on the phone) and asked three times for more fluent speech and correct English pronunciation"
 parked_until:
-resolved:
-resolution:
+resolved: 2026-10-11
+resolution: "New skill voice-summary staged at skill-updates/2026-10-11/voice-summary (user approved 2026-10-11); wraps .claude/scripts/vorlesen.py --check"
 reference: ".claude/scripts/vorlesen.py (PRONUNCIATION list, MAX_PAUSE, --check)"
 commands_verified: "run — uv run --with edge-tts --with faster-whisper python .claude/scripts/vorlesen.py TEXT OUT --check: reported 11 deviations on one message (Impeccable → 'impact käbel', Make → 'meg', Find → 'fine'); after respelling and pause trimming 0 pauses over 0.5 s (was 17) and silence 11.3 s (was 19.1 s of 100 s)"
 ---

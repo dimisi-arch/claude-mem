@@ -1,7 +1,7 @@
 ---
 id: 8
 title: "A workspace pinned as one machine's absolute path does not resolve when the same repo is checked out on a second machine"
-status: open
+status: parked
 type: open-source
 skill: [task-observer]
 proposes_skill: []
@@ -10,7 +10,7 @@ siblings_checked: "none — task-observer belongs to no family in this install (
 area: "references/environments.md, anchoring the workspace; activation block in CLAUDE.md"
 date: 2026-10-10
 session_context: "Setting up the user's Windows PC as a second workbench for a repo so far used only from Linux cloud containers"
-parked_until:
+parked_until: "upstream task-observer releases a fix for the issue drafted 2026-10-11; local half done: CLAUDE.md names the Windows workspace path (branch claude/observer-followups-2026-10-11)"
 resolved:
 resolution:
 reference:
