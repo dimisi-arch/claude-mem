@@ -10,7 +10,11 @@ check is clean. Default voice: de-DE-FlorianMultilingualNeural (male; the user l
 pitch). Uses Microsoft's free online voices, so it needs internet; needs ffmpeg.
 
 Write the text as flowing spoken German: longer connected sentences, no lists, links,
-brackets, abbreviations or digits (write numbers as words).
+brackets, abbreviations or digits (write numbers as words). English technical terms and
+skill names (Main, Branch, Merge, Pull Request, Agent Reach …) stay English and must sound
+English (user, 2026-10-10). The multilingual voice can drift into English for the German
+words right after an English name ("Agent Reach sucht" → "sucked"): put a comma after the
+name or start with "Mit …" ("Mit Agent Reach suche ich …") — tested clean.
 """
 
 import argparse
@@ -45,6 +49,10 @@ PRONUNCIATION = {
     "Find Skills": "Feind Skills",  # was heard as "Fine" / "Fame"
     "Dashboards": "Dashbords",
     "Dashboard": "Dashbord",
+    "Branch": "Bräntsch",  # was heard as German "Branche"
+    "Commit": "Kommitt",  # was heard as "kemit"
+    "Canva": "Känwa",  # was heard as "kanwa"
+    "vidIQ": "Vid Ei Kju",  # was heard as "vit eq"
 }
 
 # Pauses longer than this are cut down to it. Measured 2026-10-10: 19 % of a message was
