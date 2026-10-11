@@ -62,7 +62,7 @@ MAX_PAUSE = 0.3
 
 def prepare(text: str) -> str:
     for word, spoken in PRONUNCIATION.items():
-        text = re.sub(rf"\b{re.escape(word)}\b", spoken, text)
+        text = re.sub(rf"\b{re.escape(word)}\b", spoken, text, flags=re.IGNORECASE)
     # Hard line breaks inside a paragraph make the voice pause mid-sentence.
     paragraphs = [" ".join(p.split()) for p in re.split(r"\n\s*\n", text)]
     return "\n\n".join(p for p in paragraphs if p)
