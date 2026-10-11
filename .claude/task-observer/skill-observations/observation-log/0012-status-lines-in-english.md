@@ -1,7 +1,7 @@
 ---
 id: 12
 title: "Rule 'answer in German' broken in status lines between tool calls and in PR texts"
-status: open
+status: actioned
 type: internal
 skill: []
 proposes_skill: []
@@ -11,8 +11,8 @@ area: "Language of every user-visible text"
 date: 2026-10-10
 session_context: "Long session evaluating and installing skills; the user follows on the phone and listens to voice summaries"
 parked_until:
-resolved:
-resolution:
+resolved: 2026-10-11
+resolution: "Point 1 done in .claude/context/session-notes.md (every message, status lines and PR texts in German); point 2 (structural barrier) only on a second violation — none seen in the 2026-10-11 review run"
 reference:
 commands_verified: none
 ---

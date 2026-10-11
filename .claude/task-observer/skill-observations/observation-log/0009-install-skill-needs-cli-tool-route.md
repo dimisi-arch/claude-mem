@@ -1,7 +1,7 @@
 ---
 id: 9
 title: "install-third-party-skill has no route for skills that need a CLI tool installed"
-status: open
+status: actioned
 type: internal
 skill: [install-third-party-skill]
 proposes_skill: []
@@ -11,8 +11,8 @@ area: "Step 4 (4a/4b) and Step 5 test"
 date: 2026-10-10
 session_context: "Evaluating and installing Agent Reach (MIT skill plus Python CLI plus mcporter/Exa MCP) for cloud sessions"
 parked_until:
-resolved:
-resolution:
+resolved: 2026-10-11
+resolution: "Staged for install-third-party-skill at skill-updates/2026-10-11/install-third-party-skill (weekly review): Step 4c CLI tools, Step 5 PATH check, Step 4a description-narrowing exception"
 reference:
 commands_verified: "run — uv tool install --with-executables-from yt-dlp git+https://github.com/Panniantong/Agent-Reach@94f06c1 (worked; without the flag yt-dlp stayed off PATH); npm install -g mcporter && mcporter config add exa https://mcp.exa.ai/mcp --scope home (worked)"
 ---
