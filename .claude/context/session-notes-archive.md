@@ -158,3 +158,9 @@ its mapper and run it to change the text) and verified live; banner kept.
   2026-10-11 (same status) — needs per-skill test tasks with right answers and paid
   replay runs; the weekly task-observer review already covers improvement from real
   work. Idea worth keeping: accept a skill change only after it passes a few examples.
+- "Skill doctor" tools (xigua-wang/skill-doctor, gulmezeren2-byte/claude-skills-doctor,
+  isalicema/skill-doctor; all small, MIT): not installed, 2026-10-11 (same status) —
+  they inspect installed skills (overlaps, risky commands, listing budget, bloat). The
+  budget check was done by hand instead: 41 repo/user skills, 12,158 characters of
+  names and descriptions, and four bundled skills already arrive without a description
+  (task-observer observation 14, for the weekly review).
