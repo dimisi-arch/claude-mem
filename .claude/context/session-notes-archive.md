@@ -141,3 +141,10 @@ its mapper and run it to change the text) and verified live; banner kept.
   AI subscriptions, 60+ overlapping skills.
 - Scrapling (bypasses bot protection) and Ollama (local models, weaker German): declined
   2026-10-10; Ollama may return if many e-mails need local pre-sorting.
+- Multica (multica-ai: agent task board, `multica-cli` skill, karpathy-guidelines):
+  not installed, 2026-10-11 (Claude's recommendation, user did not ask for it after
+  the review) — the board is for teams running several coding agents; the Karpathy
+  rules are already covered by ponytail and the agent-skills.
+- Context Mode (mksglu/context-mode, Elastic License 2.0): not installed, 2026-10-11
+  (same status) — six hooks that reroute tool calls would collide with the existing
+  hooks, little gain for short sessions. Reconsider if sessions keep hitting the limit.

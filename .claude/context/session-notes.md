@@ -111,6 +111,12 @@ ponytail plugin commands, Voice Studio PowerShell installer (unchecked).
 - claude-automation-recommender (read-only), find-skills (search only), impeccable (web UI).
 - Own skills (2026-10-10): `historical-images` (free museum images per episode) and
   `free-resources` (public-apis, free-for-dev, awesome-mcp-servers, fetched at start).
+- `watch` (bradautomates/claude-video v0.3.2, MIT, copied 2026-10-11; plugin hook left
+  out): Claude views a video as timestamped frames plus captions. Set up and tested on
+  the **PC** only (local engine, detail balanced, captions only; settings in
+  `~/.config/watch/.env`). Needs ffmpeg, yt-dlp and Deno on PATH: a session started
+  before they were installed must prepend their WinGet package folders. In the cloud
+  most video downloads are blocked. Open: Gemini key and speech fallback, if wanted.
 
 ## Self-improvement loop (2026-10-10)
 
