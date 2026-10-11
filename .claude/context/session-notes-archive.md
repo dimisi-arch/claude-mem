@@ -148,3 +148,8 @@ its mapper and run it to change the text) and verified live; banner kept.
 - Context Mode (mksglu/context-mode, Elastic License 2.0): not installed, 2026-10-11
   (same status) — six hooks that reroute tool calls would collide with the existing
   hooks, little gain for short sessions. Reconsider if sessions keep hitting the limit.
+- FreeLLMAPI (tashfeenahmed/freellmapi, MIT; local router that stacks the free tiers of
+  ~34 AI providers behind one address): not installed, 2026-10-11 (same status) — weaker
+  models with daily caps, one sign-up and key per provider, guest data would go to
+  free tiers, and its own README calls it "not production". If a free model is ever
+  needed for one automation, use a single provider's free key directly.
