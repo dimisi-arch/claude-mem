@@ -133,7 +133,7 @@ ponytail plugin commands, Voice Studio PowerShell installer (unchecked).
   Remotion/graphify hooks skip outside the cloud: skill fetched by hand.
 - 2026-10-11: private repos cloned beside it (`omonia-assistent`,
   `age-of-geschichte`). ffmpeg 9.0.2 (winget Gyan.FFmpeg) and the agent-reach
-  CLI + yt-dlp installed; no logins set up, Exa search (mcporter) not installed.
+  CLI + yt-dlp installed, Exa search via mcporter set up; no logins set up.
   Every `uv run`/`uv tool install` here needs `--python 3.13` (uv otherwise
   picks 3.15: no wheels). Voice check works: `uv run --python 3.13 --with
   edge-tts --with faster-whisper python .claude/scripts/vorlesen.py … --check`.
