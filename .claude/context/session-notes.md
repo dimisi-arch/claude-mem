@@ -13,7 +13,8 @@ before acting on it.
   convert before quoting (CEST = UTC+2, CET = UTC+1).
 - Not a developer: explain steps plainly, give copy-paste commands, ask before
   anything hard to undo.
-- **Voice message with every answer** (standing): flowing spoken German, numbers as
+- **Voice message only when the user asks for one** (changed 2026-10-12 to save
+  tokens; before: with every answer). Then: flowing spoken German, numbers as
   words, no links. Always run `uv run --with edge-tts --with faster-whisper python
   .claude/scripts/vorlesen.py in.txt out.mp3 --check`, fix every mispronounced word in
   its PRONUNCIATION list and rerun until clean, then SendUserFile. Voice pitch is right.
@@ -95,6 +96,22 @@ section at the top (title, date, what it is for, code block, status
 passwords or API keys there; tell the user and leave them out. When the user
 writes code, check the page for a fitting snippet first. Entries so far:
 ponytail plugin commands, Voice Studio PowerShell installer (unchecked).
+
+## Dashboard "Stelios Zentrale" (2026-10-11)
+
+Dashboard artifact (private): https://claude.ai/artifact/VFT1XvBnSd3edG49gmAq8D.
+Four tiles plus sections Restaurant, Kanal, Chat-Themen, Make; live from the
+Notion databases Anfragen, Redaktionsplan, Chat-Archiv and Make `scenarios_list`.
+Guest names and contact data are deliberately not loaded. Change it in place
+(ArtifactData: `files/index.html`, `datasets/*`), never as a new artifact.
+
+## Token-Haushalt (2026-10-11)
+
+`node .claude/scripts/token-verbrauch.cjs <dir>` reads the PC's transcripts
+(`~/.claude/projects`) and writes tage/sitzungen/werkzeuge.json. Dashboard:
+https://claude.ai/artifact/TCXHGDzUaCq5oamKwvHAxR (three attached files; on
+"Verbrauch aktualisieren" rerun, upload each as asset, update `datasets/*`).
+Open: prune connectors/skills, voice message only on request?
 
 ## Installed skills and tools (details: session-notes-archive.md)
 
