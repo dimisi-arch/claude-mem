@@ -117,6 +117,13 @@ ponytail plugin commands, Voice Studio PowerShell installer (unchecked).
   `~/.config/watch/.env`). Needs ffmpeg, yt-dlp and Deno on PATH: a session started
   before they were installed must prepend their WinGet package folders. In the cloud
   most video downloads are blocked. Open: Gemini key and speech fallback, if wanted.
+- Own skill `skill-usage` (2026-10-11): `python .claude/skills/skill-usage/scripts/skill_usage.py`
+  prints which skills were used in the last 7 days (PC transcripts only) and their token
+  cost. A start hook switches skills unused for 14 days to name-only in
+  `.claude/settings.local.json` (never off, never the ones in its `protected.txt`);
+  nothing switches before 14 days of history exist (PC history starts 2026-10-08).
+  First run: task-observer is the main cost, about 11,000 tokens per session start.
+  Open: user to decide whether task-observer should load in every session.
 
 ## Self-improvement loop (2026-10-10)
 

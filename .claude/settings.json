@@ -38,6 +38,11 @@
             "type": "command",
             "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/install-free-lists.sh\"",
             "timeout": 200
+          },
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/skill-usage.sh\"",
+            "timeout": 30
           }
         ]
       }
