@@ -1,7 +1,7 @@
 ---
 id: 3
 title: "Session Start Protocol run as a hand-made ls instead of the shipped commands"
-status: open
+status: parked
 type: open-source
 skill: [task-observer]
 proposes_skill: []
@@ -10,7 +10,7 @@ siblings_checked: "none — task-observer belongs to no family in this install (
 area: "Session Start Protocol, steps 1-2"
 date: 2026-10-09
 session_context: "Cloud session 'Funktioniert remotion?': the agent replaced steps 1-2 with one improvised ls/awk call; the gap surfaced only when the user asked for the review later in the session"
-parked_until:
+parked_until: "upstream task-observer ships one-call commands for steps 1 and 3, or the user decides to send the remainder upstream (step 2 is fixed: session-start-scan.sh, used by the 2026-10-11 review)"
 resolved:
 resolution:
 reference:
