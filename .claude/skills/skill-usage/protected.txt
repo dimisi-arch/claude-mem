@@ -1,0 +1,10 @@
+# Skills this skill never switches, one per line; text after # is the reason.
+# skill-usage itself is always protected and needs no entry.
+task-observer              # CLAUDE.md starts it in every session
+install-third-party-skill  # required for every new third-party skill
+graphify                   # CLAUDE.md routes codebase questions through it
+make-scenario-building     # Make work: must be found without being asked for
+make-scenario-explore
+make-scenario-operations
+make-scenario-reference
+historical-images          # core of the YouTube channel workflow
