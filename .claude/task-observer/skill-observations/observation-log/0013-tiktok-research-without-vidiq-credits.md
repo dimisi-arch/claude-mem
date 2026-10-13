@@ -1,6 +1,6 @@
 ---
 id: 13
-title: "TikTok trend research has no working fallback when vidIQ credits are gone: every logged-out route is blocked or stale"
+title: "Short-form trend research without vidIQ credits: TikTok and Reels have no working fallback, YouTube Shorts has one (channel tabs via yt-dlp)"
 status: open
 type: open-source
 skill: [agent-reach]
@@ -9,7 +9,7 @@ target_file: []
 siblings_checked: "none — no skill-families.md in this install; watch was considered: it watches one known video, it does not discover accounts (watch/SKILL.md description)"
 area: "Platform coverage: TikTok account discovery and recent-post metrics"
 date: 2026-10-13
-session_context: "User asked for 5 viral faceless TikTok story accounts from the last 14 days plus a sample episode; vidIQ outlier search had 0 credits (renews 2026-11-05)"
+session_context: "User asked for 5 viral faceless TikTok story accounts from the last 14 days plus a sample episode, then for the same comparison on Shorts and Reels; vidIQ outlier search had 0 credits (renews 2026-11-05)"
 parked_until:
 resolved:
 resolution:
@@ -19,6 +19,8 @@ commands_verified: "run — vidiq_instagram_tiktok_outlier_search: 'Not enough c
 
 **Issue:** The only purpose-built tool for "what went viral on TikTok in the last N days" (vidIQ outlier search) ran out of credits. agent-reach lists 16 platforms but not TikTok, so the agent spent many calls finding a route: vendor blogs instead of accounts from WebSearch, TikTok discover/tag pages blocked from the cloud, yt-dlp's TikTok user/tag extractors broken, TikTok search behind a login. Every other route failed: profile video lists come back empty for a logged-out headless browser, /explore shows a puzzle captcha (bot detection, not to be bypassed), and the Exa index of TikTok video URLs lags months behind. Single video pages fetched with curl do carry plays and create time, and handles come from Exa `site:tiktok.com` queries — useful for checking known videos, useless for a 'last 14 days' question. Outcome: the request was answered with the creative half (sample episode) plus a scheduled re-run on the vidIQ credit reset date.
 
-**Suggested improvement:** agent-reach: add a TikTok entry that states the dead ends up front (search/discover need login or redirect, tag/user extractors in yt-dlp broken, profile post lists empty logged out, explore captcha) and the two narrow things that work (Exa site:tiktok.com for handles, curl on a known video page for its stats). For recency questions the answer is: vidIQ, a logged-in session on the user's PC, or a scheduled re-run when credits reset — decide that in the first call, not after a dozen probes.
+**Second instance (same session, YouTube Shorts):** asked to compare Shorts and Reels, the agent found a free route for Shorts only: channel discovery via yt-dlp channel search (subscriber counts), then each channel's /shorts tab (newest Shorts with views), then publish dates for a shortlist via a paid batch call because per-video lookups get rate-limited. Many large channels turned out inactive for months — a 'newest uploads' check is needed before calling any channel a current example. Reels: no logged-out route.
+
+**Suggested improvement:** agent-reach: add a TikTok entry that states the dead ends up front (search/discover need login or redirect, tag/user extractors in yt-dlp broken, profile post lists empty logged out, explore captcha) and the two narrow things that work (Exa site:tiktok.com for handles, curl on a known video page for its stats). For recency questions the answer is: vidIQ, a logged-in session on the user's PC, or a scheduled re-run when credits reset — decide that in the first call, not after a dozen probes. Add a YouTube Shorts entry with the working three-step route (channel search → /shorts tab → batched dates for a shortlist only) and the warning that sort-by-views search filters and TubeAlfred search filters return noise or nothing.
 
 **Principle:** When the paid data tool for a platform is exhausted, record per platform which questions the free routes can answer (known item: yes; 'what is trending now': no) in the research skill, so an exhausted quota leads straight to the honest options instead of a dozen probes; never treat a captcha as an obstacle to engineer around.
