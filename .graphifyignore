@@ -4,3 +4,5 @@ plugin/scripts/
 plugin/ui/
 CHANGELOG.md
 *.min.js
+# Packed skill archives (zip), not text: graphify warns on every build
+*.skill
