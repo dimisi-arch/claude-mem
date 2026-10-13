@@ -1,5 +1,5 @@
 ---
-id: 14
+id: 16
 title: "Faceless short-video production is a repeatable studio pipeline (image, voice, subtitles, render) worth its own skill"
 status: open
 type: open-source

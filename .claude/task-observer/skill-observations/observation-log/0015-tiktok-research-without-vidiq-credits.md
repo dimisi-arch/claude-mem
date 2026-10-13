@@ -1,5 +1,5 @@
 ---
-id: 13
+id: 15
 title: "Short-form trend research without vidIQ credits: TikTok and Reels have no working fallback, YouTube Shorts has one (channel tabs via yt-dlp)"
 status: open
 type: open-source

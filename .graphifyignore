@@ -1,0 +1,6 @@
+# Built bundles and generated files: minified code adds thousands of
+# meaningless nodes (Ap(), oA() ...) and pushes real source out of answers.
+plugin/scripts/
+plugin/ui/
+CHANGELOG.md
+*.min.js
