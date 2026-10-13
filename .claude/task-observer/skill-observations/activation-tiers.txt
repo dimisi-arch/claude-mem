@@ -1,4 +1,4 @@
-2026-10-11
+2026-10-13
 - CLAUDE.md (claude-mem): task-observer block present (pinned workspace, helper script, step 2 named as session-start-scan.sh)
 - user preferences (claude.ai): names the skill load + session-notes read; does not name the workspace probe
 - session-start hook: .claude/hooks/session-start.sh; names the skill load, the workspace and the scan script, not the probe-in-first-batch

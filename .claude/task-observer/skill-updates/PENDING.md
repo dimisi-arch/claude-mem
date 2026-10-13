@@ -10,3 +10,10 @@
   one checklist line. Gate passed.
 - 2026-10-11/security-and-hardening (+ .skill) — upstream refresh, same
   commit: one zod example line in references/hardening-patterns.md. Gate passed.
+- 2026-10-13/ponytail-debt (+ .skill) — upstream refresh DietrichGebert/ponytail
+  9cc65d0 → 2961b52 (v5.2.0): 3 lines changed in SKILL.md. Gate passed.
+- 2026-10-13/ponytail (+ .skill) — only SOURCE.md commit bumped to 2961b52 (the
+  ponytail skill itself is unchanged upstream). Gate passed.
+- 2026-10-13/impeccable (+ .skill) — upstream refresh pbakaus/impeccable d631a88 →
+  245ad82: 3 reference files (new-work.md, visualize.md, degraded/finish-reviewer.md);
+  skill version 4.5.2 and engine 0.1.14 unchanged. Gate passed.
