@@ -111,12 +111,19 @@ ponytail plugin commands, Voice Studio PowerShell installer (unchecked).
 - claude-automation-recommender (read-only), find-skills (search only), impeccable (web UI).
 - Own skills (2026-10-10): `historical-images` (free museum images per episode) and
   `free-resources` (public-apis, free-for-dev, awesome-mcp-servers, fetched at start).
+- **HyperFrames** (heygen-com/hyperframes, Apache 2.0, tag v0.8.151, added 2026-10-13): video
+  from HTML. 14 skills fetched at start by `install-hyperframes.sh` (core set + faceless-explainer,
+  general-video, motion-graphics, slideshow; others install on demand). CLI via
+  `npx hyperframes@0.8.151`; renders in the cloud (tested). Telemetry off
+  (`HYPERFRAMES_NO_TELEMETRY=1` in settings). Its router claims every video request: for
+  Age of Geschichte say which (Remotion or HyperFrames). Not installed from the same reel:
+  Video-Use (needs ElevenLabs key), Editly (overlap), Pexels (needs free key), Zernio, Resend.
 - `watch` (bradautomates/claude-video v0.3.2, MIT, copied 2026-10-11; plugin hook left
   out): Claude views a video as timestamped frames plus captions. Set up and tested on
   the **PC** only (local engine, detail balanced, captions only; settings in
   `~/.config/watch/.env`). Needs ffmpeg, yt-dlp and Deno on PATH: a session started
   before they were installed must prepend their WinGet package folders. In the cloud
-  most video downloads are blocked. Open: Gemini key and speech fallback, if wanted.
+  most video downloads are blocked (Instagram reels worked 2026-10-13 via plain yt-dlp). Open: Gemini key and speech fallback, if wanted.
 
 ## Self-improvement loop (2026-10-10)
 
