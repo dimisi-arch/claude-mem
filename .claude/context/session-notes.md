@@ -100,6 +100,7 @@ ponytail plugin commands, Voice Studio PowerShell installer (unchecked).
 
 - Repo skills in `.claude/skills/` (gitignored dir, new files need `git add -f`):
   task-observer, ponytail* (MIT, hooks left out: start with `/ponytail`),
+  i-have-adhd (MIT, 2026-10-14, hook left out: start with `/i-have-adhd`),
   frontend-design, 7 agent-skills by Addy Osmani, graphify, Make skills,
   own `install-third-party-skill` (use it for every new third-party skill).
 - `remotion-best-practices`: fetched at start (Remotion License). Render with
