@@ -35,3 +35,7 @@ there — if yes, the block is cloud-specific.
 **Principle:** A standing per-answer deliverable that depends on one free
 online service needs a stated fallback and a short, readable failure
 message; otherwise each outage costs a debugging detour mid-answer.
+
+**Update 2026-10-13 (same session, about 15 hours later):** the same command
+worked again without any change. The 403 is intermittent, not a permanent
+block, so the fallback should first retry once after a short wait.
