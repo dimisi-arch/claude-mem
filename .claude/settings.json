@@ -1,5 +1,7 @@
 {
-  "env": {},
+  "env": {
+    "HYPERFRAMES_NO_TELEMETRY": "1"
+  },
   "enabledMcpjsonServers": ["playwright"],
   "permissions": {
     "allow": [
@@ -27,6 +29,11 @@
           {
             "type": "command",
             "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/install-remotion-skill.sh\"",
+            "timeout": 150
+          },
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/install-hyperframes.sh\"",
             "timeout": 150
           },
           {
