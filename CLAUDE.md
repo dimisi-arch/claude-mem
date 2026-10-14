@@ -36,9 +36,13 @@ No need to edit the changelog ever, it's generated automatically.
 
 Read `.claude/context/session-notes.md` at the start of every session: it holds the user's preferences (answer in German) and the shared open work (Make, Notion rules, tools). The two projects live in private repos: restaurant work in `dimisi-arch/omonia-assistent`, the YouTube channel in `dimisi-arch/age-of-geschichte`; keep their details out of this public repo. Update it before a session ends when that state changes, and keep it under ~9,000 characters: the start hook injects it in full, so move finished topics to `.claude/context/session-notes-archive.md`.
 
+## Always-on rules from the start hook
+
+`.claude/hooks/session-start.sh` also injects two standing rules (user's decisions 2026-10-14): the `i-have-adhd` ruleset, on in every session until the user says "stop adhd mode", and the Notion check (open Chat-Archiv entries, once per session, at most three lines to the user). When the hook did not fire, read `.claude/skills/i-have-adhd/SKILL.md` and the hook's Notion line yourself and follow both.
+
 ## Task Observer (skill improvement)
 
-At the start of every session that involves tool calls, invoke the `task-observer` skill (`.claude/skills/task-observer/`) and run its Session Start Protocol before planning or exploring. Step 2 (the log scan) is one command, never a hand-made `ls`: `bash /home/user/claude-mem/.claude/skills/task-observer/scripts/session-start-scan.sh /home/user/claude-mem/.claude/task-observer`.
+Run the `task-observer` skill (`.claude/skills/task-observer/`) once at the **end** of every session, not at the start (user's decision 2026-10-14; this overrides the skill description's "before the first tool call"): when the user signals the end, or together with the Chat-Archiv entry, invoke it and log the whole session's observations. Reviews run twice a week through the routine "Skill-Verbesserung (Mo + Do)"; do not offer a review inside a session.
 
 - **Workspace (pinned, never derived from the cwd):** `/home/user/claude-mem/.claude/task-observer`
   - Log: `.../skill-observations/observation-log/`
