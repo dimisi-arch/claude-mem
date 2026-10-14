@@ -9,7 +9,7 @@ target_file: []
 siblings_checked: "none — no skill-families.md in this install; remotion-best-practices renders code-built animations and historical-images finds public-domain stills, neither covers AI frames + TTS + burned subtitles + Ken Burns (their descriptions)"
 area: "Producing vertical story videos end to end in a cloud session"
 date: 2026-10-13
-session_context: "User wants a faceless TikTok/Shorts/Reels story channel and asked whether Claude can act as a full studio (images, render, cut); a 13.5 s test scene was produced end to end"
+session_context: "User wants a faceless TikTok/Shorts/Reels story channel and asked whether Claude can act as a full studio (images, render, cut); a 13.5 s test scene was produced end to end; 2026-10-14: full 58 s episode Die Kamera lügt (dark comic, deeper voice)"
 parked_until:
 resolved:
 resolution:
@@ -24,3 +24,5 @@ commands_verified: "run — Runway generate_image nano-banana-2-lite 9:16 (worke
 **Suggested improvement:** New skill `short-video-studio`: input = a scene table (image prompt, narration per scene); steps = generate frames (Runway, fixed style prompt and character reference for consistency), narration (Piper offline or Runway speech, with a pronunciation respelling list), subtitles from the script aligned to measured speech, render per scene with ffmpeg and concatenate, then a QA frame grab. Ship the scripts (subs alignment, render command) inside the skill, and list costs per step and the plan limits (Runway free: images only).
 
 **Principle:** When a multi-tool production chain is assembled once by trial, freeze the working chain (tools, flags, workarounds, cost per step) into a skill with its scripts, so the next run starts from the known-good path instead of re-discovering the same failures.
+
+**Second instance (2026-10-14, episode "Die Kamera lügt", 58 s, dark comic style):** four more pipeline traps a skill would have prevented: (1) SDXL's CLIP encoder truncates prompts at 77 tokens, so a style string appended AFTER the scene prompt was silently cut; the style must come first and stay short. (2) `ffmpeg` inside a `while read` loop eats the loop's stdin and drops lines; needs `-nostdin`. (3) `pkill -f <script>` from the same shell killed the shell itself (its own command line matched). (4) "deeper, more suspenseful voice" was met with ffmpeg `rubberband=pitch=0.86:formant=preserved` + slower Piper `--length-scale`; a strong echo hurt Whisper intelligibility, so the check (median F0 via librosa pyin before/after + Whisper transcript) belongs in the pipeline as the verification step. Image models cannot draw "shadows of feet under the door": compositing the light gap with PIL on an existing frame worked.
