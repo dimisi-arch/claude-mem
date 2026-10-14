@@ -132,7 +132,7 @@ ponytail plugin commands, Voice Studio PowerShell installer (unchecked).
   Berlin (twice a week since 2026-10-14), fires into session `session_01Lrn7FyucuYZy1VNQJZTC16` (has the repo; fresh
   routine sessions cannot push). Result: PR + push notification, never merges.
   "Run now" starts an empty session: test by messaging that session instead.
-- Since 2026-10-14 task-observer runs only at session end (start hook says so); nudge hook removed.
+- 2026-10-14: task-observer runs from session start again (end-only reversed the same day), nudge hook back; it tells the user each logged observation in one line.
 
 ## Local PC (workbench since 2026-10-10)
 
