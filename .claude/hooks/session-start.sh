@@ -15,12 +15,15 @@ archive = "collection://0f9aa644-8d33-447f-b637-7956de2e7e36"
 parts = [
     "Session start (from .claude/hooks/session-start.sh):",
     "- Answer the user in German.",
-    "- task-observer runs at the END of the session only (user's decision "
-    "2026-10-14; this overrides the skill description's 'before the first tool "
-    "call'). Do not invoke it at session start. When the user signals the end, "
-    "or together with the Chat-Archiv entry, invoke `task-observer` once and log "
-    "the whole session's observations with: "
-    f"bash {root}/.claude/skills/task-observer/scripts/new-observation.sh <slug> {root}/.claude/task-observer",
+    "- task-observer is active for the whole session again (user's decision "
+    "2026-10-14, reversing the end-only rule tried earlier that day). Before the "
+    "first other tool call, invoke the `task-observer` skill and run its Session "
+    f"Start Protocol. Workspace: {root}/.claude/task-observer. Step 2 (the log scan) is one command: "
+    f"bash {root}/.claude/skills/task-observer/scripts/session-start-scan.sh {root}/.claude/task-observer. "
+    "Keep the user informed: each time an observation file is written, tell the "
+    "user in one German line what was logged (number and topic), and close the "
+    "session with the grouped summary. The observer only proposes: skills "
+    "change only after the user approves.",
     "- Notion check, once per session with the first answer (user's request "
     "2026-10-14): one notion-query-data-sources call in sql mode on "
     f'{archive}: SELECT "Titel", "date:Datum:start" AS Datum, "Offene Punkte", url '

@@ -42,7 +42,7 @@ Read `.claude/context/session-notes.md` at the start of every session: it holds 
 
 ## Task Observer (skill improvement)
 
-Run the `task-observer` skill (`.claude/skills/task-observer/`) once at the **end** of every session, not at the start (user's decision 2026-10-14; this overrides the skill description's "before the first tool call"): when the user signals the end, or together with the Chat-Archiv entry, invoke it and log the whole session's observations. Reviews run twice a week through the routine "Skill-Verbesserung (Mo + Do)"; do not offer a review inside a session.
+At the start of every session that involves tool calls, invoke the `task-observer` skill (`.claude/skills/task-observer/`) and run its Session Start Protocol before planning or exploring; it stays active for the whole session (user's decision 2026-10-14, reversing the end-only rule tried earlier that day). Step 2 (the log scan) is one command, never a hand-made `ls`: `bash /home/user/claude-mem/.claude/skills/task-observer/scripts/session-start-scan.sh /home/user/claude-mem/.claude/task-observer`. Keep the user informed: each time an observation is written, tell the user in one line what was logged, and end the session with the grouped summary. The hook `.claude/hooks/observer-nudge.sh` adds a reminder on every fourth user message. Reviews run twice a week through the routine "Skill-Verbesserung (Mo + Do)".
 
 - **Workspace (pinned, never derived from the cwd):** `/home/user/claude-mem/.claude/task-observer`
   - Log: `.../skill-observations/observation-log/`
