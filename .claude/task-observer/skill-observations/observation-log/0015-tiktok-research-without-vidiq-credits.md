@@ -1,7 +1,7 @@
 ---
 id: 15
 title: "Short-form trend research without vidIQ credits: TikTok and Reels have no working fallback, YouTube Shorts has one (channel tabs via yt-dlp)"
-status: open
+status: actioned
 type: open-source
 skill: [agent-reach]
 proposes_skill: []
@@ -11,8 +11,8 @@ area: "Platform coverage: TikTok account discovery and recent-post metrics"
 date: 2026-10-13
 session_context: "User asked for 5 viral faceless TikTok story accounts from the last 14 days plus a sample episode, then for the same comparison on Shorts and Reels; vidIQ outlier search had 0 credits (renews 2026-11-05)"
 parked_until:
-resolved:
-resolution:
+resolved: 2026-10-15
+resolution: "Staged for agent-reach at skill-updates/2026-10-15/agent-reach (weekly review): Local-notes block on TikTok/Reels dead ends and the YouTube Shorts route, promoted with provenance (observed once, 2026-10-13, cloud)"
 reference:
 commands_verified: "run — vidiq_instagram_tiktok_outlier_search: 'Not enough credits'; curl/WebFetch tiktok.com/discover/*: redirect to homepage, no content; yt-dlp 2026.08.19 tiktok:tag 'CURRENTLY BROKEN', tiktok:user 'Failed to parse JSON' (no impersonate target); Playwright Chromium via HTTPS_PROXY on tiktok.com/search: login wall; Playwright on tiktok.com/@handle: /api/post/item_list answers 200 with an empty body, only profile totals (followers, likes, video count) in the page JSON; Playwright on /explore: puzzle captcha after the first load (not bypassed); curl on a single /@user/video/<id> page: playCount and createTime present (worked); Exa video URLs decoded by id>>32: newest from July 2026, none from the last 14 days; Exa web_search_exa with 'site:tiktok.com' yields @handles (153 from 16 queries, some calls fail on rate limit and need a sequential retry); YouTube: yt-dlp search with sp= sort/date filters returns mostly tiny new uploads (not usable for 'what is viral'), yt-dlp search with sp=EgIQAg%253D%253D (channels) returns subscriber counts (worked), yt-dlp --flat-playlist on /channel/<id>/shorts returns the newest Shorts with view_count but no date (worked, 64 of 78 channels), per-video yt-dlp date lookups hit HTTP 429 + 'confirm you are not a bot' after ~45 calls; TubeAlfred youtube_videos_batch gives publish_date but bills 1 credit per video and accepts only top-level field names (id,title,publish_date,view_count_int,channel,duration_ms); TubeAlfred youtube_search_query with type/sort/upload_date filters returned empty (4 credits spent)"
 ---

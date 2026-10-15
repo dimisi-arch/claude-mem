@@ -1,7 +1,7 @@
 ---
-id: 13
+id: 17
 title: "Standing voice-message rule has no fallback when the Edge TTS endpoint answers 403 in the cloud"
-status: open
+status: superseded
 type: internal
 skill: []
 proposes_skill: []
@@ -11,8 +11,8 @@ area: "Voice message with every answer"
 date: 2026-10-13
 session_context: "Short content questions (viral shorts research); voice message attempted per standing rule"
 parked_until:
-resolved:
-resolution:
+resolved: 2026-10-15
+resolution: "Superseded by #13 (0013-edge-tts-403-voice-message-fails, same finding, logged earlier the same day); its extra point — the session-notes line 'say once and continue in text' — is covered by #13's fallback proposal"
 reference:
 commands_verified: "run: uv run --with edge-tts --with faster-whisper python .claude/scripts/vorlesen.py in.txt out.mp3 --check -> aiohttp WSServerHandshakeError 403 from speech.platform.bing.com"
 ---
@@ -22,3 +22,5 @@ commands_verified: "run: uv run --with edge-tts --with faster-whisper python .cl
 **Suggested improvement:** Give vorlesen.py a fallback TTS backend that works offline or through the proxy (e.g. a local model such as piper with a German voice), or add one line to the session notes: when TTS fails, say so once per session and continue in text.
 
 **Principle:** A standing per-answer rule that depends on an external service needs a defined fallback, or every answer either fails the rule silently or burns time on retries.
+
+**Renumbered 2026-10-15:** first written as #13, colliding with the earlier 0013-edge-tts-403-voice-message-fails.md (the writer bypassed the id claim); renumbered to #17 by the review.
