@@ -1,7 +1,7 @@
 ---
 id: 13
 title: "Voice message script fails in the cloud: Microsoft edge-tts answers 403, no fallback voice"
-status: open
+status: actioned
 type: internal
 skill: []
 proposes_skill: [voice-summary]
@@ -11,8 +11,8 @@ area: "Voice message sent with every answer (vorlesen.py, edge-tts backend)"
 date: 2026-10-13
 session_context: "Summarising an Instagram reel in a cloud session; the standing voice message could not be produced"
 parked_until:
-resolved:
-resolution:
+resolved: 2026-10-15
+resolution: "vorlesen.py falls back to offline Piper (de_DE-thorsten-high) on any Microsoft failure (403, timeout, no network); --engine edge|piper forces one; tested 2026-10-15 (normal, forced Piper, simulated failure). Session notes updated. Branch claude/video-studio-2026-10-15"
 reference:
 commands_verified: "run — uv run --with edge-tts --with faster-whisper python .claude/scripts/vorlesen.py in.txt out.mp3 --check: WSServerHandshakeError 403 from speech.platform.bing.com (edge-tts 7.2.8), twice; agent proxy status enabled and covers every host"
 ---

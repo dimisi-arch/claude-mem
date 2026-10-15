@@ -1,8 +1,7 @@
 # Session notes — carried-over state
 
 Stand: 2026-10-10.
-Verify anything time-sensitive (connection status, webhook) with the Make tools
-before acting on it.
+Verify time-sensitive state (connections, webhooks) with the Make tools first.
 
 ## User
 
@@ -83,8 +82,7 @@ Offene Punkte, Status (Offen/Erledigt), Sitzung (URL).
 Rule for every session: before it ends (and after each larger topic), add one
 page per topic with summary, decisions and open points. Summaries only, no
 verbatim transcripts. Nothing runs by itself after a session closes; if the
-user ends abruptly, the entry is missing. Created 2026-10-08 with three
-entries from the first session.
+user ends abruptly, the entry is missing.
 
 ## Code-Sammlung in Notion (standing request, 2026-10-08)
 
@@ -114,6 +112,9 @@ ponytail plugin commands, Voice Studio PowerShell installer (unchecked).
 - claude-automation-recommender (read-only), find-skills (search only), impeccable (web UI).
 - Own skills (2026-10-10): `historical-images` (free museum images per episode) and
   `free-resources` (public-apis, free-for-dev, awesome-mcp-servers, fetched at start).
+- `short-video-studio` (own, 2026-10-15): faceless 9:16 shorts from one projekt.json (SDXL-Turbo
+  images on CPU, voice Fish Audio > Microsoft > Piper, Whisper check, subtitles, ffmpeg cut).
+  Fish Audio needs `FISH_API_KEY` + a voice id (open: user supplies both).
 - **HyperFrames** (heygen-com/hyperframes, Apache 2.0, tag v0.8.151, added 2026-10-13): video
   from HTML. 14 skills fetched at start by `install-hyperframes.sh` (core set + faceless-explainer,
   general-video, motion-graphics, slideshow; others install on demand). CLI via
