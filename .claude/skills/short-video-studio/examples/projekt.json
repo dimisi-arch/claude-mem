@@ -1,0 +1,19 @@
+{
+  "titel": "Testfolge",
+  "kopfzeile": "DIE 13. STUNDE · TEST",
+  "abspann": ["NÄCHSTE FOLGE", "STRASSBURG 1518"],
+  "stil": "dark comic illustration, muted sepia, dramatic light",
+  "stimme": {"engine": "auto", "fish_voice": "", "edge_voice": "de-DE-ConradNeural", "edge_rate": "-6%", "edge_pitch": "-5Hz"},
+  "aussprache": {"Zuchthaus": "Zucht-Haus"},
+  "anzeige": {"dreizehn": "13", "neunzehnhundertsechs": "1906"},
+  "akzent": ["dreizehn", "verboten", "uhr"],
+  "ton": {"ticken": true, "drone": true, "musik": ""},
+  "szenen": [
+    {"nr": 1, "bild": "close-up of hands holding an antique brass pocket watch, dusty workbench, warm lamp light",
+     "text": "Diese Uhr hat dreizehn Ziffern. Und die dreizehnte Stunde ist verboten.", "varianten": 2, "seed": 100},
+    {"nr": 2, "bild": "young man in a brown wool coat on a foggy Berlin street in 1906, gas lanterns",
+     "text": "Als er sie aufzieht, steht er plötzlich in Berlin, neunzehnhundertsechs.", "varianten": 2, "seed": 200, "glocke": true},
+    {"nr": 3, "bild": "old prison gate at night, fog, single lantern",
+     "text": "Und vor ihm liegt das Zuchthaus. Die Uhr tickt weiter.", "varianten": 2, "seed": 300}
+  ]
+}

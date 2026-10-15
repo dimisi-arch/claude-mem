@@ -3,6 +3,10 @@
 Run:   uv run --with edge-tts python .claude/scripts/vorlesen.py TEXT.txt OUT.mp3
 Check: uv run --with edge-tts --with faster-whisper python .claude/scripts/vorlesen.py TEXT.txt OUT.mp3 --check
 
+If Microsoft's voice is unreachable (403 from some cloud IPs), the script falls back to the offline
+Piper voice de_DE-thorsten-high automatically (needs uv; first use downloads ~114 MB). Force one
+with --engine edge|piper.
+
 Every message is checked before it is sent (standing rule): --check transcribes the audio
 with Whisper, lists words that came out differently from the text, and reports the pauses.
 Fix a mispronounced English name by adding it to PRONUNCIATION, then run again until the
@@ -62,7 +66,7 @@ MAX_PAUSE = 0.3
 
 def prepare(text: str) -> str:
     for word, spoken in PRONUNCIATION.items():
-        text = re.sub(rf"\b{re.escape(word)}\b", spoken, text)
+        text = re.sub(rf"\b{re.escape(word)}\b", spoken, text, flags=re.IGNORECASE)
     # Hard line breaks inside a paragraph make the voice pause mid-sentence.
     paragraphs = [" ".join(p.split()) for p in re.split(r"\n\s*\n", text)]
     return "\n\n".join(p for p in paragraphs if p)
@@ -121,8 +125,8 @@ def check(text: str, path: str) -> int:
         wav = os.path.join(tmp, "a.wav")
         subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", path, "-ar", "16000",
                         "-ac", "1", wav], check=True)
-        w = wave.open(wav)
-        audio = np.frombuffer(w.readframes(w.getnframes()), np.int16).astype(np.float32) / 32768
+        with wave.open(wav) as w:  # closed before cleanup: Windows cannot delete an open file
+            audio = np.frombuffer(w.readframes(w.getnframes()), np.int16).astype(np.float32) / 32768
     model = WhisperModel("small", device="cpu", compute_type="int8")
     segs, _ = model.transcribe(audio, language="de", beam_size=5)
     heard = words(" ".join(s.text for s in segs))
@@ -145,11 +149,45 @@ def check(text: str, path: str) -> int:
     return len(problems)
 
 
-async def synth(text: str, out_path: str, voice: str) -> None:
+# Fallback voice when Microsoft's online voice is unreachable (it answers 403 from some cloud
+# IPs, on and off). Piper runs offline; the voice (~114 MB) is downloaded once and cached.
+PIPER_VOICE = "de_DE-thorsten-high"
+PIPER_DIR = os.path.join(os.path.expanduser("~"), ".cache", "vorlesen", "piper")
+PIPER = ["uv", "run", "-q", "--with", "piper-tts", "python", "-m"]
+
+
+def piper_synth(text: str, wav: str) -> None:
+    model = os.path.join(PIPER_DIR, PIPER_VOICE + ".onnx")
+    if not os.path.isfile(model):
+        os.makedirs(PIPER_DIR, exist_ok=True)
+        subprocess.run(PIPER + ["piper.download_voices", "--download-dir", PIPER_DIR, PIPER_VOICE],
+                       check=True, capture_output=True)
+    subprocess.run(PIPER + ["piper", "-m", model, "-f", wav], input=text.encode("utf-8"),
+                   check=True, capture_output=True)
+
+
+async def edge_synth(text: str, mp3: str, voice: str) -> None:
+    await asyncio.wait_for(edge_tts.Communicate(text, voice).save(mp3), timeout=90)
+
+
+def synth(text: str, out_path: str, voice: str, engine: str = "auto") -> str:
+    """Render text to out_path; returns the engine that was used ("edge" or "piper")."""
+    spoken = prepare(text)
     with tempfile.TemporaryDirectory() as tmp:
         raw = os.path.join(tmp, "raw.mp3")
-        await edge_tts.Communicate(prepare(text), voice).save(raw)
+        if engine in ("auto", "edge"):
+            try:
+                asyncio.run(edge_synth(spoken, raw, voice))
+                tighten_pauses(raw, out_path)
+                return "edge"
+            except Exception as e:  # 403 handshake, timeout, no network
+                if engine == "edge":
+                    raise
+                print(f"Microsoft-Stimme nicht erreichbar ({type(e).__name__}), nehme Ersatzstimme Piper.")
+        raw = os.path.join(tmp, "raw.wav")
+        piper_synth(spoken, raw)
         tighten_pauses(raw, out_path)
+        return "piper"
 
 
 if __name__ == "__main__":
@@ -158,9 +196,12 @@ if __name__ == "__main__":
     ap.add_argument("out_mp3")
     ap.add_argument("--voice", default=VOICE)
     ap.add_argument("--check", action="store_true", help="transcribe and report mispronunciations")
+    ap.add_argument("--engine", choices=["auto", "edge", "piper"], default="auto",
+                    help="auto: Microsoft voice, Piper if it is unreachable (default)")
     args = ap.parse_args()
     with open(args.text_file, encoding="utf-8") as f:
         source = f.read()
-    asyncio.run(synth(source, args.out_mp3, args.voice))
+    used = synth(source, args.out_mp3, args.voice, args.engine)
+    print("Stimme:", "Microsoft (" + args.voice + ")" if used == "edge" else "Piper (" + PIPER_VOICE + ", Ersatz)")
     if args.check:
         check(source, args.out_mp3)

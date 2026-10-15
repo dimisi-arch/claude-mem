@@ -1,7 +1,7 @@
 ---
 id: 16
 title: "Faceless short-video production is a repeatable studio pipeline (image, voice, subtitles, render) worth its own skill"
-status: open
+status: actioned
 type: open-source
 skill: []
 proposes_skill: [short-video-studio]
@@ -11,8 +11,8 @@ area: "Producing vertical story videos end to end in a cloud session"
 date: 2026-10-13
 session_context: "User wants a faceless TikTok/Shorts/Reels story channel and asked whether Claude can act as a full studio (images, render, cut); a 13.5 s test scene was produced end to end; 2026-10-14: full 58 s episode Die Kamera lügt (dark comic, deeper voice)"
 parked_until:
-resolved:
-resolution:
+resolved: 2026-10-15
+resolution: "New skill .claude/skills/short-video-studio built on the user's request (2026-10-15): projekt.json-driven scripts (bilder, kontakt, stimme Fish>Microsoft>Piper, pruefen, schnitt) from the reference scripts, all traps of the three instances built in (style first + 77-token warning, -nostdin, pid file not pgrep, bitrate cap, subtitles from script, OOM-safe model choice); tested end to end in the cloud 2026-10-15 (3 scenes, 21 s, 5.5 MB)"
 reference: ".claude/task-observer/skill-observations/references/short-video-studio/ (bilder.py, schnitt.py, kontakt.py, sprechen.sh, aussprache.sed, pruefen.py, szenen.json, auswahl.json)"
 commands_verified: "run — Runway generate_image nano-banana-2-lite 9:16 (worked, 768x1376, 4 credits of 8; free plan has no video models); Canva generate-image (worked, but the tool returns only a 112x199 preview, full size stays in Canva); uv tool run --from piper-tts piper -m de_DE-thorsten-high.onnx (worked offline after downloading the voice from huggingface; mispronounces some words: 'schlug' heard as 'Schluck'); edge-tts via vorlesen.py: 403 from speech.platform.bing.com in the cloud; faster-whisper transcribe(path) fails with 'open() got an unexpected keyword argument metadata_errors' (PyAV mismatch) — decoding with ffmpeg to a 16 kHz numpy array works; ffmpeg zoompan + vignette + subtitles=ASS + amix (worked; the noise filter bloats size 14x, crf 23 without it gives 2.5 MB for 13.5 s); local SDXL-Turbo (diffusers, torch CPU, bfloat16 on a 4-core AMX Xeon, 576x1024, 4 steps) ~25 s per image, 45 images for one episode at zero cost (worked); full 77 s episode render from 13 stills + 13 Piper lines ~90 s (worked); whisper check of each TTS line found 3 mispronounced words (nassem, Zeitungsjunge, Zuchthaus), fixed by respelling or rewording; running whisper in parallel with image generation tripled image time (CPU contention); libass stacks overlapping subtitle events — end times must be clipped to the next start"
 ---
