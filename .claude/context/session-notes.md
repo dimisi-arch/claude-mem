@@ -17,6 +17,8 @@ before acting on it.
   words, no links. Always run `uv run --with edge-tts --with faster-whisper python
   .claude/scripts/vorlesen.py in.txt out.mp3 --check`, fix every mispronounced word in
   its PRONUNCIATION list and rerun until clean, then SendUserFile. Voice pitch is right.
+  If Microsoft's voice answers 403 (cloud), the script switches to the offline Piper voice
+  by itself (`--engine piper` forces it). Videos use Fish Audio, not this script.
 
 ## Projects (private repos since 2026-10-10)
 
