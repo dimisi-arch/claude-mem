@@ -60,6 +60,7 @@ PRONUNCIATION = {
     "Zernio": "Sörnio",  # was heard as "cernio"
     "Reels": "Riels",  # was heard as "rails"
     "Reel": "Riel",
+    "acemusic": "Ejs-Mjusik",  # was heard as "azzmusik"
 }
 
 # Pauses longer than this are cut down to it. Measured 2026-10-10: 19 % of a message was
