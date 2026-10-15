@@ -8,7 +8,7 @@
 
 [ "${CLAUDE_CODE_REMOTE:-}" = "true" ] || exit 0
 
-REV=945c61ebb6db975f17468f49a0c3e4d8ddb3ddc1   # tag v0.8.151 = npm hyperframes@0.8.151
+REV=f35b05fba0e8562b44a1edcf46ac2c1b79c1bca7   # tag v0.8.159 = npm hyperframes@0.8.159
 SKILLS="hyperframes hyperframes-core hyperframes-cli hyperframes-animation
   hyperframes-creative hyperframes-audio hyperframes-keyframes
   hyperframes-registry hyperframes-studio media-use
@@ -16,7 +16,8 @@ SKILLS="hyperframes hyperframes-core hyperframes-cli hyperframes-animation
 DIR="$CLAUDE_PROJECT_DIR/.claude/skills"
 
 missing=0
-for s in $SKILLS; do [ -f "$DIR/$s/SKILL.md" ] || missing=1; done
+# A skill counts as present only at this exact REV (.rev marker), so bumping REV refreshes all.
+for s in $SKILLS; do [ -f "$DIR/$s/SKILL.md" ] && [ "$(cat "$DIR/$s/.rev" 2>/dev/null)" = "$REV" ] || missing=1; done
 [ "$missing" = 0 ] && exit 0
 
 paths=""
@@ -34,6 +35,7 @@ if timeout 120 git -C "$tmp" init -q \
     [ -d "$tmp/skills/$s" ] || continue
     rm -rf "${DIR:?}/$s" && cp -r "$tmp/skills/$s" "$DIR/$s"
     cp "$tmp/LICENSE" "$DIR/$s/LICENSE.hyperframes"
+    echo "$REV" > "$DIR/$s/.rev"
   done
   echo "HyperFrames skills installed" >&2
 else
