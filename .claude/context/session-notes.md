@@ -100,6 +100,7 @@ ponytail plugin commands, Voice Studio PowerShell installer (unchecked).
 
 - Repo skills in `.claude/skills/` (gitignored dir, new files need `git add -f`):
   task-observer, ponytail* (MIT, hooks left out: start with `/ponytail`),
+  i-have-adhd (MIT; always on since 2026-10-14, rules injected by the start hook),
   frontend-design, 7 agent-skills by Addy Osmani, graphify, Make skills,
   own `install-third-party-skill` (use it for every new third-party skill).
 - `remotion-best-practices`: fetched at start (Remotion License). Render with
@@ -111,14 +112,27 @@ ponytail plugin commands, Voice Studio PowerShell installer (unchecked).
 - claude-automation-recommender (read-only), find-skills (search only), impeccable (web UI).
 - Own skills (2026-10-10): `historical-images` (free museum images per episode) and
   `free-resources` (public-apis, free-for-dev, awesome-mcp-servers, fetched at start).
+- **HyperFrames** (heygen-com/hyperframes, Apache 2.0, tag v0.8.151, added 2026-10-13): video
+  from HTML. 14 skills fetched at start by `install-hyperframes.sh` (core set + faceless-explainer,
+  general-video, motion-graphics, slideshow; others install on demand). CLI via
+  `npx hyperframes@0.8.151`; renders in the cloud (tested). Telemetry off
+  (`HYPERFRAMES_NO_TELEMETRY=1` in settings). Its router claims every video request: for
+  Age of Geschichte say which (Remotion or HyperFrames). Not installed from the same reel:
+  Video-Use (needs ElevenLabs key), Editly (overlap), Pexels (needs free key), Zernio, Resend.
+- `watch` (bradautomates/claude-video v0.3.2, MIT, copied 2026-10-11; plugin hook left
+  out): Claude views a video as timestamped frames plus captions. Set up and tested on
+  the **PC** only (local engine, detail balanced, captions only; settings in
+  `~/.config/watch/.env`). Needs ffmpeg, yt-dlp and Deno on PATH: a session started
+  before they were installed must prepend their WinGet package folders. In the cloud
+  most video downloads are blocked (Instagram reels worked 2026-10-13 via plain yt-dlp). Open: Gemini key and speech fallback, if wanted.
 
 ## Self-improvement loop (2026-10-10)
 
-- Routine `trig_01S8wUrZaHJPHUUdTfQi5RbE` "Skill-Verbesserung (jeden 2. Tag)", 06:45
-  Berlin (odd days), fires into session `session_01Lrn7FyucuYZy1VNQJZTC16` (has the repo; fresh
+- Routine `trig_01S8wUrZaHJPHUUdTfQi5RbE` "Skill-Verbesserung (Mo + Do)", 06:45
+  Berlin (twice a week since 2026-10-14), fires into session `session_01Lrn7FyucuYZy1VNQJZTC16` (has the repo; fresh
   routine sessions cannot push). Result: PR + push notification, never merges.
   "Run now" starts an empty session: test by messaging that session instead.
-- `observer-nudge.sh` (UserPromptSubmit) reminds to log observations every 4th prompt.
+- 2026-10-14: task-observer runs from session start again (end-only reversed the same day), nudge hook back; it tells the user each logged observation in one line.
 
 ## Local PC (workbench since 2026-10-10)
 

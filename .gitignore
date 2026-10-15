@@ -62,5 +62,13 @@ graphify-out/
 # Remotion skill: Remotion License, fetched at session start by .claude/hooks/install-remotion-skill.sh
 .claude/skills/remotion-best-practices/
 
+# HyperFrames skills (Apache 2.0, ~6 MB): fetched at session start by .claude/hooks/install-hyperframes.sh
+.claude/skills/hyperframes*/
+.claude/skills/media-use/
+.claude/skills/faceless-explainer/
+.claude/skills/general-video/
+.claude/skills/motion-graphics/
+.claude/skills/slideshow/
+
 # free-resources lists (free-for-dev has no license), fetched at session start by .claude/hooks/install-free-lists.sh
 .claude/skills/free-resources/lists/

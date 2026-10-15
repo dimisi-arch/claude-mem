@@ -1,9 +1,9 @@
 0003-session-start-protocol-shortened.md
-0004-make-connection-cannot-see-new-notion-db.md
 0006-bundle-gate-flags-make-iml-as-residue.md
 0007-scheduled-prompt-tool-names-and-repo.md
 0008-pinned-workspace-path-differs-per-machine.md
-0009-install-skill-needs-cli-tool-route.md
 0010-voice-summary-check-loop.md
-0011-museum-images-need-restyle.md
-0012-status-lines-in-english.md
+0013-edge-tts-403-voice-message-fails.md
+0015-tiktok-research-without-vidiq-credits.md
+0016-short-video-studio-pipeline.md
+0017-edge-tts-403-no-fallback.md

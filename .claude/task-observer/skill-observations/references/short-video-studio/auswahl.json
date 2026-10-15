@@ -1,0 +1,67 @@
+[
+ {
+  "nr": 1,
+  "bild": "roh/szene01_v2.png",
+  "glocke": false
+ },
+ {
+  "nr": 2,
+  "bild": "roh/szene02_v2.png",
+  "glocke": false
+ },
+ {
+  "nr": 3,
+  "bild": "roh/szene03_v2.png",
+  "glocke": true
+ },
+ {
+  "nr": 4,
+  "bild": "roh/szene04_v3.png",
+  "glocke": false
+ },
+ {
+  "nr": 5,
+  "bild": "roh/szene05_v2.png",
+  "glocke": false
+ },
+ {
+  "nr": 6,
+  "bild": "roh/szene06_v2.png",
+  "glocke": false
+ },
+ {
+  "nr": 7,
+  "bild": "roh/szene07_v2.png",
+  "glocke": false
+ },
+ {
+  "nr": 8,
+  "bild": "roh/szene08_v2.png",
+  "glocke": false
+ },
+ {
+  "nr": 9,
+  "bild": "roh/szene09_v2.png",
+  "glocke": false
+ },
+ {
+  "nr": 10,
+  "bild": "roh/szene10_v3.png",
+  "glocke": false
+ },
+ {
+  "nr": 11,
+  "bild": "roh2/szene11_v2.png",
+  "glocke": false
+ },
+ {
+  "nr": 12,
+  "bild": "roh/szene12_v3.png",
+  "glocke": false
+ },
+ {
+  "nr": 13,
+  "bild": "roh2/szene13_v1.png",
+  "glocke": true
+ }
+]

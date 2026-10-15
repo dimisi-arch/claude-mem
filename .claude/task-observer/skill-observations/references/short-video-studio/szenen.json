@@ -1,0 +1,80 @@
+[
+ {
+  "nr": 1,
+  "prompt": "close-up of hands holding an antique brass pocket watch with thirteen numerals, dusty workbench, warm lamp light",
+  "seed": 100,
+  "varianten": 3
+ },
+ {
+  "nr": 2,
+  "prompt": "young man with dark messy hair in a brown wool coat winding a pocket watch in an old cluttered clockmaker workshop, many clocks on the walls",
+  "seed": 200,
+  "varianten": 3
+ },
+ {
+  "nr": 3,
+  "prompt": "swirling clocks and golden light vortex in a dark clockmaker workshop, time travel, motion blur",
+  "seed": 300,
+  "varianten": 3
+ },
+ {
+  "nr": 4,
+  "prompt": "young man with dark messy hair in a brown wool coat lying on wet cobblestones, foggy Berlin street in 1906, gas lanterns, horse carriage",
+  "seed": 400,
+  "varianten": 3
+ },
+ {
+  "nr": 5,
+  "prompt": "newspaper boy in flat cap shouting and holding up a newspaper, foggy Berlin street in 1906",
+  "seed": 500,
+  "varianten": 3
+ },
+ {
+  "nr": 6,
+  "prompt": "Prussian army captain stepping off a steam train with a squad of soldiers in spiked helmets, railway platform 1906",
+  "seed": 600,
+  "varianten": 3
+ },
+ {
+  "nr": 7,
+  "prompt": "portrait of a weathered old man with grey moustache in a Prussian captain uniform and peaked cap, tired eyes",
+  "seed": 700,
+  "varianten": 3
+ },
+ {
+  "nr": 8,
+  "prompt": "soldiers with rifles guarding a corridor in an old German town hall, frightened clerks in suits, 1906",
+  "seed": 800,
+  "varianten": 3
+ },
+ {
+  "nr": 9,
+  "prompt": "hand signing a paper receipt next to stacks of gold coins and banknotes on a wooden desk, 1906",
+  "seed": 900,
+  "varianten": 3
+ },
+ {
+  "nr": 10,
+  "prompt": "young man with dark messy hair in a brown wool coat watching through a rainy window as an officer walks away down the street",
+  "seed": 1000,
+  "varianten": 3
+ },
+ {
+  "nr": 11,
+  "prompt": "mysterious man in a long grey coat and bowler hat facing the viewer at the end of a foggy narrow alley, staring straight at the camera, face half in shadow",
+  "seed": 1111,
+  "varianten": 3
+ },
+ {
+  "nr": 12,
+  "prompt": "close-up of an antique pocket watch with thirteen numerals hanging from a chain on a grey wool coat",
+  "seed": 1200,
+  "varianten": 3
+ },
+ {
+  "nr": 13,
+  "prompt": "young man in a brown wool coat sprinting toward a blinding golden light at the end of a foggy cobblestone alley, seen from behind, strong motion blur",
+  "seed": 1313,
+  "varianten": 3
+ }
+]
