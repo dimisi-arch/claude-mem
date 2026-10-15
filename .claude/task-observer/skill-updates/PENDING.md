@@ -10,6 +10,10 @@
   one checklist line. Gate passed.
 - SUPERSEDED by 2026-10-15/security-and-hardening — 2026-10-11/security-and-hardening (+ .skill) — upstream refresh, same
   commit: one zod example line in references/hardening-patterns.md. Gate passed.
+- 2026-10-11/voice-summary (+ .skill) — NEW internal skill (observation #10,
+  approved by the user 2026-10-11): spoken German summary → vorlesen.py
+  --check → fix PRONUNCIATION → rerun → send. Gate passed.
+  Install: `cp -r .claude/task-observer/skill-updates/2026-10-11/voice-summary .claude/skills/` and `git add -f`.
 
 - 2026-10-15/agent-reach (+ .skill) — Local notes: short-form trend research
   without vidIQ credits (TikTok/Reels dead ends, YouTube Shorts route), with

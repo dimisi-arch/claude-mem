@@ -50,6 +50,7 @@ At the start of every session that involves tool calls, invoke the `task-observe
   - Staged skill updates: `.../skill-updates/` (manifest `PENDING.md`)
 - **New observation files** are created only via `bash /home/user/claude-mem/.claude/skills/task-observer/scripts/new-observation.sh <slug> /home/user/claude-mem/.claude/task-observer`.
 - **Repositories root:** `/home/user`
+- **Other machine:** the paths above are the cloud container's. On the user's Windows PC the same workspace is `C:\Users\Stilianos\claude-mem\.claude\task-observer` (Git Bash: `/c/Users/Stilianos/claude-mem/.claude/task-observer`); replace the `/home/user/claude-mem` root in every command above with that one there.
 - The observer only proposes changes; installed skills are changed only after the user approves them in a review.
 - Cloud sessions run in throwaway containers: commit and push changes under `.claude/task-observer/` before the session ends, or the observations are lost.
 
