@@ -164,3 +164,13 @@ its mapper and run it to change the text) and verified live; banner kept.
   budget check was done by hand instead: 41 repo/user skills, 12,158 characters of
   names and descriptions, and four bundled skills already arrive without a description
   (task-observer observation 14, for the weekly review).
+
+## HyperFrames install details (moved 2026-10-15)
+
+- **HyperFrames** (heygen-com/hyperframes, Apache 2.0, tag v0.8.151, added 2026-10-13): video
+  from HTML. 14 skills fetched at start by `install-hyperframes.sh` (core set + faceless-explainer,
+  general-video, motion-graphics, slideshow; others install on demand). CLI via
+  `npx hyperframes@0.8.151`; renders in the cloud (tested). Telemetry off
+  (`HYPERFRAMES_NO_TELEMETRY=1` in settings). Its router claims every video request: for
+  Age of Geschichte say which (Remotion or HyperFrames). Not installed from the same reel:
+  Video-Use (needs ElevenLabs key), Editly (overlap), Pexels (needs free key), Zernio, Resend.

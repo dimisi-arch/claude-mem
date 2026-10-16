@@ -115,13 +115,13 @@ ponytail plugin commands, Voice Studio PowerShell installer (unchecked).
 - `short-video-studio` (own, 2026-10-15): faceless 9:16 shorts from one projekt.json (SDXL-Turbo
   images on CPU, voice Fish Audio > Microsoft > Piper, Whisper check, subtitles, ffmpeg cut).
   Fish Audio needs `FISH_API_KEY` + a voice id (open: user supplies both).
-- **HyperFrames** (heygen-com/hyperframes, Apache 2.0, tag v0.8.151, added 2026-10-13): video
-  from HTML. 14 skills fetched at start by `install-hyperframes.sh` (core set + faceless-explainer,
-  general-video, motion-graphics, slideshow; others install on demand). CLI via
-  `npx hyperframes@0.8.151`; renders in the cloud (tested). Telemetry off
-  (`HYPERFRAMES_NO_TELEMETRY=1` in settings). Its router claims every video request: for
-  Age of Geschichte say which (Remotion or HyperFrames). Not installed from the same reel:
-  Video-Use (needs ElevenLabs key), Editly (overlap), Pexels (needs free key), Zernio, Resend.
+- `ai-music` (own, 2026-10-15): background music via ACE-Step 1.5 on acemusic.ai (free key,
+  `ACEMUSIC_API_KEY` in the cloud environment settings or `~/.config/acemusic/key` on the PC).
+  Open: user creates the key. Feeds short-video-studio `ton.musik`.
+- `niche-research` (charlie947/social-media-skills, MIT, copied 2026-10-15): topic research,
+  last 7 days; answer in German, offer Short ideas instead of LinkedIn posts.
+- **HyperFrames** (Apache 2.0, fetched at start, telemetry off): video from HTML, CLI
+  `npx hyperframes@<pinned>`; for Age of Geschichte say Remotion or HyperFrames. Details: archive.
 - `watch` (bradautomates/claude-video v0.3.2, MIT, copied 2026-10-11; plugin hook left
   out): Claude views a video as timestamped frames plus captions. Set up and tested on
   the **PC** only (local engine, detail balanced, captions only; settings in
