@@ -8,7 +8,7 @@
 
 [ "${CLAUDE_CODE_REMOTE:-}" = "true" ] || exit 0
 
-REV=f35b05fba0e8562b44a1edcf46ac2c1b79c1bca7   # tag v0.8.159 = npm hyperframes@0.8.159
+REV=bbf9f8ffd0b2faa5edca9852c5528c5312f6c57e   # tag v0.8.186 = npm hyperframes@0.8.186
 SKILLS="hyperframes hyperframes-core hyperframes-cli hyperframes-animation
   hyperframes-creative hyperframes-audio hyperframes-keyframes
   hyperframes-registry hyperframes-studio media-use
