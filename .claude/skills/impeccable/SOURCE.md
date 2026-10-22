@@ -1,4 +1,4 @@
-Source: https://github.com/pbakaus/impeccable (commit d631a8827f99414d2b6daba4ef08b7f8701751d7), skill 4.5.2, Apache License 2.0 (see LICENSE and NOTICE.md).
+Source: https://github.com/pbakaus/impeccable (commit 490141501de5035d1d2fb975239ceb757f045bcb), skill 4.5.2, Apache License 2.0 (see LICENSE and NOTICE.md).
 
 Copied unchanged: `plugin/skills/impeccable/` (SKILL.md, reference/, scripts/).
 The launcher `scripts/impeccable` downloads its engine binary (v0.1.14, pinned in scripts/VERSION)

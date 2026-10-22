@@ -1,7 +1,7 @@
 ---
 id: 22
 title: "Hand-built HyperFrames map broke two rules the maps module states (far-polygon filter, pre-hold hidden state) — caught only by snapshots"
-status: open
+status: parked
 type: open-source
 skill: [motion-graphics]
 proposes_skill: []
@@ -10,7 +10,7 @@ siblings_checked: "none — no skill-families.md; HyperFrames skills are third-p
 area: "motion-graphics/categories/maps/module.md (Determinism hard rules) and the shortcut of skipping the director/builder subagent pipeline"
 date: 2026-10-13
 session_context: "Building a 9:16 recap map (Troy to Sicily) for the Age of Geschichte channel with HyperFrames, after reading the maps module"
-parked_until:
+parked_until: "the user decides to send it upstream to heygen-com/hyperframes (third-party skill, fetched at start; no local edit possible)"
 resolved:
 resolution:
 reference: "dimisi-arch/age-of-geschichte PR #1 (merged), folgen/01-odysseus-zyklop/teil-2-rueckblick/make-map.mjs"

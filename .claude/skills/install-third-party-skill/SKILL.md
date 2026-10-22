@@ -34,6 +34,10 @@ If the skill is not installed yet, ask in one line which one is meant.
    every change or at every session start, hooks and scripts unless the user
    wants them.
 4. Note the commit SHA you looked at: `git -C <clone> rev-parse HEAD`.
+   If the skills call the project's own CLI or package (`npx <pkg>@…`), pin the
+   release tag whose version matches the published package instead
+   (`npm view <pkg> version`, `git ls-remote --tags <url>`): HEAD can be a
+   version ahead of the registry, and the skills' commands then fail.
 
 ## Step 3 — License check (decides everything else)
 
@@ -43,6 +47,7 @@ itself (a folder can carry its own license that differs from the repo).
 | License found | Route |
 |---|---|
 | MIT, Apache 2.0, BSD, CC BY | **Copy and commit** (Step 4a), keep the license file |
+| Permissive license but heavy (over ~1 MB or many folders) | **Fetch at session start** (Step 4b) is fine too; say why in the hook comment |
 | No license, "source-available", custom terms (e.g. Remotion License) | **Ask the user.** Default offer: **fetch at session start** (Step 4b), folder gitignored, nothing republished |
 | Terms forbid redistribution or automated download | Do not install; tell the user why |
 
@@ -58,6 +63,10 @@ den Skill deshalb bei jedem Start neu herunter, statt ihn in dein
    left out and why.
 3. `.claude/skills/` is gitignored in this repo: new skills need
    `git add -f .claude/skills/<name>`.
+4. "Unchanged" has one exception: an upstream `description` so broad that it
+   would push aside installed tools or connectors (e.g. "MUST USE for every
+   web lookup") may be narrowed. Record the change and the reason in
+   `SOURCE.md`.
 
 ## Step 4b — Fetch at session start
 
@@ -66,7 +75,11 @@ den Skill deshalb bei jedem Start neu herunter, statt ihn in dein
 2. Write `.claude/hooks/install-<name>.sh` on the pattern of
    `.claude/hooks/install-remotion-skill.sh`:
    - only runs when `CLAUDE_CODE_REMOTE=true`;
-   - exits early when the skill is already present (idempotent);
+   - exits early only when this exact version is installed: after copying,
+     write `$REV` into `<skill>/.rev`, and skip when `.rev` equals `REV`
+     (a plain presence check turns every REV bump into a silent no-op);
+   - for a big monorepo, fetch only the skill folders: `--filter=blob:none`
+     plus `sparse-checkout set --no-cone <paths>` (70 MB repo → ~2 s);
    - pins one commit (`REV=<sha>`, with a comment naming the version);
    - `git init` + `git fetch --depth 1 <url> "$REV"` with a `timeout`;
    - copies only the skill folder into place;
@@ -75,15 +88,32 @@ den Skill deshalb bei jedem Start neu herunter, statt ihn in dein
 3. Register it under `hooks.SessionStart` in `.claude/settings.json` with a
    `timeout`. Edit the JSON by hand; never reformat the whole file.
 
+## Step 4c — Skill needs a CLI tool
+
+Some skills only work when a command-line tool is installed (example: Agent
+Reach calls `agent-reach`, `yt-dlp`, `mcporter`). Copying the folder is then
+not enough — a fresh container has no tools. Add a hook on the pattern of
+`.claude/hooks/install-agent-reach.sh` (or `install-graphify.sh`):
+- pin the tool to the same commit/version as the copied skill;
+- check each tool separately (`command -v`) and install only what is missing;
+- install in the background so the session start is not delayed;
+- write failures to a log file — stderr of a backgrounded subshell is lost;
+- `uv tool install` puts only the package's own commands on PATH; a bundled
+  dependency CLI needs `--with-executables-from <package>`;
+- always `exit 0`.
+
 ## Step 5 — Test
 
-1. Run the hook by hand twice:
+1. After every REV bump, check that `<skill>/.rev` shows the new REV.
+   Run the hook by hand twice:
    `CLAUDE_PROJECT_DIR=/home/user/claude-mem CLAUDE_CODE_REMOTE=true bash .claude/hooks/install-<name>.sh`
    — the first run installs, the second must do nothing.
 2. Check the result: `SKILL.md` exists and the skill shows up in the skill
    list.
 3. Actually use the skill once on a tiny example (Remotion: render a short
    test video). Being in the list does not prove it works.
+   For a skill with CLI tools (Step 4c): check that every command the
+   skill's instructions name is on PATH (`command -v <tool>`).
 4. Known gap: hooks only fire when this repo is the session's project.
    `CLAUDE.md` ("Session-start hooks may not fire") holds the manual
    fallback — add the new hook's command there too.

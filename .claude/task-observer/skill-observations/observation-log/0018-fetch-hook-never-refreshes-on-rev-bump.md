@@ -1,7 +1,7 @@
 ---
 id: 18
 title: "Fetch-at-start hook pattern never installs a bumped REV: it exits as soon as the skill folder exists"
-status: open
+status: actioned
 type: open-source
 skill: [install-third-party-skill]
 proposes_skill: []
@@ -11,8 +11,8 @@ area: "Step 4b — Fetch at session start (idempotency check)"
 date: 2026-10-15
 session_context: "Bumping REV in install-remotion-skill.sh and install-hyperframes.sh on the user's request"
 parked_until:
-resolved:
-resolution:
+resolved: 2026-10-23
+resolution: "Both fetch hooks got the .rev check on 2026-10-15 (PR #46); the rule is staged for install-third-party-skill Step 4b/5 at skill-updates/2026-10-23/install-third-party-skill (weekly review)"
 reference:
 commands_verified: "run — CLAUDE_PROJECT_DIR=$PWD CLAUDE_CODE_REMOTE=true bash .claude/hooks/install-remotion-skill.sh twice after adding a .rev marker: first run installed 7ba4dcf (3.7 s), second run exited (0.05 s)"
 ---

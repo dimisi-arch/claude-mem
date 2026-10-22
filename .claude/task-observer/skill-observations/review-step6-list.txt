@@ -2,8 +2,13 @@
 0006-bundle-gate-flags-make-iml-as-residue.md
 0007-scheduled-prompt-tool-names-and-repo.md
 0008-pinned-workspace-path-differs-per-machine.md
-0010-voice-summary-check-loop.md
 0013-edge-tts-403-voice-message-fails.md
 0015-tiktok-research-without-vidiq-credits.md
 0016-short-video-studio-pipeline.md
 0017-edge-tts-403-no-fallback.md
+0018-fetch-hook-never-refreshes-on-rev-bump.md
+0019-setup-check-fails-on-fetched-skills.md
+0020-adhd-mode-answers-too-long.md
+0021-pin-skills-to-released-cli-and-size-route.md
+0022-hyperframes-map-rules-missed-in-hand-built-map.md
+0023-cloudflare-1010-blocks-python-user-agent.md

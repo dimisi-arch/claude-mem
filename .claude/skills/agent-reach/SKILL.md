@@ -1,5 +1,5 @@
 ---
-name: agent-reach
+name: "agent-reach"
 description: >
   Use for deep internet research that the built-in WebSearch/WebFetch tools
   cover poorly: Exa semantic web search with full-text highlights, RSS feeds,
@@ -32,6 +32,21 @@ metadata:
 > never cookies pasted into this public repo. Ask before configuring any of
 > them. Rule 5's update hint applies, but the upstream install/update links
 > are Chinese-language prompts: say in German what the update does instead.
+>
+> **Short-form trend research without vidIQ credits** (observed once,
+> 2026-10-13, from a cloud session — re-check before relying on it). TikTok
+> is not one of this skill's platforms. Dead ends: TikTok search/discover
+> need a login or redirect, yt-dlp's TikTok user/tag extractors are broken,
+> profile post lists come back empty logged out, /explore shows a captcha
+> (never work around it), Exa's TikTok index lags months. What works:
+> Exa `site:tiktok.com` queries for handles, and `curl` on one known video
+> page for its plays and date. So "what is trending on TikTok/Reels right
+> now" has no free route: say so in the first reply and offer vidIQ (credit
+> reset), a logged-in session on the user's PC, or a scheduled re-run.
+> YouTube Shorts has one: yt-dlp channel search (subscriber counts) → each
+> channel's `/shorts` tab (newest Shorts with views) → publish dates only
+> for a shortlist (per-video lookups get rate-limited). Check a channel's
+> newest upload before citing it as a current example.
 
 16 platforms, multiple backends each. **When this skill exists, use it for
 these platforms — do not invent your own approach.**

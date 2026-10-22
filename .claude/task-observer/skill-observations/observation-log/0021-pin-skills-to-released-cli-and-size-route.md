@@ -1,7 +1,7 @@
 ---
 id: 21
 title: "install-third-party-skill: pin skills that drive a CLI to the released tag, and let size (not only license) pick the fetch route"
-status: open
+status: actioned
 type: internal
 skill: [install-third-party-skill]
 proposes_skill: []
@@ -11,8 +11,8 @@ area: "Step 2.4 (note the commit SHA) and Step 3 (license route table)"
 date: 2026-10-13
 session_context: "Installing HyperFrames skills (heygen-com/hyperframes) after a user asked to install the useful tools from an Instagram reel"
 parked_until:
-resolved:
-resolution:
+resolved: 2026-10-23
+resolution: "Staged for install-third-party-skill at skill-updates/2026-10-23/install-third-party-skill (weekly review): Step 2.4 pin to released tag, Step 3 size row, Step 4b sparse checkout"
 reference: ".claude/hooks/install-hyperframes.sh (PR #37)"
 commands_verified: "run — npx -y hyperframes@0.8.152 init: npm ETARGET (HEAD's package.json version not published); npm view hyperframes version: 0.8.151; git ls-remote --tags: v0.8.151 = 945c61eb; init/check/render with 0.8.151 passed"
 ---

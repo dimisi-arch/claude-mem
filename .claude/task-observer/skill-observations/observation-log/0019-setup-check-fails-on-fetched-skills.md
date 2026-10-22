@@ -1,7 +1,7 @@
 ---
 id: 19
 title: "check-claude-setup.sh fails locally on third-party skills fetched at session start (hyperframes), though CI is green"
-status: open
+status: actioned
 type: internal
 skill: []
 proposes_skill: []
@@ -11,8 +11,8 @@ area: "Setup check, skill validation pass"
 date: 2026-10-15
 session_context: "Merging PR #29; the local setup check exited 1"
 parked_until:
-resolved:
-resolution:
+resolved: 2026-10-23
+resolution: "check-claude-setup.sh: skills not tracked by git (fetched by start hooks) get only a presence check (SKILL.md with name); local run green again. Branch claude/weekly-skill-review-2026-10-23"
 reference:
 commands_verified: "run — bash .claude/scripts/check-claude-setup.sh: exit 1, FAIL for faceless-explainer, general-video, hyperframes-audio, hyperframes-cli, hyperframes-creative (29 'cited path missing' / 'heading not in its own Contents index' lines); all are gitignored folders written by .claude/hooks/install-hyperframes.sh"
 ---
