@@ -1,7 +1,7 @@
 ---
 id: 20
 title: "ADHD mode active, but long multi-section answers still sent; user reminded 'ich habe adhs'"
-status: open
+status: actioned
 type: internal
 skill: [i-have-adhd]
 proposes_skill: []
@@ -11,8 +11,8 @@ area: "Rules 1, 3, 9 (next action first, one next action, max 5 items) in long w
 date: 2026-10-15
 session_context: "After a long session (merge PRs, hooks, voice fallback, short-video-studio skill) the final report had 5 sections, ~20 bullets and the action not in line 1; the user replied only 'ich habe adhs'"
 parked_until:
-resolved:
-resolution:
+resolved: 2026-10-23
+resolution: "Fixed final-answer shape added to the ADHD block injected by .claude/hooks/session-start.sh (line 1 action, max 3 done, max 2 open); i-have-adhd itself untouched (third-party). Structural Stop-hook only on a second violation"
 reference:
 commands_verified: none
 ---

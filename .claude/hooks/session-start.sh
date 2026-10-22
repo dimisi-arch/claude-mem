@@ -41,6 +41,10 @@ if os.path.isfile(adhd):
         "\nADHD MODE ACTIVE (always-on, user's decision 2026-10-14). The ruleset "
         'below applies to every response; "stop adhd mode" turns it off for this '
         "session.\n\n" + body.strip()
+        + "\n\n## Final answer after a long work turn (user's reminder 2026-10-15)\n\n"
+        "Long tool-heavy turns end in the default full-summary habit. The final answer has a fixed "
+        "shape: line 1 = the one thing to do now (with link); then at most 3 lines 'erledigt'; then at "
+        "most 2 open points; nothing else. Details go into the PR or file, not the chat."
     )
 if os.path.isfile(notes):
     with open(notes, encoding="utf-8") as f:

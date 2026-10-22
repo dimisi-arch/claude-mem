@@ -13,6 +13,12 @@ python3 -I "$v" --selftest >/dev/null || { echo "FAIL validator selftest"; fail=
 for d in "$root"/.claude/skills/*/; do
   n=$(basename "$d")
   [ -f "$d/SKILL.md" ] || continue
+  # Skills a start hook fetches (not tracked by git, e.g. hyperframes) are foreign content:
+  # only check that they are there, not that they follow this repo's authoring rules.
+  if ! git -C "$root" ls-files --error-unmatch "$d/SKILL.md" >/dev/null 2>&1; then
+    head -5 "$d/SKILL.md" | grep -q '^name:' || { echo "FAIL fetched skill $n: SKILL.md has no name"; fail=1; }
+    continue
+  fi
   cp -r "$d" "$tmp/$n"   # validate a copy: the live skill is never touched
   out=$(python3 -I "$v" "$tmp/$n" 2>&1) && continue
   # {{now}} in the Make examples is a Make formula, not leftover template text.
