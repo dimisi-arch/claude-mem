@@ -1,5 +1,5 @@
 ---
-name: ponytail-gain
+name: "ponytail-gain"
 description: >
   Show ponytail's measured savings (code, cost, speed) from the benchmark.
   One-shot display. Use for /ponytail-gain, "what does ponytail save",
@@ -50,4 +50,3 @@ this card points there instead of inventing one.
 ## Boundaries
 
 One-shot display. Edits nothing, changes no mode.
-"stop ponytail" or "normal mode": revert.

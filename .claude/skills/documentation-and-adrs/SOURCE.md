@@ -1,1 +1,1 @@
-Source: https://github.com/addyosmani/agent-skills (commit 1401c8b8030e023baeebb31781a6653fe8e93026), MIT License.
+Source: https://github.com/addyosmani/agent-skills (commit aeac41d4d005999432bb7312f7ff06383a91d59d), MIT License.
