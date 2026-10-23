@@ -1,6 +1,6 @@
 ---
 name: short-video-studio
-description: "Internal skill for this repo. Produce a faceless vertical short (TikTok, YouTube Shorts, Reels; 9:16, about 30-90 s) end to end: story text per scene, AI scene images (local SDXL-Turbo or SD-Turbo, free), narration (Fish Audio for videos, Microsoft or offline Piper as fallback), a pronunciation check, subtitles from the script, Ken Burns motion, sound bed, final MP4 plus check frames. Use when the user wants a story short, a Kurzvideo, a TikTok or Shorts episode, or asks Claude to act as the whole video studio. Not for code-built animations or explainers made of typography and charts (use hyperframes / faceless-explainer) or for finding historical images (historical-images)."
+description: "Internal skill for this repo. Produce a faceless vertical short (TikTok, YouTube Shorts, Reels; 9:16, about 30-90 s) end to end: story text per scene, AI scene images (local SDXL-Turbo or SD-Turbo, free), narration (Fish Audio for videos, Microsoft or offline Piper as fallback), a pronunciation check, subtitles from the script, Ken Burns motion, sound bed, final MP4 plus check frames. Use when the user wants a story short, a Kurzvideo, a TikTok or Shorts episode, or asks Claude to act as the whole video studio. Not for code-built animations or explainers made of typography and charts (use hyperframes) or for finding historical images (historical-images)."
 requires:
   - binary: ffmpeg
   - binary: ffprobe
