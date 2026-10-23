@@ -1,7 +1,7 @@
 ---
 id: 24
 title: "A REV bump in a fetch hook silently dropped 9 skills because upstream had folded them into one"
-status: open
+status: actioned
 type: open-source
 skill: [install-third-party-skill]
 proposes_skill: []
@@ -11,8 +11,8 @@ area: "Step 4b/5 — updating a pinned REV"
 date: 2026-10-23
 session_context: "Bumping hyperframes v0.8.159 -> v0.8.186 in .claude/hooks/install-hyperframes.sh"
 parked_until:
-resolved:
-resolution:
+resolved: 2026-10-23
+resolution: "Staged in skill-updates/2026-10-23-b: Step 4b hook removes its own stale folders; Step 5 compares the skill list with git ls-tree before a REV bump. Principle kept in this file only (one instance)."
 reference:
 commands_verified: "run — git ls-tree -d FETCH_HEAD skills/ at v0.8.186 listed 7 folders; 9 of the hook's 14 names were gone, so the hook re-fetched at every start and kept stale copies"
 ---
