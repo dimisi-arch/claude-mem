@@ -83,6 +83,9 @@ den Skill deshalb bei jedem Start neu herunter, statt ihn in dein
    - pins one commit (`REV=<sha>`, with a comment naming the version);
    - `git init` + `git fetch --depth 1 <url> "$REV"` with a `timeout`;
    - copies only the skill folder into place;
+   - for a set of skills: marks each folder it installs (e.g. a copied
+     `LICENSE.<name>`) and first removes marked folders that are no longer
+     in its list, so a renamed or merged upstream skill leaves no stale copy;
    - **always ends with `exit 0`** — a failed download prints one line to
      stderr and never blocks the session start.
 3. Register it under `hooks.SessionStart` in `.claude/settings.json` with a
@@ -104,7 +107,13 @@ not enough — a fresh container has no tools. Add a hook on the pattern of
 
 ## Step 5 — Test
 
-1. After every REV bump, check that `<skill>/.rev` shows the new REV.
+1. Before a REV bump, compare the hook's skill list with what the new REV
+   ships: `git -C <clone> ls-tree -d --name-only <REV> <skills-dir>/`.
+   Upstream renames, merges and drops skills between versions (hyperframes
+   v0.8.186 folded 9 workflow skills into one); drop or rename every entry
+   that is gone, and read the changelog for where its content went. A name
+   that no longer exists makes the hook re-download at every start.
+   After the bump, check that `<skill>/.rev` shows the new REV.
    Run the hook by hand twice:
    `CLAUDE_PROJECT_DIR=/home/user/claude-mem CLAUDE_CODE_REMOTE=true bash .claude/hooks/install-<name>.sh`
    — the first run installs, the second must do nothing.
