@@ -8,7 +8,7 @@
 
 [ "${CLAUDE_CODE_REMOTE:-}" = "true" ] || exit 0
 
-REV=f35b05fba0e8562b44a1edcf46ac2c1b79c1bca7   # tag v0.8.159 = npm hyperframes@0.8.159
+REV=bbf9f8ffd0b2faa5edca9852c5528c5312f6c57e   # tag v0.8.186 = npm hyperframes@0.8.186
 # Since v0.8.17x upstream folds the workflows (explainer, motion graphics, general video, ...)
 # into hyperframes/references/types; the old per-workflow skills no longer exist.
 SKILLS="hyperframes hyperframes-cli hyperframes-registry media-use slideshow remotion-to-hyperframes"

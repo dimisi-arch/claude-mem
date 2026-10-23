@@ -6,7 +6,7 @@
 
 [ "${CLAUDE_CODE_REMOTE:-}" = "true" ] || exit 0
 
-REV=7ba4dcf8ebe1626b00baa41e1f2478113719b60b   # skills version 4.0.535
+REV=6c67adcd9cdbe6eb84d76342da89b225f9161cb2   # skills version 4.0.538
 DEST="$CLAUDE_PROJECT_DIR/.claude/skills/remotion-best-practices"
 # Skip only when this exact REV is installed (.rev marker), so bumping REV refreshes it.
 [ -f "$DEST/SKILL.md" ] && [ "$(cat "$DEST/.rev" 2>/dev/null)" = "$REV" ] && exit 0
