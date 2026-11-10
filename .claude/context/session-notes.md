@@ -115,6 +115,9 @@ ponytail plugin commands, Voice Studio PowerShell installer (unchecked).
 - `short-video-studio` (own, 2026-10-15): faceless 9:16 shorts from one projekt.json (SDXL-Turbo
   images on CPU, voice Fish Audio > Microsoft > Piper, Whisper check, subtitles, ffmpeg cut).
   Fish Audio needs `FISH_API_KEY` + a voice id (open: user supplies both).
+- Cloud environment **`video-studio`** (2026-11-09): allows Hugging Face, PyTorch, Microsoft voice
+  and Fish Audio hosts. Start video sessions in it; "Default" blocks them. Microsoft voice needs
+  `proxy=$HTTPS_PROXY` in edge-tts (observation 0025, not yet in `stimme.py`).
 - `ai-music` (own, 2026-10-15): background music via ACE-Step 1.5 on acemusic.ai (free key,
   `ACEMUSIC_API_KEY` in the cloud environment settings or `~/.config/acemusic/key` on the PC).
   Open: user creates the key. Feeds short-video-studio `ton.musik`.
